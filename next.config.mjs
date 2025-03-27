@@ -11,10 +11,14 @@ const nextConfig = {
                 protocol: "https",
                 hostname: "cdn.example.com",
             },
+            {
+                protocol: "https",
+                hostname: "uzxkr.com",
+            },
         ],
     },
     i18n: {
-        locales: ['en', 'ch'], // Add your supported locales
+        locales: ['en', 'ch', 'zh', 'de', 'jp', 'sp', 'tr'], // Add your supported locales
         defaultLocale: 'en', // Set the default locale
     },
     reactStrictMode: false
