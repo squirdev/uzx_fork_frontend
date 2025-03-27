@@ -15,7 +15,7 @@ export default function CurrentEquity() {
     setIsLoadingBalance(true);
     let result = await getProfile();
     if (result && result.user) {
-      setUserEquity(result.user.totalBalance);
+      setUserEquity(result.user.totalBalance ?? 0);
     }
     setIsLoadingBalance(false);
   };
