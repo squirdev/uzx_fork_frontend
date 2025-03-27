@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { useLanguage } from "../../../context/LanguageProvider";
-import { getWithdrawHistory } from "../api/token";
 import { useEffect, useState } from "react";
-import { getSimplifiedDateTime } from "../helper";
+import { getSimplifiedDateTime } from "@/app/helper";
+import { useLanguage } from "../../../../context/LanguageProvider";
+import { getWithdrawHistory } from "@/app/api/token";
 
 const WithdrawRecord = () => {
   const [withdrawHistory, setWithdrawHistory] = useState(null);

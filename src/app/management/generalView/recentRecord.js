@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import DepositRecord from "./depositRecord";
-import { useLanguage } from "../../../context/LanguageProvider";
+import { useLanguage } from "../../../../context/LanguageProvider";
 import WithdrawRecord from "./withDrawRecord";
 
 export default function RecentRecord() {
@@ -11,7 +11,7 @@ export default function RecentRecord() {
   return (
     <div className="w-full border border-black rounded-md p-4">
       <div className="w-full flex justify-between items-end">
-        <p className="text-2xl font-bold">Recent records</p>
+        <p className="text-2xl font-bold">{t("recentRecords")}</p>
         <Link href={"/recharge"} className="text-blue1">
           {t("viewAll")}
         </Link>

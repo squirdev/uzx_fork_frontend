@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { useLanguage } from "../../../context/LanguageProvider";
-import { getDepositHistory } from "../api/token";
 import { useEffect, useState } from "react";
-import { getSimplifiedDateTime } from "../helper";
+import { getSimplifiedDateTime } from "@/app/helper";
+import { getDepositHistory } from "@/app/api/token";
+import { useLanguage } from "../../../../context/LanguageProvider";
 
 const DepositRecord = () => {
   const [depositHistory, setDepositHistory] = useState(null);

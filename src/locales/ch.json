@@ -378,5 +378,9 @@
     "proofReserces": "储备证明",
     "community": "社区",
     "logout": "退出登录",
-    "generalView": "概览"
+    "generalView": "概览",
+    "recentRecords": "最近记录",
+    "ownedTokens": "拥有的代币",
+    "safety": "安全",
+    "idVerify": "身份验证"
 }

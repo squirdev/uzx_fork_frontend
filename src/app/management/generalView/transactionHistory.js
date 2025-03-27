@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useLanguage } from "../../../context/LanguageProvider";
+import { useLanguage } from "../../../../context/LanguageProvider";
 
 export default function TransactionHistory() {
   const { t } = useLanguage();

@@ -378,5 +378,9 @@
     "proofReserces": "Rezerv Kanıtı",
     "community": "Topluluk",
     "logout": "Çıkış yap",
-    "generalView": "Genel Görünüm"
+    "generalView": "Genel Görünüm",
+    "recentRecords": "Son kayıtlar",
+    "ownedTokens": "Sahip olunan tokenler",
+    "safety": "Güvenlik",
+    "idVerify": "Kimlik Doğrulama"
 }

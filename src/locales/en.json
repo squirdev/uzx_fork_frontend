@@ -310,7 +310,6 @@
     "learn": "Learn",
     "signoutSuccess": "Sign out Successfully",
     "convertDesc": "No slippage丨One-click transactions",
-
     "loginFirst": "Please login first",
     "swapTokenSuccess": "Swap token Successfully",
     "swapTokenFailed": "Swap token Failed",
@@ -378,7 +377,10 @@
     "channels": "channels",
     "proofReserces": "Proof of Reserces",
     "community": "Community",
-
     "logout": "Log out",
-    "generalView": "General View"
+    "generalView": "General View",
+    "recentRecords": "Recent records",
+    "ownedTokens": "Owned Tokens",
+    "safety": "Safety",
+    "idVerify": "Identify Verification"
 }

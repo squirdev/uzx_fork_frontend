@@ -378,5 +378,9 @@
     "proofReserces": "Prueba de reservas",
     "community": "Comunidad",
     "logout": "Cerrar sesión",
-    "generalView": "Vista general"
+    "generalView": "Vista general",
+    "recentRecords": "Registros recientes",
+    "ownedTokens": "Tokens poseídos",
+    "safety": "Seguridad",
+    "idVerify": "Verificación de identidad"
 }

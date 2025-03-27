@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useLanguage } from "../../../context/LanguageProvider";
+import { useLanguage } from "../../../../context/LanguageProvider";
 
 export default function ProofReserve() {
   const { t } = useLanguage();

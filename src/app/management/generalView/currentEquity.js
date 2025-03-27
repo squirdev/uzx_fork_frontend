@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { useLanguage } from "../../../context/LanguageProvider";
-import { getProfile } from "../api/profile";
 import { useEffect, useState } from "react";
+import { getProfile } from "@/app/api/profile";
+import { useLanguage } from "../../../../context/LanguageProvider";
 
 const { Button } = require("@material-tailwind/react");
 const { default: Image } = require("next/image");

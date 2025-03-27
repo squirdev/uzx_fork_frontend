@@ -378,5 +378,9 @@
     "proofReserces": "Nachweis der Reserven",
     "community": "Community",
     "logout": "Abmelden",
-    "generalView": "Allgemeine Ansicht"
+    "generalView": "Allgemeine Ansicht",
+    "recentRecords": "Letzte Aufzeichnungen",
+    "ownedTokens": "Besitzene Token",
+    "safety": "Sicherheit",
+    "idVerify": "Identitätsverifizierung"
 }

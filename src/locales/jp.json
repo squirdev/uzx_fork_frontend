@@ -378,5 +378,9 @@
     "proofReserces": "準備金証明",
     "community": "コミュニティ",
     "logout": "ログアウト",
-    "generalView": "全体ビュー"
+    "generalView": "全体ビュー",
+    "recentRecords": "最近の記録",
+    "ownedTokens": "所有トークン",
+    "safety": "安全",
+    "idVerify": "本人確認"
 }
