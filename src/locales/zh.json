@@ -376,5 +376,7 @@
     "officialVerification": "官方認證",
     "channels": "渠道",
     "proofReserces": "儲備證明",
-    "community": "社群"
+    "community": "社群",
+    "logout": "登出",
+    "generalView": "總覽"
 }

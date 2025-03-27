@@ -11,7 +11,7 @@ export default function Home() {
     <div className="content bg-white">
       <div className="brands container mx-auto my-2 overflow-hidden">
         <div className="w-full flex flex-col gap-12 my-12">
-          <p className="text-3xl font-bold">Withdraw</p>
+          <p className="text-3xl font-bold">{t("withdraw")}</p>
           <WithdrawStep />
           <WithdrawPanel />
         </div>

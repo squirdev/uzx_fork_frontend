@@ -377,5 +377,8 @@
     "officialVerification": "Official verification",
     "channels": "channels",
     "proofReserces": "Proof of Reserces",
-    "community": "Community"
+    "community": "Community",
+
+    "logout": "Log out",
+    "generalView": "General View"
 }

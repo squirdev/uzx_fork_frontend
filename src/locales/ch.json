@@ -376,5 +376,7 @@
     "officialVerification": "官方认证",
     "channels": "渠道",
     "proofReserces": "储备证明",
-    "community": "社区"
+    "community": "社区",
+    "logout": "退出登录",
+    "generalView": "概览"
 }

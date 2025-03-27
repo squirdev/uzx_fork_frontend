@@ -376,5 +376,7 @@
     "officialVerification": "Offizielle Verifizierung",
     "channels": "Kanäle",
     "proofReserces": "Nachweis der Reserven",
-    "community": "Community"
+    "community": "Community",
+    "logout": "Abmelden",
+    "generalView": "Allgemeine Ansicht"
 }

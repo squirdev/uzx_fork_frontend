@@ -376,5 +376,7 @@
     "officialVerification": "公式認証",
     "channels": "チャンネル",
     "proofReserces": "準備金証明",
-    "community": "コミュニティ"
+    "community": "コミュニティ",
+    "logout": "ログアウト",
+    "generalView": "全体ビュー"
 }

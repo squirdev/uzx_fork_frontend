@@ -376,5 +376,7 @@
     "officialVerification": "Resmi Doğrulama",
     "channels": "Kanallar",
     "proofReserces": "Rezerv Kanıtı",
-    "community": "Topluluk"
+    "community": "Topluluk",
+    "logout": "Çıkış yap",
+    "generalView": "Genel Görünüm"
 }

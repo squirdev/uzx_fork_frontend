@@ -3,6 +3,7 @@ import { BiUser } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux";
 import { useLanguage } from "../../../context/LanguageProvider";
 import { logout } from "../../../redux/authSlice";
+import Link from "next/link";
 
 const {
   Menu,
@@ -12,34 +13,28 @@ const {
   Button,
 } = require("@material-tailwind/react");
 
-const menuData = [
-  {
-    icon: "/general.svg",
-    title: "General View",
-    href: "/#",
-  },
-  {
-    icon: "/security.svg",
-    title: "Security center",
-    href: "/#",
-  },
-  {
-    icon: "/preference.svg",
-    title: "Preferences",
-    href: "/#",
-  },
-  {
-    icon: "/api.svg",
-    title: "API management",
-    href: "/#",
-  },
-];
-
 const UserProfileItem = () => {
   const { username, email } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const { t } = useLanguage();
   if (!t) return <p className="text-white">Loading translations...</p>;
+  const menuData = [
+    {
+      icon: "/general.svg",
+      title: t("generalView"),
+      href: "/management",
+    },
+    {
+      icon: "/security.svg",
+      title: t("deposit"),
+      href: "/recharge",
+    },
+    {
+      icon: "/preference.svg",
+      title: t("withdraw"),
+      href: "/withdraw",
+    },
+  ];
   const handleLogout = () => {
     dispatch(logout());
   };
@@ -53,12 +48,15 @@ const UserProfileItem = () => {
         <p>UID:8380656588</p>
         {menuData.map((menu, index) => (
           <MenuItem key={index} className="p-0 my-3">
-            <div className="w-full h-full flex items-center gap-4 hover:bg-hoverblack py-2 px-1 rounded-sm group">
+            <Link
+              href={menu.href}
+              className="w-full h-full flex items-center gap-4 hover:bg-hoverblack py-2 px-1 rounded-sm group"
+            >
               <Image src={menu.icon} width={20} height={20} alt="reward" />
               <p className="font-bold text-white hover:text-blue1">
                 {menu.title}
               </p>
-            </div>
+            </Link>
           </MenuItem>
         ))}
         <Button
@@ -66,7 +64,7 @@ const UserProfileItem = () => {
           className="w-full text-white"
           variant="outlined"
         >
-          Log out
+          {t("logout")}
         </Button>
       </MenuList>
     </Menu>
