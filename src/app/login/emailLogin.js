@@ -1,6 +1,6 @@
 import { Button, Input, TabPanel } from "@material-tailwind/react";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   AiOutlineClose,
   AiOutlineEye,
@@ -31,8 +31,8 @@ export default function EmailLoginPanel() {
   const { showAlert } = useAlert();
   const router = useRouter();
   const dispatch = useDispatch();
-
   const { t } = useLanguage();
+
   if (!t) return <p className="text-white">Loading translations...</p>;
 
   const handleLogin = async () => {
@@ -45,11 +45,7 @@ export default function EmailLoginPanel() {
       else {
         showAlert(t("signinSuccess"), "success");
         dispatch(login({ token: result.token, email: result.email }));
-        if (window.history.length > 1) {
-          router.back();
-        } else {
-          router.push("/");
-        }
+        router.push("/");
       }
     }
   };

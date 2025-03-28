@@ -25,11 +25,7 @@ export default function KeyLoginPanel() {
     if (result.success) {
       showAlert(t("signinSuccess"), "success");
       dispatch(login({ token: result.token, username: result.username }));
-      if (window.history.length > 1) {
-        router.back();
-      } else {
-        router.push("/");
-      }
+      router.push("/");
     } else showAlert(t("signinFailed"), "error");
   };
   return (
