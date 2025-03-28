@@ -6,12 +6,7 @@ import { useLanguage } from "../../../context/LanguageProvider";
 import { sendVerifyEmail, signUpEmail } from "../api/auth";
 import { useAlert } from "../../../context/alertContext";
 import { useRouter } from "next/navigation";
-
-function isValidEmailRegister(email, verifyCode, password, confirmPassword) {
-  if (!email || !verifyCode || !password || !confirmPassword) return false;
-  else if (password != confirmPassword) return false;
-  else return true;
-}
+import { isValidEmailRegister } from "../helper";
 
 export default function EmailRegisterPanel() {
   const [email, setEmail] = useState("");

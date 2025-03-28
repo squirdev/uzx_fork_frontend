@@ -33,3 +33,30 @@ export function getSimplifiedAddress(address) {
   const shortenedHex = address.slice(0, 7) + "..." + address.slice(-5);
   return shortenedHex;
 }
+
+export function isValidChangeLoginPassword(
+  oldPassword,
+  newPassword,
+  confirmPassword
+) {
+  if (!oldPassword || !newPassword || !confirmPassword) return false;
+  else if (newPassword != confirmPassword) return false;
+  else return true;
+}
+
+export function isValidEmailRegister(
+  email,
+  verifyCode,
+  password,
+  confirmPassword
+) {
+  if (!email || !verifyCode || !password || !confirmPassword) return false;
+  else if (password != confirmPassword) return false;
+  else return true;
+}
+
+export function isValidPassword(password, confirmPassword) {
+  if (!password || !confirmPassword) return false;
+  else if (password != confirmPassword) return false;
+  else return true;
+}

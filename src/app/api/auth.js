@@ -50,6 +50,22 @@ export const signUpEmail = async (email, verifyCode, password) => {
   }
 };
 
+export const bindEmail = async (email, verifyCode, privateKey) => {
+  if (!email || !verifyCode || !privateKey) return false;
+  try {
+    const response = await axiosApi.post("/user/bind-email", {
+      email: email,
+      code: verifyCode,
+      private: privateKey,
+    });
+    console.log("RESPONSE:", response);
+    return true;
+  } catch (error) {
+    console.log("ERROR:", error);
+    return false;
+  }
+};
+
 export const signInEmail = async (email, password) => {
   if (!email || !password) return false;
   try {

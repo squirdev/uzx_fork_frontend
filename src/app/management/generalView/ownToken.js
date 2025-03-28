@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLanguage } from "../../../../context/LanguageProvider";
-import { getProfile } from "@/app/api/profile";
+import { getBalanceDetail } from "@/app/api/profile";
 import { SwapTokenList } from "@/constants/supportCryptoInfo";
 
 export default function OwnToken() {
@@ -10,8 +10,9 @@ export default function OwnToken() {
   const [showTokenList, setShowTokenList] = useState(SwapTokenList);
 
   const fetchUserProfile = async () => {
-    let result = await getProfile();
-    if (result) setBalanceInfo(result.user);
+    let result = await getBalanceDetail();
+    console.log("DETAIL_BALANCE:", result);
+    if (result) setBalanceInfo(result.data);
   };
 
   useEffect(() => {
@@ -24,28 +25,25 @@ export default function OwnToken() {
       <div className="w-full flex justify-between items-end">
         <p className="text-2xl font-bold">{t("ownedTokens")}</p>
       </div>
-      <div className="w-full flex justify-between items-center mt-4 font-bold px-4">
+      <div className="w-full grid grid-cols-3 mt-4 font-bold px-4">
         <p>{t("crypto")}</p>
         <p>{t("amount")}</p>
+        <p className="text-end">USDT {t("amount")}</p>
       </div>
       <div className="mt-4 w-full flex flex-col overflow-y-auto max-h-96 px-4">
-        {showTokenList.map((data, index) => {
-          if (
-            balanceInfo &&
-            balanceInfo[data.toLowerCase()] &&
-            balanceInfo[data.toLowerCase()] != 0
-          )
+        {balanceInfo?.map((data, index) => {
+          if (data.tokenBalance)
             return (
               <div
                 key={index}
-                className="w-full flex justify-between items-center py-2"
+                className="w-full grid grid-cols-3 text-sm font-bold items-center py-2"
               >
-                <p>{data}</p>
+                <p>{data.name?.toUpperCase()}</p>
                 <p>
-                  {balanceInfo &&
-                    balanceInfo[data.toLowerCase()] &&
-                    balanceInfo[data.toLowerCase()].toFixed(2)}
+                  {data.tokenBalance?.toFixed(2)}
+                  {data.name?.toUpperCase()}
                 </p>
+                <p className="text-end">{data.usdtBalance?.toFixed(2)}USDT</p>
               </div>
             );
         })}
