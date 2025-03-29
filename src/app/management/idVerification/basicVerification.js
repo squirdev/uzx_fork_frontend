@@ -107,7 +107,6 @@ const BasicVerification = () => {
             description={t("uploadFrontSideDocument")}
             setImageUrl={setFrontImageUrl}
           />
-          <CameraFileUpload />
           {documentType != 1 && (
             <ImageFileUploader
               imageUrl={backImageUrl}
