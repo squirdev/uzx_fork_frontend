@@ -427,5 +427,15 @@
     "idCard": "Kimlik Kartı",
     "driverLicense": "Sürücü Belgesi",
     "enterDigitOTP": "6 haneli OTP'yi girin",
-    "googleAuthentication": "Google Kimlik Doğrulama"
+    "googleAuthentication": "Google Kimlik Doğrulama",
+    "securitySettings": "Güvenlik Ayarları",
+    "bindEmail": "E-posta bağla",
+    "bindEmailDesc": "Anonim kullanıcılar hesaplarını bir e-posta bağlayarak kurtarabilirler",
+    "googleAuth": "Google Kimlik Doğrulama",
+    "googleAuthDesc": "Lütfen Google Kimlik Doğrulamayı bağlayın",
+    "loginPassword": "Giriş şifresi",
+    "loginPasswordDesc": "Platforma giriş yaparken kullanılır",
+    "modify": "Değiştir",
+    "fundPasswordDesc": "Hesap fonları değiştiğinde, önce fon şifresini doğrulamanız gerekir",
+    "setting": "Ayarlar"
 }

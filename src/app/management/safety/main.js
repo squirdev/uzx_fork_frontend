@@ -6,12 +6,15 @@ import SecurityAuthItem from "./securityPassword";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { getProfile } from "@/app/api/profile";
+import { useLanguage } from "../../../../context/LanguageProvider";
 
 const SafetyPanel = () => {
   const [userProfile, setUserProfile] = useState(null);
   const [isEmailBind, setIsEmailBind] = useState(false);
   const [isGoogleAuthBind, setIsGoogleAuthBind] = useState(false);
   const router = useRouter();
+  const { t } = useLanguage();
+
   const fetchProfile = async () => {
     let result = await getProfile();
     if (result && result.user) {
@@ -28,41 +31,42 @@ const SafetyPanel = () => {
     if (userProfile && userProfile.isOtp) setIsGoogleAuthBind(true);
   }, [userProfile]);
 
+  if (!t) return <p className="text-white">Loading translations...</p>;
   return (
     <div className="w-full flex flex-col mb-6 text-black">
-      <p className="text-3xl font-bold mt-8">Security</p>
-      <p className="text-2xl font-bold mt-6">Security Settings</p>
+      <p className="text-3xl font-bold mt-8">{t("security")}</p>
+      <p className="text-2xl font-bold mt-6">{t("securitySettings")}</p>
       <div className="w-full flex flex-col gap-6">
         <SecuritySettingItem
           verified={isEmailBind}
-          title="Bind email"
+          title={t("bindEmail")}
           email={userProfile && userProfile.email}
           onClick={() => router.push("/emailCenter?classify=1")}
-          description="Anonymous users can recover their account by binding an email"
+          description={t("bindEmailDesc")}
           image="/management/bindmail.png"
         />
         <SecuritySettingItem
-          title="GoogleAuth"
-          description="Please bind GoogleAuth"
+          title={t("googleAuth")}
+          description={t("googleAuthDesc")}
           onClick={() => router.push("/emailCenter?classify=2")}
           image="/management/google.png"
           verified={isGoogleAuthBind}
         />
         {userProfile && userProfile.password && (
           <SecurityAuthItem
-            title="Login password"
+            title={t("loginPassword")}
             onClick={() => router.push("/emailCenter?classify=3")}
-            description="Use when logging in to the platform"
+            description={t("loginPasswordDesc")}
             image="/management/login.png"
-            button="Modify"
+            button={t("modify")}
           />
         )}
         <SecurityAuthItem
-          title="Fund password"
+          title={t("fundPassword")}
           onClick={() => router.push("/emailCenter?classify=4")}
-          description="When account funds change, you need to verify the funds password first"
+          description={t("fundPasswordDesc")}
           image="/management/fund.png"
-          button="Setting"
+          button={t("setting")}
         />
       </div>
     </div>

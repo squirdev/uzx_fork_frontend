@@ -427,5 +427,15 @@
     "idCard": "身份证",
     "driverLicense": "驾驶证",
     "enterDigitOTP": "输入6位数验证码",
-    "googleAuthentication": "谷歌身份验证"
+    "googleAuthentication": "谷歌身份验证",
+    "securitySettings": "安全设置",
+    "bindEmail": "绑定邮箱",
+    "bindEmailDesc": "匿名用户可以通过绑定邮箱找回账号",
+    "googleAuth": "谷歌验证",
+    "googleAuthDesc": "请绑定谷歌验证",
+    "loginPassword": "登录密码",
+    "loginPasswordDesc": "用于登录平台",
+    "modify": "修改",
+    "fundPasswordDesc": "当账户资金变更时，需要先验证资金密码",
+    "setting": "设置"
 }

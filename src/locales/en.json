@@ -427,7 +427,16 @@
     "idCard": "ID Card",
     "driverLicense": "Driver's License",
     "enterDigitOTP": "Enter the 6-digit OTP",
-    "googleAuthentication": "Google Authentication"
+    "googleAuthentication": "Google Authentication",
 
-
+    "securitySettings": "Security Settings",
+    "bindEmail": "Bind email",
+    "bindEmailDesc": "Anonymous users can recover their account by binding an email",
+    "googleAuth": "GoogleAuth",
+    "googleAuthDesc": "Please bind GoogleAuth",
+    "loginPassword": "Login password",
+    "loginPasswordDesc": "Use when logging in to the platform",
+    "modify": "Modify",
+    "fundPasswordDesc": "When account funds change, you need to verify the funds password first",
+    "setting": "Setting"
 }

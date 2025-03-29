@@ -427,5 +427,15 @@
     "idCard": "DNI",
     "driverLicense": "Licencia de conducir",
     "enterDigitOTP": "Ingrese el código OTP de 6 dígitos",
-    "googleAuthentication": "Autenticación de Google"
+    "googleAuthentication": "Autenticación de Google",
+    "securitySettings": "Configuraciones de seguridad",
+    "bindEmail": "Vincular correo electrónico",
+    "bindEmailDesc": "Los usuarios anónimos pueden recuperar su cuenta vinculando un correo electrónico",
+    "googleAuth": "Autenticación de Google",
+    "googleAuthDesc": "Por favor, vincule la autenticación de Google",
+    "loginPassword": "Contraseña de inicio de sesión",
+    "loginPasswordDesc": "Se usa al iniciar sesión en la plataforma",
+    "modify": "Modificar",
+    "fundPasswordDesc": "Cuando cambian los fondos de la cuenta, primero debe verificar la contraseña de fondos",
+    "setting": "Configuración"
 }

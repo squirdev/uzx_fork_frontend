@@ -427,5 +427,15 @@
     "idCard": "身分証明書",
     "driverLicense": "運転免許証",
     "enterDigitOTP": "6桁のOTPを入力してください",
-    "googleAuthentication": "Google認証"
+    "googleAuthentication": "Google認証",
+    "securitySettings": "セキュリティ設定",
+    "bindEmail": "メールを紐付ける",
+    "bindEmailDesc": "匿名ユーザーはメールを紐付けることでアカウントを復元できます",
+    "googleAuth": "Google認証",
+    "googleAuthDesc": "Google認証を紐付けてください",
+    "loginPassword": "ログインパスワード",
+    "loginPasswordDesc": "プラットフォームにログインする際に使用",
+    "modify": "変更",
+    "fundPasswordDesc": "アカウント資金が変更される際、資金パスワードの確認が必要です",
+    "setting": "設定"
 }

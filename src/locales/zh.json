@@ -427,5 +427,15 @@
     "idCard": "身份證",
     "driverLicense": "駕駛證",
     "enterDigitOTP": "輸入6位數驗證碼",
-    "googleAuthentication": "谷歌身份驗證"
+    "googleAuthentication": "谷歌身份驗證",
+    "securitySettings": "安全設置",
+    "bindEmail": "綁定郵箱",
+    "bindEmailDesc": "匿名用戶可以通過綁定郵箱找回賬號",
+    "googleAuth": "谷歌驗證",
+    "googleAuthDesc": "請綁定谷歌驗證",
+    "loginPassword": "登錄密碼",
+    "loginPasswordDesc": "用於登錄平台",
+    "modify": "修改",
+    "fundPasswordDesc": "當賬戶資金變更時，需要先驗證資金密碼",
+    "setting": "設置"
 }
