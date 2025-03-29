@@ -15,7 +15,6 @@ import { useAlert } from "../../../../context/alertContext";
 import { useRouter } from "next/navigation";
 import { useLanguage } from "../../../../context/LanguageProvider";
 import { createDocument } from "@/app/api/profile";
-import CameraFileUpload from "./CameraFileUploader";
 
 const BasicVerification = () => {
   const { countries } = useCountries();
