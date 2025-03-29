@@ -422,5 +422,8 @@
     "uploadFrontSideDocument": "Vorderseite des Dokuments hochladen",
     "uploadBackSideDocument": "Rückseite des Dokuments hochladen",
     "submitForReview": "Zur Überprüfung einreichen",
-    "estimatedReviewTime": "Geschätzte Überprüfungszeit: 24 Stunden"
+    "estimatedReviewTime": "Geschätzte Überprüfungszeit: 24 Stunden",
+    "passport": "Reisepass",
+    "idCard": "Personalausweis",
+    "driverLicense": "Führerschein"
 }

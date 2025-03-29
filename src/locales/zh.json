@@ -422,5 +422,8 @@
     "uploadFrontSideDocument": "上傳文件正面照片",
     "uploadBackSideDocument": "上傳文件背面照片",
     "submitForReview": "提交審核",
-    "estimatedReviewTime": "預計審核時間：24 小時"
+    "estimatedReviewTime": "預計審核時間：24 小時",
+    "passport": "護照",
+    "idCard": "身份證",
+    "driverLicense": "駕駛證"
 }

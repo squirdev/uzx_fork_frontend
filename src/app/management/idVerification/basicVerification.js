@@ -27,8 +27,6 @@ const BasicVerification = () => {
   const { t } = useLanguage();
   if (!t) return <p className="text-white">Loading translations...</p>;
 
-  const DOCUMENT_TYPE_LIST = ["ID card", "Passport", "Driver's License"];
-
   const handleSubmitDocument = async () => {
     if (!isValidDocument(country, documentType, frontImageUrl, backImageUrl)) {
       showAlert(t("inputAllDetail"));
@@ -48,6 +46,8 @@ const BasicVerification = () => {
       showAlert(t("submitDocumentFailed"));
     }
   };
+
+  const DOCUMENT_TYPE_LIST = [t("idCard"), t("passport"), t("driverLicense")];
 
   return (
     <Card className="w-full p-8 ">

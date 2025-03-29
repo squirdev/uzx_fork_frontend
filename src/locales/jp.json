@@ -422,5 +422,8 @@
     "uploadFrontSideDocument": "書類の表面をアップロード",
     "uploadBackSideDocument": "書類の裏面をアップロード",
     "submitForReview": "審査のために提出",
-    "estimatedReviewTime": "審査の目安時間: 24時間"
+    "estimatedReviewTime": "審査の目安時間: 24時間",
+    "passport": "パスポート",
+    "idCard": "身分証明書",
+    "driverLicense": "運転免許証"
 }

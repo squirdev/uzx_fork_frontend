@@ -25,7 +25,7 @@ const SafetyPanel = () => {
 
   useEffect(() => {
     if (userProfile && userProfile.email) setIsEmailBind(true);
-    if (userProfile && userProfile.isOpt) setIsGoogleAuthBind(true);
+    if (userProfile && userProfile.isOtp) setIsGoogleAuthBind(true);
   }, [userProfile]);
 
   return (

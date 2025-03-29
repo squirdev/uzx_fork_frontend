@@ -422,5 +422,8 @@
     "uploadFrontSideDocument": "Upload Front Side of the Document Photo",
     "uploadBackSideDocument": "Upload Back Side of the Document Photo",
     "submitForReview": "Submit for Review",
-    "estimatedReviewTime": "Estimated Review Time: 24 hours"
+    "estimatedReviewTime": "Estimated Review Time: 24 hours",
+    "passport": "Passport",
+    "idCard": "ID Card",
+    "driverLicense": "Driver's License"
 }

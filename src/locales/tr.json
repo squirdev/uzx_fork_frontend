@@ -422,5 +422,8 @@
     "uploadFrontSideDocument": "Belgenin Ön Yüzünü Yükleyin",
     "uploadBackSideDocument": "Belgenin Arka Yüzünü Yükleyin",
     "submitForReview": "İnceleme için gönder",
-    "estimatedReviewTime": "Tahmini inceleme süresi: 24 saat"
+    "estimatedReviewTime": "Tahmini inceleme süresi: 24 saat",
+    "passport": "Pasaport",
+    "idCard": "Kimlik Kartı",
+    "driverLicense": "Sürücü Belgesi"
 }

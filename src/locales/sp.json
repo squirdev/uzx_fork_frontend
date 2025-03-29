@@ -422,5 +422,8 @@
     "uploadFrontSideDocument": "Subir foto del lado frontal del documento",
     "uploadBackSideDocument": "Subir foto del lado posterior del documento",
     "submitForReview": "Enviar para revisión",
-    "estimatedReviewTime": "Tiempo estimado de revisión: 24 horas"
+    "estimatedReviewTime": "Tiempo estimado de revisión: 24 horas",
+    "passport": "Pasaporte",
+    "idCard": "DNI",
+    "driverLicense": "Licencia de conducir"
 }
