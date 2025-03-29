@@ -60,3 +60,14 @@ export function isValidPassword(password, confirmPassword) {
   else if (password != confirmPassword) return false;
   else return true;
 }
+
+export function isValidDocument(
+  country,
+  documentType,
+  frontImageUrl,
+  backImageUrl
+) {
+  if (!country || !frontImageUrl || documentType == -1) return false;
+  else if (documentType == 1 && !backImageUrl) return false;
+  else return true;
+}

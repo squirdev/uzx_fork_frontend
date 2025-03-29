@@ -13,6 +13,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "../../../context/LanguageProvider";
 import SafetyPanel from "./safety/main";
+import IDVerification from "./idVerification/main";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState(0);
@@ -59,15 +60,7 @@ export default function Home() {
               <SafetyPanel />
             </TabPanel>
             <TabPanel key={2} value={2}>
-              <div className="w-full flex flex-col p-12 items-center gap-4">
-                <Image
-                  src={"/rewards/nodata.png"}
-                  width={88}
-                  height={65}
-                  alt="No data"
-                />
-                <p className="text-xl text-hoverblack">此部分将很快完成</p>
-              </div>
+              <IDVerification />
             </TabPanel>
           </TabsBody>
         </Tabs>
