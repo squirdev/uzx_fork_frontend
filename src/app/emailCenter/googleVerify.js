@@ -15,6 +15,7 @@ import { useAlert } from "../../../context/alertContext";
 import { useLanguage } from "../../../context/LanguageProvider";
 import { QRCodeCanvas } from "qrcode.react";
 import { getOTP, verifyOTP } from "../api/profile";
+import { useRouter } from "next/navigation";
 
 const GoogleVerify = () => {
   const { showAlert } = useAlert();
@@ -22,6 +23,8 @@ const GoogleVerify = () => {
   const [qrLoading, setQrLoading] = useState(false);
   const [qrCodeUrl, setQrCodeUrl] = useState("");
   const [qrCodeStr, setQrCodeStr] = useState("");
+
+  const router = useRouter();
 
   const { t } = useLanguage();
 
@@ -46,6 +49,7 @@ const GoogleVerify = () => {
     let result = await verifyOTP(verifyCode);
     if (result) {
       showAlert(t("googleVerificationSuccess"), "success");
+      router.push("/management");
     } else {
       showAlert(t("googleVerificationFailed"));
     }

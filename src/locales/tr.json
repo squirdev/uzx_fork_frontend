@@ -425,5 +425,7 @@
     "estimatedReviewTime": "Tahmini inceleme süresi: 24 saat",
     "passport": "Pasaport",
     "idCard": "Kimlik Kartı",
-    "driverLicense": "Sürücü Belgesi"
+    "driverLicense": "Sürücü Belgesi",
+    "enterDigitOTP": "6 haneli OTP'yi girin",
+    "googleAuthentication": "Google Kimlik Doğrulama"
 }

@@ -425,5 +425,7 @@
     "estimatedReviewTime": "Geschätzte Überprüfungszeit: 24 Stunden",
     "passport": "Reisepass",
     "idCard": "Personalausweis",
-    "driverLicense": "Führerschein"
+    "driverLicense": "Führerschein",
+    "enterDigitOTP": "Geben Sie das 6-stellige OTP ein",
+    "googleAuthentication": "Google-Authentifizierung"
 }

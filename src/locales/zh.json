@@ -425,5 +425,7 @@
     "estimatedReviewTime": "預計審核時間：24 小時",
     "passport": "護照",
     "idCard": "身份證",
-    "driverLicense": "駕駛證"
+    "driverLicense": "駕駛證",
+    "enterDigitOTP": "輸入6位數驗證碼",
+    "googleAuthentication": "谷歌身份驗證"
 }

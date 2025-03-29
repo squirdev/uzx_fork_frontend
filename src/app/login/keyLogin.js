@@ -7,9 +7,12 @@ import { signPrivateKey } from "../api/auth";
 import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { login } from "../../../redux/authSlice";
+import { InputOneTimePassword } from "../components/login/inputOneTimePassword";
 
 export default function KeyLoginPanel() {
   const [privateKey, setprivateKey] = useState("");
+  const [userID, setUserID] = useState(null);
+  const [otpDialogShow, setOtpDialogShow] = useState(false);
   const { t } = useLanguage();
   if (!t) return <p className="text-white">Loading translations...</p>;
   const { showAlert } = useAlert();
@@ -22,14 +25,24 @@ export default function KeyLoginPanel() {
       return;
     }
     let result = await signPrivateKey(privateKey);
-    if (result.success) {
-      showAlert(t("signinSuccess"), "success");
-      dispatch(login({ token: result.token, username: result.username }));
-      router.push("/");
+    if (result) {
+      if (result.isOtp) {
+        setUserID(result.id);
+        setOtpDialogShow(true);
+      } else {
+        showAlert(t("signinSuccess"), "success");
+        dispatch(login({ token: result.token, username: result.username }));
+        router.push("/");
+      }
     } else showAlert(t("signinFailed"), "error");
   };
   return (
     <TabPanel value={0}>
+      <InputOneTimePassword
+        userId={userID}
+        open={otpDialogShow}
+        setOpen={setOtpDialogShow}
+      />
       <div className="w-full flex flex-col">
         <p className="mb-2">{t("accountPrivateKey")}</p>
         <textarea

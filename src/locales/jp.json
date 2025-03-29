@@ -425,5 +425,7 @@
     "estimatedReviewTime": "審査の目安時間: 24時間",
     "passport": "パスポート",
     "idCard": "身分証明書",
-    "driverLicense": "運転免許証"
+    "driverLicense": "運転免許証",
+    "enterDigitOTP": "6桁のOTPを入力してください",
+    "googleAuthentication": "Google認証"
 }

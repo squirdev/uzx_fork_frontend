@@ -12,6 +12,7 @@ import { signInEmail } from "../api/auth";
 import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { login } from "../../../redux/authSlice";
+import { InputOneTimePassword } from "../components/login/inputOneTimePassword";
 
 function isValidEmail(email) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -28,30 +29,41 @@ export default function EmailLoginPanel() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordShow, setPasswordShow] = useState(false);
+  const [userID, setUserID] = useState(null);
+  const [otpDialogShow, setOtpDialogShow] = useState(false);
   const { showAlert } = useAlert();
   const router = useRouter();
   const dispatch = useDispatch();
   const { t } = useLanguage();
-
   if (!t) return <p className="text-white">Loading translations...</p>;
 
   const handleLogin = async () => {
     if (!isValidEmailandPassword(email, password)) {
       showAlert(t("inputAllDetail"), "error");
       return;
+    }
+    let result = await signInEmail(email, password);
+    if (!result) {
+      showAlert(t("signinFailed"), "error");
+      return;
+    }
+    if (result.isOtp) {
+      setUserID(result.id);
+      setOtpDialogShow(true);
     } else {
-      let result = await signInEmail(email, password);
-      if (!result) showAlert(t("signinFailed"), "error");
-      else {
-        showAlert(t("signinSuccess"), "success");
-        dispatch(login({ token: result.token, email: result.email }));
-        router.push("/");
-      }
+      showAlert(t("signinSuccess"), "success");
+      dispatch(login({ token: result.token, email: result.email }));
+      router.push("/");
     }
   };
 
   return (
     <TabPanel value={1}>
+      <InputOneTimePassword
+        userId={userID}
+        open={otpDialogShow}
+        setOpen={setOtpDialogShow}
+      />
       <div className="w-full flex flex-col">
         <div className="w-full flex flex-col gap-12 mt-2">
           <Input

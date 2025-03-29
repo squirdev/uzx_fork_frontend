@@ -8,6 +8,7 @@ import EmailLoginPanel from "./emailLogin";
 import AppLoginPanel from "./appLogin";
 import LoginLeftPanel from "../components/login/leftPanel";
 import { useLanguage } from "../../../context/LanguageProvider";
+import { InputOneTimePassword } from "../components/login/inputOneTimePassword";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState(0);
@@ -19,6 +20,7 @@ export default function Home() {
 
   return (
     <div className="content">
+      
       <div className="w-full flex items-center bg-white">
         <LoginLeftPanel />
         <div className="w-3/5 flex items-center justify-center">

@@ -425,5 +425,7 @@
     "estimatedReviewTime": "Tiempo estimado de revisión: 24 horas",
     "passport": "Pasaporte",
     "idCard": "DNI",
-    "driverLicense": "Licencia de conducir"
+    "driverLicense": "Licencia de conducir",
+    "enterDigitOTP": "Ingrese el código OTP de 6 dígitos",
+    "googleAuthentication": "Autenticación de Google"
 }

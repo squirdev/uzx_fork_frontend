@@ -425,5 +425,7 @@
     "estimatedReviewTime": "预计审核时间：24 小时",
     "passport": "护照",
     "idCard": "身份证",
-    "driverLicense": "驾驶证"
+    "driverLicense": "驾驶证",
+    "enterDigitOTP": "输入6位数验证码",
+    "googleAuthentication": "谷歌身份验证"
 }

@@ -75,11 +75,37 @@ export const signInEmail = async (email, password) => {
     });
     let responseData = response.data;
     console.log("RESPONSE:", responseData);
-    return {
-      success: true,
-      token: responseData.user.token,
-      email: responseData.user.email,
-    };
+    if (responseData.isOtp) {
+      return responseData;
+    } else
+      return {
+        success: true,
+        token: responseData.user.token,
+        email: responseData.user.email,
+      };
+  } catch (error) {
+    console.log("ERROR:", error);
+    return false;
+  }
+};
+
+export const signInEmailOtp = async (otp, id) => {
+  if (!otp || !id) return false;
+  try {
+    const response = await axiosApi.post("/auth/signin-otp", {
+      otp: otp,
+      id: id,
+    });
+    let responseData = response.data;
+    console.log("RESPONSE:", responseData);
+    if (responseData.isOtp) {
+      return responseData;
+    } else
+      return {
+        success: true,
+        token: responseData.user.token,
+        email: responseData.user.email,
+      };
   } catch (error) {
     console.log("ERROR:", error);
     return false;
@@ -94,11 +120,15 @@ export const signPrivateKey = async (privateKey) => {
     });
     let responseData = response.data;
     console.log("RESPONSE:", responseData);
-    return {
-      success: true,
-      token: responseData.user.token,
-      username: responseData.user.username,
-    };
+    if (responseData.isOtp) {
+      return responseData;
+    } else {
+      return {
+        success: true,
+        token: responseData.user.token,
+        username: responseData.user.username,
+      };
+    }
   } catch (error) {
     console.log("ERROR:", error);
     return {
