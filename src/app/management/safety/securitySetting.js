@@ -1,5 +1,7 @@
 "use client";
 
+import { useLanguage } from "../../../../context/LanguageProvider";
+
 const { Button } = require("@material-tailwind/react");
 const { default: Image } = require("next/image");
 const {
@@ -15,6 +17,8 @@ export default function SecuritySettingItem({
   verified,
   onClick,
 }) {
+  const { t } = useLanguage();
+  if (!t) return <p className="text-white">Loading translations...</p>;
   return (
     <div className="w-full flex justify-between items-center py-4 border-b border-hoverblack/10">
       <div className="w-full flex items-center gap-4">
@@ -33,20 +37,20 @@ export default function SecuritySettingItem({
         ) : (
           <>
             <AiFillExclamationCircle className="text-2xl text-red-500" />
-            <p>Not bound</p>
+            <p>{t("notBound")}</p>
           </>
         )}
       </div>
       <div className="w-full flex justify-end">
         {verified ? (
-          <p className="text-sm">Already bound</p>
+          <p className="text-sm">{t("alreadyBound")}</p>
         ) : (
           <Button
             onClick={onClick}
             variant="outlined"
             className="rounded-full px-12"
           >
-            Bind
+            {t("bind")}
           </Button>
         )}
       </div>

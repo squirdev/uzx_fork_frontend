@@ -437,5 +437,8 @@
     "loginPasswordDesc": "プラットフォームにログインする際に使用",
     "modify": "変更",
     "fundPasswordDesc": "アカウント資金が変更される際、資金パスワードの確認が必要です",
-    "setting": "設定"
+    "setting": "設定",
+    "alreadyBound": "すでにバインドされています",
+    "notBound": "バインドされていません",
+    "bind": "バインド"
 }

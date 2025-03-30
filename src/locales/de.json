@@ -437,5 +437,8 @@
     "loginPasswordDesc": "Wird bei der Anmeldung auf der Plattform verwendet",
     "modify": "Ändern",
     "fundPasswordDesc": "Bei Änderungen der Kontofinanzen müssen Sie zuerst das Finanzpasswort bestätigen",
-    "setting": "Einstellung"
+    "setting": "Einstellung",
+    "alreadyBound": "Bereits gebunden",
+    "notBound": "Nicht gebunden",
+    "bind": "Binden"
 }

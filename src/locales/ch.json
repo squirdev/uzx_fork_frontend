@@ -437,5 +437,8 @@
     "loginPasswordDesc": "用于登录平台",
     "modify": "修改",
     "fundPasswordDesc": "当账户资金变更时，需要先验证资金密码",
-    "setting": "设置"
+    "setting": "设置",
+    "alreadyBound": "已绑定",
+    "notBound": "未绑定",
+    "bind": "绑定"
 }

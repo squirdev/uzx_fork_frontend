@@ -437,5 +437,8 @@
     "loginPasswordDesc": "用於登錄平台",
     "modify": "修改",
     "fundPasswordDesc": "當賬戶資金變更時，需要先驗證資金密碼",
-    "setting": "設置"
+    "setting": "設置",
+    "alreadyBound": "已綁定",
+    "notBound": "未綁定",
+    "bind": "綁定"
 }

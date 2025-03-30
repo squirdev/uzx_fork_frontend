@@ -428,7 +428,6 @@
     "driverLicense": "Driver's License",
     "enterDigitOTP": "Enter the 6-digit OTP",
     "googleAuthentication": "Google Authentication",
-
     "securitySettings": "Security Settings",
     "bindEmail": "Bind email",
     "bindEmailDesc": "Anonymous users can recover their account by binding an email",
@@ -438,5 +437,8 @@
     "loginPasswordDesc": "Use when logging in to the platform",
     "modify": "Modify",
     "fundPasswordDesc": "When account funds change, you need to verify the funds password first",
-    "setting": "Setting"
+    "setting": "Setting",
+    "alreadyBound": "Already bound",
+    "notBound": "Not bound",
+    "bind": "Bind"
 }

@@ -437,5 +437,8 @@
     "loginPasswordDesc": "Platforma giriş yaparken kullanılır",
     "modify": "Değiştir",
     "fundPasswordDesc": "Hesap fonları değiştiğinde, önce fon şifresini doğrulamanız gerekir",
-    "setting": "Ayarlar"
+    "setting": "Ayarlar",
+    "alreadyBound": "Zaten bağlı",
+    "notBound": "Bağlı değil",
+    "bind": "Bağla"
 }

@@ -437,5 +437,8 @@
     "loginPasswordDesc": "Se usa al iniciar sesión en la plataforma",
     "modify": "Modificar",
     "fundPasswordDesc": "Cuando cambian los fondos de la cuenta, primero debe verificar la contraseña de fondos",
-    "setting": "Configuración"
+    "setting": "Configuración",
+    "alreadyBound": "Ya vinculado",
+    "notBound": "No vinculado",
+    "bind": "Vincular"
 }
