@@ -75,7 +75,7 @@ export default function Home() {
               </TabsBody>
             </Tabs>
             <Link
-              href="/saveCoins/order"
+              href="#"
               className="text-blue1 absolute top-0 right-0"
             >
               {t("myOrder")}

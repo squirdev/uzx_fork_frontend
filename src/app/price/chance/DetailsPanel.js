@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CoinItemButton from "@/app/components/coinItemButtom";
 import { BiRefresh } from "react-icons/bi";
 import { CoinGeckoBTCData } from "@/app/components/tradingViewMiniChart";
 import { useLanguage } from "../../../../context/LanguageProvider";
+import { getTokenList } from "@/app/api/token";
 
 const coinListData = [
   "All",
@@ -43,11 +44,6 @@ const cryptoData = [
     coinId: "binancecoin",
   },
   {
-    coin: "TRX",
-    image: "/coin/TRX.png",
-    coinId: "tron",
-  },
-  {
     coin: "SOL",
     image: "/coin/SOL.png",
     coinId: "solana",
@@ -59,10 +55,26 @@ const cryptoData = [
   },
 ];
 
+function getProfit(array, name) {
+  if (!array) return 0;
+  const item = array.find((entry) => entry.name === name);
+  return item ? item.profit : 0;
+}
+
 export default function DetailsPanel() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [tokenList, setTokenList] = useState(null);
   const { t } = useLanguage();
   if (!t) return <p className="text-white">Loading translations...</p>;
+
+  const fetchTokenList = async () => {
+    let result = await getTokenList();
+    if (result) setTokenList(result.data);
+  };
+
+  useEffect(() => {
+    fetchTokenList();
+  }, []);
 
   return (
     <div className="w-full flex flex-col mt-24">
@@ -104,6 +116,7 @@ export default function DetailsPanel() {
               image={data.image}
               coin={data.coin}
               coinId={data.coinId}
+              profit={getProfit(tokenList, data.coin.toLowerCase())}
             />
           ))}
         </div>

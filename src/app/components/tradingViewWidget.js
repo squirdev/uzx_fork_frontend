@@ -19,7 +19,6 @@ const TradingViewWidget = ({ symbol = "BTCUSDT" }) => {
     script.innerHTML = JSON.stringify({
       symbol: `BINANCE:${symbol}`,
       width: "100%",
-      // height: 500,
       interval: "1",
       timezone: "Etc/UTC",
       theme: "dark",
@@ -28,6 +27,35 @@ const TradingViewWidget = ({ symbol = "BTCUSDT" }) => {
       toolbar_bg: "#f1f3f6",
       enable_publishing: false,
       hide_side_toolbar: false,
+      custom_formatters: {
+        priceFormatterFactory: (symbolInfo, minTick) => {
+          console.log("$$$$$$$", symbolInfo);
+          if (symbolInfo === null) {
+            return null;
+          }
+
+          if (symbolInfo.format === "price") {
+            return {
+              format: (price, signPositive) => {
+                if (price >= 1000000000) {
+                  return `${((price * 2) / 1000000000).toFixed(4)}B`;
+                }
+
+                if (price >= 1000000) {
+                  return `${((price * 2) / 1000000).toFixed(4)}M`;
+                }
+
+                if (price >= 1000) {
+                  return `${((price * 2) / 1000).toFixed(4)}K`;
+                }
+
+                return (price * 2).toFixed(4);
+              },
+            };
+          }
+          return null; // The default formatter will be used.
+        },
+      },
       // allow_symbol_change: true,
     });
 

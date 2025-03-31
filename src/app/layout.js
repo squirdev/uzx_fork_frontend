@@ -8,7 +8,6 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 
 import ReduxProvider from "../../redux/reduxProvider";
-import { ScrollProvider } from "../../context/scrollContext";
 import ScrollToTopButton from "./components/scrollToTop";
 
 import { usePathname } from "next/navigation";
@@ -34,14 +33,12 @@ function RootLayout({ children }) {
       </head>
       <body className="bg-black">
         <ReduxProvider>
-          <ScrollProvider>
             <LanguageProvider>
               <Header />
               <AlertProvider>{children}</AlertProvider>
               <ScrollToTopButton />
               {shouldShowFooter && <Footer />}
             </LanguageProvider>
-          </ScrollProvider>
         </ReduxProvider>
       </body>
     </html>

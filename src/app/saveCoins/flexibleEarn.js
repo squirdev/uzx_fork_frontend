@@ -1,5 +1,6 @@
 import { TabPanel } from "@material-tailwind/react";
 import Image from "next/image";
+import { useLanguage } from "../../../context/LanguageProvider";
 
 const flexibleData = [
   {
@@ -33,16 +34,18 @@ const flexibleData = [
 ];
 
 export default function FlexibleEarnTab() {
+  const { t } = useLanguage();
+  if (!t) return <p className="text-white">Loading translations...</p>;
   return (
     <TabPanel value={0}>
       <div className="w-full flex flex-col items-center">
         <div className="w-full grid grid-cols-6 px-6 pb-3 items-center">
-          <p>Crypto</p>
+          <p>{t("crypto")}</p>
           <p>Est APR</p>
           <p>Est DPR</p>
           <p>Term</p>
           <p>Invested</p>
-          <p>Operate</p>
+          <p>{t("operation")}</p>
         </div>
         {flexibleData.map((data, index) => (
           <div
@@ -59,7 +62,7 @@ export default function FlexibleEarnTab() {
             <p>{data.invest}</p>
             <div className="w-full">
               <button className="bg-black text-white py-1 px-5 rounded-full">
-                Deposit
+                {t("deposit")}
               </button>
             </div>
           </div>

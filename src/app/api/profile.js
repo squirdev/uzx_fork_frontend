@@ -31,10 +31,11 @@ export const getOTP = async () => {
   }
 };
 
-export const verifyOTP = async (otp) => {
+export const verifyOTP = async (otp, secret) => {
   try {
     const response = await axiosApi.post("/user/verify-otp", {
       otp: otp,
+      secret: secret,
     });
     console.log(response.data);
     return response.data;

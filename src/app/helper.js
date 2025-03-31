@@ -65,9 +65,11 @@ export function isValidDocument(
   country,
   documentType,
   frontImageUrl,
-  backImageUrl
+  backImageUrl,
+  handHeldImageUrl
 ) {
-  if (!country || !frontImageUrl || documentType == -1) return false;
+  if (!country || !frontImageUrl || !handHeldImageUrl || documentType == -1)
+    return false;
   else if (documentType == 1 && !backImageUrl) return false;
   else return true;
 }

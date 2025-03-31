@@ -52,8 +52,10 @@ export const TradingViewMiniChart = ({ coinId }) => {
   );
 };
 
-export const CoinGeckoBTCData = ({ image, coin, coinId }) => {
+export const CoinGeckoBTCData = ({ image, coin, coinId, profit }) => {
   const [btcData, setBtcData] = useState(null);
+
+  console.log("PROFIT:", coinId, profit);
 
   useEffect(() => {
     const fetchBTCData = async () => {
@@ -77,9 +79,9 @@ export const CoinGeckoBTCData = ({ image, coin, coinId }) => {
     };
 
     fetchBTCData();
-    const interval = setInterval(fetchBTCData, 10000); // Refresh every 10 seconds
+    // const interval = setInterval(fetchBTCData, 10000); // Refresh every 10 seconds
 
-    return () => clearInterval(interval); // Cleanup on unmount
+    // return () => clearInterval(interval); // Cleanup on unmount
   }, []);
 
   return btcData ? (
@@ -88,7 +90,7 @@ export const CoinGeckoBTCData = ({ image, coin, coinId }) => {
         <Image src={image} width={16} height={16} alt="logo" />
         <p>{coin}</p>
       </div>
-      <h2>${btcData.price.toLocaleString()}</h2>
+      <h2>${(btcData.price * (1 + profit/100)).toLocaleString()}</h2>
       <p
         className={`flex items-center gap-1 ${btcData.change24h > 0 ? "text-green-500" : "text-red-500"}`}
       >

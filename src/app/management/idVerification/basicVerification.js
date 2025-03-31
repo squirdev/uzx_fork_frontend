@@ -7,7 +7,7 @@ import {
   Select,
   Typography,
 } from "@material-tailwind/react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useCountries } from "use-react-countries";
 import ImageFileUploader from "./imageFileUploader";
 import { isValidDocument } from "@/app/helper";
@@ -21,6 +21,7 @@ const BasicVerification = () => {
   const [country, setCountry] = useState(null);
   const [documentType, setDocumentType] = useState(-1);
   const [frontImageUrl, setFrontImageUrl] = useState(null);
+  const [handHeldImageUrl, setHandHeldImageUrl] = useState(null);
   const [backImageUrl, setBackImageUrl] = useState(null);
   const { showAlert } = useAlert();
   const router = useRouter();
@@ -28,7 +29,15 @@ const BasicVerification = () => {
   if (!t) return <p className="text-white">Loading translations...</p>;
 
   const handleSubmitDocument = async () => {
-    if (!isValidDocument(country, documentType, frontImageUrl, backImageUrl)) {
+    if (
+      !isValidDocument(
+        country,
+        documentType,
+        frontImageUrl,
+        backImageUrl,
+        handHeldImageUrl
+      )
+    ) {
       showAlert(t("inputAllDetail"));
       return;
     }
@@ -36,6 +45,7 @@ const BasicVerification = () => {
     formData.append("country", country);
     formData.append("type", DOCUMENT_TYPE_LIST[documentType]);
     formData.append("img_front", frontImageUrl);
+    formData.append("img_hand", handHeldImageUrl);
     if (documentType != 1) formData.append("img_back", backImageUrl);
 
     let result = await createDocument(formData);
@@ -113,6 +123,11 @@ const BasicVerification = () => {
               setImageUrl={setBackImageUrl}
             />
           )}
+          <ImageFileUploader
+            imageUrl={handHeldImageUrl}
+            description={t("uploadFrontSideDocument")}
+            setImageUrl={setHandHeldImageUrl}
+          />
         </div>
       </div>
       <div className="mt-8">

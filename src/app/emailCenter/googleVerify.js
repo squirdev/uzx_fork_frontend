@@ -46,7 +46,7 @@ const GoogleVerify = () => {
 
   const handleGoogleVerify = async () => {
     if (!verifyCode || !qrCodeStr) return;
-    let result = await verifyOTP(verifyCode);
+    let result = await verifyOTP(verifyCode, qrCodeStr);
     if (result) {
       showAlert(t("googleVerificationSuccess"), "success");
       router.push("/management");
