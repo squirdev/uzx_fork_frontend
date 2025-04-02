@@ -23,6 +23,7 @@ const BasicVerification = () => {
   const [frontImageUrl, setFrontImageUrl] = useState(null);
   const [handHeldImageUrl, setHandHeldImageUrl] = useState(null);
   const [backImageUrl, setBackImageUrl] = useState(null);
+  const [isUploading, setIsUploading] = useState(false);
   const { showAlert } = useAlert();
   const router = useRouter();
   const { t } = useLanguage();
@@ -41,6 +42,7 @@ const BasicVerification = () => {
       showAlert(t("inputAllDetail"));
       return;
     }
+    setIsUploading(true);
     const formData = new FormData();
     formData.append("country", country);
     formData.append("type", DOCUMENT_TYPE_LIST[documentType]);
@@ -55,6 +57,7 @@ const BasicVerification = () => {
     } else {
       showAlert(t("submitDocumentFailed"));
     }
+    setIsUploading(false);
   };
 
   const DOCUMENT_TYPE_LIST = [t("idCard"), t("passport"), t("driverLicense")];
@@ -132,6 +135,7 @@ const BasicVerification = () => {
       </div>
       <div className="mt-8">
         <Button
+          loading={isUploading}
           onClick={handleSubmitDocument}
           className="rounded-full text-black bg-gradient-to-r from-blue1 to-blue2"
         >

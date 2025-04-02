@@ -12,6 +12,7 @@
         "@material-tailwind/react": "^2.1.10",
         "@reduxjs/toolkit": "^2.6.0",
         "axios": "^1.8.1",
+        "klinecharts": "^10.0.0-alpha5",
         "next": "15.1.7",
         "next-intl": "^4.0.2",
         "next-redux-wrapper": "^8.1.0",

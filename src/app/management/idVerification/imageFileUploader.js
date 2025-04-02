@@ -1,12 +1,14 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { uploadImage } from "@/app/api/upload";
 import { useLanguage } from "../../../../context/LanguageProvider";
 import { useAlert } from "../../../../context/alertContext";
+import { Spinner } from "@material-tailwind/react";
 
 const ImageFileUploader = ({ imageUrl, setImageUrl, description }) => {
   const { showAlert } = useAlert();
+  const [isFullLoadImg, setIsFullLoadImg] = useState(false);
   const { t } = useLanguage();
   if (!t) return <p className="text-white">Loading translations...</p>;
 
@@ -25,10 +27,8 @@ const ImageFileUploader = ({ imageUrl, setImageUrl, description }) => {
 
     try {
       const response = await uploadImage(formData);
-
       setImageUrl(response.data?.url);
     } catch (error) {
-      console.error("Upload failed", error);
       showAlert(t("fileUploadError"));
     }
   };
@@ -40,11 +40,19 @@ const ImageFileUploader = ({ imageUrl, setImageUrl, description }) => {
         onClick={handleDivClick}
       >
         {imageUrl ? (
-          <img
-            src={imageUrl}
-            alt="Uploaded"
-            className="w-full h-full object-cover"
-          />
+          <div className="w-full h-full relative">
+            {!isFullLoadImg && (
+              <div className="absolute w-full h-full flex justify-center items-center bg-black/40">
+                <Spinner className="w-8 h-8" />
+              </div>
+            )}
+            <img
+              src={imageUrl}
+              alt="Uploaded"
+              onLoad={() => setIsFullLoadImg(true)}
+              className="w-full h-full object-cover"
+            />
+          </div>
         ) : (
           <p className="text-center text-sm px-4">{description}</p>
         )}

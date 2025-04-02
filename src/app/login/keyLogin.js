@@ -13,6 +13,7 @@ export default function KeyLoginPanel() {
   const [privateKey, setprivateKey] = useState("");
   const [userID, setUserID] = useState(null);
   const [otpDialogShow, setOtpDialogShow] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const { t } = useLanguage();
   if (!t) return <p className="text-white">Loading translations...</p>;
   const { showAlert } = useAlert();
@@ -21,11 +22,13 @@ export default function KeyLoginPanel() {
 
   const handleLoginWithKey = async () => {
     if (!privateKey) {
+      setIsLoading(false);
       showAlert(t("inputAllDetail"), "error");
       return;
     }
+    setIsLoading(true);
     let result = await signPrivateKey(privateKey);
-    if (result) {
+    if (result.success) {
       if (result.isOtp) {
         setUserID(result.id);
         setOtpDialogShow(true);
@@ -34,7 +37,10 @@ export default function KeyLoginPanel() {
         dispatch(login({ token: result.token, username: result.username }));
         router.push("/");
       }
-    } else showAlert(t("signinFailed"), "error");
+    } else {
+      showAlert(t("signinFailed"), "error");
+    }
+    setIsLoading(false);
   };
   return (
     <TabPanel value={0}>
@@ -54,6 +60,7 @@ export default function KeyLoginPanel() {
           {t("forgotPriKey")}
         </Link>
         <Button
+          disabled={isLoading}
           onClick={handleLoginWithKey}
           className="bg-gradient-to-r from-blue1 to-blue2 text-black py-2 rounded-full mt-12"
         >

@@ -61,7 +61,7 @@ export default function FooterForm({ inviteCode, setInviteCode, onSubmit }) {
       />
       <Button
         onClick={onSubmit}
-        className="w-min px-24 self-center text-sm font-bold bg-gradient-to-r from-blue1 to-blue2 text-black py-2 rounded-full"
+        className="px-24 self-center text-sm font-bold bg-gradient-to-r from-blue1 to-blue2 text-black py-2 rounded-full"
       >
         {t("register")}
       </Button>

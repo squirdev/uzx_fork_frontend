@@ -16,6 +16,7 @@ const LoginPassword = () => {
   const [confirmPassword, setconfirmPassword] = useState("");
   const [verifyCode, setVerifyCode] = useState("");
   const [userProfile, setUserProfile] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   const { showAlert } = useAlert();
   const router = useRouter();
   const { t } = useLanguage();
@@ -47,6 +48,7 @@ const LoginPassword = () => {
       showAlert(t("inputAllDetail"));
       return;
     }
+    setIsLoading(true);
     let result = await updatePassword(verifyCode, oldPassword, newPassword);
     if (result) {
       showAlert(t("passwordUpdateSuccess"), "success");
@@ -54,6 +56,7 @@ const LoginPassword = () => {
     } else {
       showAlert(t("passwordUpdateFailed"));
     }
+    setIsLoading(false);
   };
 
   if (!t) return <p className="text-white">Loading translations...</p>;
@@ -110,8 +113,9 @@ const LoginPassword = () => {
       </div>
       <Button
         disabled={!verifyCode}
+        loading={isLoading}
         onClick={handleChangePassword}
-        className="bg-mainblack/80"
+        className="bg-mainblack/80 flex justify-center"
       >
         {t("save")}
       </Button>

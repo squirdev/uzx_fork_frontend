@@ -31,26 +31,32 @@ export default function EmailLoginPanel() {
   const [passwordShow, setPasswordShow] = useState(false);
   const [userID, setUserID] = useState(null);
   const [otpDialogShow, setOtpDialogShow] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const { showAlert } = useAlert();
   const router = useRouter();
   const dispatch = useDispatch();
   const { t } = useLanguage();
   if (!t) return <p className="text-white">Loading translations...</p>;
 
-  const handleLogin = async () => {
+  const handleLogin = async (e) => {
+    e.preventDefault();
     if (!isValidEmailandPassword(email, password)) {
       showAlert(t("inputAllDetail"), "error");
       return;
     }
+    setIsLoading(true);
     let result = await signInEmail(email, password);
     if (!result) {
       showAlert(t("signinFailed"), "error");
+      setIsLoading(false);
       return;
     }
     if (result.isOtp) {
+      setIsLoading(false);
       setUserID(result.id);
       setOtpDialogShow(true);
     } else {
+      setIsLoading(false);
       showAlert(t("signinSuccess"), "success");
       dispatch(login({ token: result.token, email: result.email }));
       router.push("/");
@@ -65,9 +71,13 @@ export default function EmailLoginPanel() {
         setOpen={setOtpDialogShow}
       />
       <div className="w-full flex flex-col">
-        <div className="w-full flex flex-col gap-12 mt-2">
+        <form
+          onSubmit={handleLogin}
+          className="w-full flex flex-col gap-12 mt-2"
+        >
           <Input
             value={email}
+            autoFocus={true}
             label={t("email")}
             className="bg-[#f5f5f6]"
             onChange={(e) => setEmail(e.target.value)}
@@ -77,21 +87,30 @@ export default function EmailLoginPanel() {
               label={t("password")}
               className="bg-[#f5f5f6]"
               value={password}
+              autoFocus={true}
               onChange={(e) => setPassword(e.target.value)}
               type={passwordShow ? "text" : "password"}
               icon={
-                <button onClick={() => setPasswordShow(!passwordShow)}>
+                <button
+                  className="outline-none"
+                  onClick={() => setPasswordShow(!passwordShow)}
+                >
                   {passwordShow ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}
                 </button>
               }
             />
-            <Link href="/findPwd" className="text-[13px] self-end text-blue1">
+            <Link
+              href="/findPwd"
+              className="text-[13px] self-end text-blue1 outline-none"
+            >
               {t("forgetPassword")}
             </Link>
           </div>
           <div className="w-full flex flex-col gap-6 items-center">
             <Button
+              loading={isLoading}
               onClick={handleLogin}
+              type="submit"
               className="rounded-full bg-gradient-to-r from-blue1 to-blue2 py-2 px-24"
             >
               <span className="text-black">{t("logIn")}</span>
@@ -103,7 +122,7 @@ export default function EmailLoginPanel() {
               </Link>
             </div>
           </div>
-        </div>
+        </form>
       </div>
     </TabPanel>
   );

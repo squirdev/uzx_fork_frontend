@@ -9,7 +9,7 @@ import Footer from "@/components/footer";
 
 import ReduxProvider from "../../redux/reduxProvider";
 import ScrollToTopButton from "./components/scrollToTop";
-
+import Script from "next/script";
 import { usePathname } from "next/navigation";
 import { LanguageProvider } from "../../context/LanguageProvider";
 import { AlertProvider } from "../../context/alertContext";
@@ -30,15 +30,17 @@ function RootLayout({ children }) {
     <html lang="en">
       <head>
         <title>UZX</title>
+        <Script src="/charting_library.standalone.js" />
+        <Script src="/bundle.js" />
       </head>
       <body className="bg-black">
         <ReduxProvider>
-            <LanguageProvider>
-              <Header />
-              <AlertProvider>{children}</AlertProvider>
-              <ScrollToTopButton />
-              {shouldShowFooter && <Footer />}
-            </LanguageProvider>
+          <LanguageProvider>
+            <Header />
+            <AlertProvider>{children}</AlertProvider>
+            <ScrollToTopButton />
+            {shouldShowFooter && <Footer />}
+          </LanguageProvider>
         </ReduxProvider>
       </body>
     </html>

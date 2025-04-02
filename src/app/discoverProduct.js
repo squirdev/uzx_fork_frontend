@@ -14,13 +14,13 @@ export default function DiscoverProductPanel() {
       icon: "/spot.png",
       title: t("spot"),
       description: t("tradeCryptowithTool"),
-      href: "/exchange/btc_usdt",
+      href: "/exchange/btc",
     },
     {
       icon: "/contract.png",
       title: t("perpetualContract"),
       description: t("coinBaseUBaseContracts"),
-      href: "/exchange/btc_usdt",
+      href: "/exchange/btc",
     },
     {
       icon: "/convert.png",

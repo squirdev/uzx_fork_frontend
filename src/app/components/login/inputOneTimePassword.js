@@ -4,6 +4,7 @@ import {
   Typography,
   Dialog,
   DialogBody,
+  Spinner,
 } from "@material-tailwind/react";
 import { signInEmailOtp } from "@/app/api/auth";
 import { login } from "../../../../redux/authSlice";
@@ -15,6 +16,7 @@ import { useLanguage } from "../../../../context/LanguageProvider";
 export function InputOneTimePassword({ userId, open, setOpen }) {
   const inputRefs = useRef([]);
   const [otp, setOtp] = useState(Array(6).fill(""));
+  const [isLoading, setIsLoading] = useState(false);
   const { showAlert } = useAlert();
   const router = useRouter();
   const dispatch = useDispatch();
@@ -31,8 +33,8 @@ export function InputOneTimePassword({ userId, open, setOpen }) {
   };
 
   const signInOtp = async (otp, id) => {
+    setIsLoading(true);
     let result = await signInEmailOtp(otp, id);
-    console.log("resultresult", result);
     if (result && result.success) {
       let token = result?.token;
       showAlert(t("signinSuccess"), "success");
@@ -41,13 +43,12 @@ export function InputOneTimePassword({ userId, open, setOpen }) {
     } else {
       setOpen(false);
       showAlert(t("signinFailed"), "error");
-      console.log("ERROR");
     }
+    setIsLoading(false);
   };
 
   useEffect(() => {
     if (otp.some((letter) => letter === "")) return;
-
     const otpString = otp.join("");
     signInOtp(otpString, userId);
   }, [otp]);
@@ -67,6 +68,11 @@ export function InputOneTimePassword({ userId, open, setOpen }) {
       handler={handleOpen}
       className="flex items-center bg-black justify-center"
     >
+      {isLoading && (
+        <div className="absolute z-50 flex justify-center items-center w-full h-full bg-black/90 rounded-md">
+          <Spinner className="w-12 h-12" />
+        </div>
+      )}
       <DialogBody className="px-0">
         <div className="w-full px-0 py-8 rounded-xl backdrop-blur-xl bg-black">
           <Typography

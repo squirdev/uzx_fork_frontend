@@ -50,6 +50,7 @@ export default function Home() {
   const [exchangeRate, setExchangeRate] = useState(0);
   const [currentCoinBalance, setCurrentCoinBalance] = useState(0);
   const [curCurrencyProfit, setCurCurrencyProfit] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
   const handleSwapCoin = () => {
     setFromIndex(toIndex);
     settoIndex(fromIndex);
@@ -134,6 +135,7 @@ export default function Home() {
       showAlert(t("loginFirst"), "error");
       return;
     }
+    setIsLoading(true);
     let from = sourceCoin[fromIndex].toLowerCase();
     let to = targetCoin[toIndex].toLowerCase();
     let amount = Number(fromValue);
@@ -144,6 +146,7 @@ export default function Home() {
     } else {
       showAlert(t("swapTokenFailed"), "error");
     }
+    setIsLoading(false);
   };
 
   const handleSetMaxValue = () => {
@@ -262,8 +265,9 @@ export default function Home() {
               </div>
             </div>
             <Button
+              loading={isLoading}
               onClick={handleConvert}
-              className="rounded-full py-3 bg-gradient-to-r from-blue1 to-blue2 bg-[#e9e9e9] w-1/2"
+              className="rounded-full flex justify-center py-3 bg-gradient-to-r from-blue1 to-blue2 bg-[#e9e9e9] w-1/2"
             >
               <span className="text-black text-lg">{t("convert")}</span>
             </Button>

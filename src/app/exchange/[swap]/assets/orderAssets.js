@@ -18,6 +18,7 @@ const OrderAssets = ({ swap }) => {
   const [availableBalance, setAvailableBalance] = useState(0);
   const [userBalance, setUserBalance] = useState(null);
   const [swapAmount, setSwapAmount] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
   const { showAlert } = useAlert();
   const { t } = useLanguage();
@@ -81,6 +82,7 @@ const OrderAssets = ({ swap }) => {
       return;
     }
     let paramFrom, paramTo;
+    setIsLoading(true);
     if (isBuying) {
       paramFrom = "usdt";
       paramTo = swap;
@@ -95,6 +97,7 @@ const OrderAssets = ({ swap }) => {
     } else {
       showAlert(t("swapTokenFailed"), "error");
     }
+    setIsLoading(false);
   };
 
   if (!t) return <p className="text-white">Loading translations...</p>;
@@ -164,8 +167,9 @@ const OrderAssets = ({ swap }) => {
       </Stepper>
       <Button
         color={isBuying ? "green" : "red"}
+        loading={isLoading}
         disabled={swapAmount == 0}
-        className="w-full my-12 rounded-full"
+        className="w-full my-12 rounded-full flex justify-center"
         onClick={handleSwapToken}
       >
         {isBuying ? (
