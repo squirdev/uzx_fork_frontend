@@ -41,7 +41,7 @@ const BTCChart = ({ symbol, profit }) => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://api.binance.com/api/v3/klines?symbol=${symbol}&interval=1m&limit=100`
+          `https://api.binance.us/api/v3/klines?symbol=${symbol}&interval=1m&limit=100`
         );
         const data = await response.json();
 
@@ -64,7 +64,7 @@ const BTCChart = ({ symbol, profit }) => {
 
     // WebSocket for real-time updates
     const socket = new WebSocket(
-      `wss://stream.binance.com:9443/ws/${symbol.toLowerCase()}@kline_1m`
+      `wss://stream.binance.us:9443/ws/${symbol.toLowerCase()}@kline_1m`
     );
 
     socket.onmessage = (event) => {

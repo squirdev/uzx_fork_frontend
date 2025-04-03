@@ -9,10 +9,12 @@
         "lint": "next lint"
     },
     "dependencies": {
+        "@klinecharts/pro": "^0.1.1",
         "@material-tailwind/react": "^2.1.10",
         "@reduxjs/toolkit": "^2.6.0",
         "axios": "^1.8.1",
-        "klinecharts": "^10.0.0-alpha5",
+        "install": "^0.13.0",
+        "klinecharts": "^9.8.10",
         "next": "15.1.7",
         "next-intl": "^4.0.2",
         "next-redux-wrapper": "^8.1.0",
@@ -26,6 +28,7 @@
         "recharts": "^2.15.1",
         "redux-persist": "^6.0.0",
         "slick-carousel": "^1.8.1",
+        "uninstall": "^0.0.0",
         "use-react-countries": "^2.0.1"
     },
     "devDependencies": {

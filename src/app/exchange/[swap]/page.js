@@ -47,7 +47,7 @@ export default function Home({ params }) {
   const fetchBTCData = async () => {
     try {
       
-     const response = await fetch(`https://api.binance.com/api/v3/ticker/24hr?symbol=${tradingSymbol}`);
+     const response = await fetch(`https://api.binance.us/api/v3/ticker/24hr?symbol=${tradingSymbol}`);
      const data = await response.json();
 
       console.log(data);

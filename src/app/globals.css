@@ -28,3 +28,16 @@
     background-color: #888888;
     /* Hover state color */
 }
+
+.klinecharts-pro-period-bar>.symbol {
+    display: none !important;
+}
+
+.klinecharts-pro {
+    --klinecharts-pro-hover-background-color: rgba(22, 119, 255, 0.15) !important;
+    --klinecharts-pro-background-color: #151517 !important;
+    --klinecharts-pro-popover-background-color: #1c1c1f !important;
+    --klinecharts-pro-text-color: #F8F8F8 !important;
+    --klinecharts-pro-text-second-color: #929AA5 !important;
+    --klinecharts-pro-border-color: #292929 !important;
+}
