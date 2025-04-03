@@ -48,7 +48,7 @@ const BTCChart = ({ symbol, profit }) => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://api.binance.com/api/v3/klines?symbol=${symbol}&interval=1m&limit=500`
+          `https://api.binance.us/api/v3/klines?symbol=${symbol}&interval=1m&limit=500`
         );
         const data = await response.json();
 

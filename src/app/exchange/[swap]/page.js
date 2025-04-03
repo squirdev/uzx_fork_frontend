@@ -31,6 +31,8 @@ export default function Home({ params }) {
   const tradingSymbol = swap.toUpperCase() + "USDT";
   const router = useRouter();
 
+  const [btcData, setBtcData] = useState(null);
+
   useEffect(() => {
     if (!SwapTokenList.includes(swap.toUpperCase())) {
       router.push("/exchange/btc");
@@ -42,8 +44,28 @@ export default function Home({ params }) {
     if (result) setTokenInfo(result.data);
   };
 
+  const fetchBTCData = async () => {
+    try {
+      
+     const response = await fetch(`https://api.binance.com/api/v3/ticker/24hr?symbol=${tradingSymbol}`);
+     const data = await response.json();
+
+      console.log(data);
+
+      setBtcData({
+        change24h: data.priceChangePercent, // 24h Change %
+        high24h: data.highPrice, // 24h High
+        low24h: data.lastPrice, // 24h Low
+        volume24h: data.volume, // 24h Volume
+      });
+    } catch (error) {
+      console.log("Error fetching BTC data:", error);
+    }
+  };
+
   useEffect(() => {
     fetchTokenList();
+    fetchBTCData();
   }, []);
 
   const { t } = useLanguage();
@@ -70,19 +92,19 @@ export default function Home({ params }) {
               </Menu>
               <div className="flex flex-col text-[12px] items-end">
                 <p className="text-[#999]">{t("change24H")}</p>
-                <p className="text-[#999] text-warnred">-0.54%</p>
+                <p className="text-[#999] text-warnred">{btcData?.change24h}%</p>
               </div>
               <div className="flex flex-col text-[12px] items-end">
                 <p className="text-[#999]">{t("high24H")}</p>
-                <p className="text-[#999] text-white">-0.54%</p>
+                <p className="text-[#999] text-white">{Number(btcData?.high24h).toFixed(2)}</p>
               </div>
               <div className="flex flex-col text-[12px] items-end">
                 <p className="text-[#999]">{t("low24H")}</p>
-                <p className="text-[#999] text-white">-0.54%</p>
+                <p className="text-[#999] text-white">{Number(btcData?.low24h).toFixed(2)}</p>
               </div>
               <div className="flex flex-col text-[12px] items-end">
                 <p className="text-[#999]">{t("volume24H")}</p>
-                <p className="text-[#999] text-white">-0.54%</p>
+                <p className="text-[#999] text-white">{Number(btcData?.volume24h).toFixed(2)}{swap.toUpperCase()}</p>
               </div>
             </div>
             <div className="flex items-center gap-8">
