@@ -45,14 +45,20 @@ const BTCChart = ({ symbol, profit }) => {
         );
         const data = await response.json();
 
-        const formattedData = data.map((item) => ({
-          timestamp: Math.floor(item[0]),
-          open: parseFloat(item[1]) * multiplier,
-          high: parseFloat(item[2]) * multiplier,
-          low: parseFloat(item[3]) * multiplier,
-          close: parseFloat(item[4]) * multiplier,
-          volume: parseFloat(item[5]) * multiplier,
-        }));
+        const formattedData = data.map((item, index) => {
+          if (index === 1) {
+            return {
+              timestamp: Math.floor(item[0]),
+              open: parseFloat(item[1]) * multiplier,
+              high: parseFloat(item[2]) * multiplier,
+              low: parseFloat(item[3]) * multiplier,
+              close: parseFloat(item[4]) * multiplier,
+              volume: parseFloat(item[5]) * multiplier,
+            };
+          } else {
+            return null; // or undefined
+          }
+        });
 
         chart.applyNewData(formattedData);
       } catch (error) {

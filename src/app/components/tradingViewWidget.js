@@ -11,6 +11,7 @@ class CustomDatafeed {
   constructor(symbol, profit){
     this.symbol = symbol;
     this.profit = profit;
+    this.interval = '15m';
 
     console.log(symbol, profit);
   }
@@ -33,19 +34,34 @@ class CustomDatafeed {
 
   async fetchData (interval) {
     const response = await fetch(
-      `https://api.binance.us/api/v3/klines?symbol=${this.symbol}&interval=1m`
+      `https://api.binance.us/api/v3/klines?symbol=${this.symbol}&interval=${this.interval}`
     );
 
     const data = await response.json();
 
-    const formattedData = data.map((item) => ({
-      timestamp: Math.floor(item[0]),
-      open: parseFloat(item[1]) * this.profit,
-      high: parseFloat(item[2]) * this.profit,
-      low: parseFloat(item[3]) * this.profit,
-      close: parseFloat(item[4]) * this.profit,
-      volume: parseFloat(item[5]) * this.profit,
-    }));
+    const formattedData = data.map((item, index) => {
+      
+      if (index+1 === (data.length)) {
+       console.log("dfdd");
+        return {
+          timestamp: Math.floor(item[0]),
+          open: parseFloat(item[1]) ,
+          high: parseFloat(item[2]) * this.profit,
+          low: parseFloat(item[3]) ,
+          close: parseFloat(item[4]) * this.profit,
+          volume: parseFloat(item[5]) * this.profit,
+        };
+      } else {
+        return {
+          timestamp: Math.floor(item[0]),
+          open: parseFloat(item[1]) ,
+          high: parseFloat(item[2]) ,
+          low: parseFloat(item[3]) ,
+          close: parseFloat(item[4]) ,
+          volume: parseFloat(item[5]) ,
+        }; // or undefined
+      }
+    });
 
     return formattedData
   }
@@ -152,6 +168,8 @@ const BTCChart = ({ symbol, profit }) => {
       period: { multiplier: 15, timespan: "minute", text: "15m" },
       datafeed: new CustomDatafeed(symbol, multiplier)
     });
+
+    chart.setStyles({grid: {show: false}})
 
     if (!chart || typeof chart.applyNewData !== "function") {
       console.warn("Chart initialization failed.");
