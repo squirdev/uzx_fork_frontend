@@ -34,7 +34,7 @@ class CustomDatafeed {
 
   async fetchData (interval) {
     const response = await fetch(
-      `https://api.binance.us/api/v3/klines?symbol=${this.symbol}&interval=${this.interval}`
+      `https://api.binance.us/api/v3/klines?symbol=${this.symbol}&interval=${interval}`
     );
 
     const data = await response.json();
@@ -69,7 +69,7 @@ class CustomDatafeed {
   getTimeDifference(from, to) {
     const difference = Math.abs(to - from); // Get absolute difference in milliseconds
 
-    const second = 1000;
+    const second = 1000 * 500;
     const minute = second * 60;
     const hour = minute * 60;
     const day = hour * 24;
@@ -78,19 +78,19 @@ class CustomDatafeed {
     const year = day * 365; // Approximate (365 days)
 
     if (difference < minute) {
-      return `${(difference / second).toFixed(2)} seconds`;
+      return `${(difference / second).toFixed(0)} seconds`;
     } else if (difference < hour) {
-      return `${(difference / minute).toFixed(2)}m`;
+      return `${(difference / minute).toFixed(0)}m`;
     } else if (difference < day) {
-      return `${(difference / hour).toFixed(2)}h`;
+      return `${(difference / hour).toFixed(0)}h`;
     } else if (difference < week) {
-      return `${(difference / day).toFixed(2)}d`;
+      return `${(difference / day).toFixed(0)}d`;
     } else if (difference < month) {
-      return `${(difference / week).toFixed(2)}w`;
+      return `${(difference / week).toFixed(0)}w`;
     } else if (difference < year) {
-      return `${(difference / month).toFixed(2)}m`;
+      return `${(difference / month).toFixed(0)}m`;
     } else {
-      return `${(difference / year).toFixed(2)}y`;
+      return `${(difference / year).toFixed(0)}y`;
     }
   }
   
