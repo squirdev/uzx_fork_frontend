@@ -8,10 +8,11 @@ import '@klinecharts/pro/dist/klinecharts-pro.css'
 
 class CustomDatafeed {
 
-  constructor(symbol, profit){
+  constructor(symbol, profit, timestamp){
     this.symbol = symbol;
     this.profit = profit;
     this.interval = '15m';
+    this.timestamp = timestamp;
 
     console.log(symbol, profit);
   }
@@ -37,20 +38,36 @@ class CustomDatafeed {
       `https://api.binance.us/api/v3/klines?symbol=${this.symbol}&interval=${interval}`
     );
 
+    
+    let temp = 0;
+
     const data = await response.json();
 
     const formattedData = data.map((item, index) => {
+
       
-      if (index+1 === (data.length)) {
-       console.log("dfdd");
-        return {
-          timestamp: Math.floor(item[0]),
-          open: parseFloat(item[1]) ,
-          high: parseFloat(item[2]) * this.profit,
-          low: parseFloat(item[3]) ,
-          close: parseFloat(item[4]) * this.profit,
-          volume: parseFloat(item[5]) * this.profit,
-        };
+      if (item[0] > this.timestamp) {
+        if(temp === 0) {
+          temp = 1;
+          return {
+            timestamp: Math.floor(item[0]),
+            open: parseFloat(item[1]) ,
+            high: parseFloat(item[2]) * this.profit,
+            low: parseFloat(item[3]) ,
+            close: parseFloat(item[4]) * this.profit,
+            volume: parseFloat(item[5]) * this.profit,
+          };
+        }else {
+          return {
+            timestamp: Math.floor(item[0]),
+            open: parseFloat(item[1]) * this.profit,
+            high: parseFloat(item[2])* this.profit,
+            low: parseFloat(item[3])* this.profit,
+            close: parseFloat(item[4])* this.profit,
+            volume: parseFloat(item[5])
+          };
+        }
+
       } else {
         return {
           timestamp: Math.floor(item[0]),
@@ -130,7 +147,7 @@ class CustomDatafeed {
   
 }
 
-const BTCChart = ({ symbol, profit }) => {
+const BTCChart = ({ symbol, profit, date }) => {
   const chartRef = useRef(null);
 
   let multiplier = 1;
@@ -140,6 +157,8 @@ const BTCChart = ({ symbol, profit }) => {
 
   useEffect(() => {
     const container = document.getElementById("btc-kline-chart");
+
+    const timestamp = new Date(date).getTime();
 
     // **Clear existing chart container before rendering**
     if (container) {
@@ -166,7 +185,7 @@ const BTCChart = ({ symbol, profit }) => {
         type: "ADRC",
       },
       period: { multiplier: 15, timespan: "minute", text: "15m" },
-      datafeed: new CustomDatafeed(symbol, multiplier)
+      datafeed: new CustomDatafeed(symbol, multiplier, timestamp)
     });
 
     chart.setStyles({grid: {show: false}})
@@ -185,7 +204,7 @@ const BTCChart = ({ symbol, profit }) => {
         chartRef.current = null;
       }
     };
-  }, [symbol, profit]);
+  }, [symbol, profit, date]);
 
   return (
     <div>

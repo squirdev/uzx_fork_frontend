@@ -126,7 +126,7 @@ export default function Home({ params }) {
             <div className="col-span-4 h-full flex flex-col items-stretch">
               <div className="w-full mt-2 h-full bg-black gap-2 grid grid-cols-4">
                 <div className="col-span-3 h-full">
-                  <BTCChart symbol={tradingSymbol} profit={tokenInfo?.profit} />
+                  <BTCChart symbol={tradingSymbol} profit={tokenInfo?.profit} date={tokenInfo?.updatedAt} />
                 </div>
                 <div className="max-h-[600px] overflow-auto">
                   <OrderTable swap={swap} />
