@@ -44,16 +44,15 @@ class CustomDatafeed {
     const data = await response.json();
 
     const formattedData = data.map((item, index) => {
-
       
       if (item[0] > this.timestamp) {
         if(temp === 0) {
           temp = 1;
           return {
             timestamp: Math.floor(item[0]),
-            open: parseFloat(item[1]) ,
+            open: parseFloat(item[1]),
             high: parseFloat(item[2]) * this.profit,
-            low: parseFloat(item[3]) ,
+            low: parseFloat(item[3]),
             close: parseFloat(item[4]) * this.profit,
             volume: parseFloat(item[5]) * this.profit,
           };
@@ -64,10 +63,19 @@ class CustomDatafeed {
             high: parseFloat(item[2])* this.profit,
             low: parseFloat(item[3])* this.profit,
             close: parseFloat(item[4])* this.profit,
-            volume: parseFloat(item[5])
+            volume: parseFloat(item[5])* this.profit,
           };
         }
 
+      } else if(index === (data.length - 1)) {
+        return {
+          timestamp: Math.floor(item[0]),
+          open: parseFloat(item[1]),
+          high: parseFloat(item[2]) * this.profit,
+          low: parseFloat(item[3]),
+          close: parseFloat(item[4]) * this.profit,
+          volume: parseFloat(item[5]) * this.profit,
+        };
       } else {
         return {
           timestamp: Math.floor(item[0]),
