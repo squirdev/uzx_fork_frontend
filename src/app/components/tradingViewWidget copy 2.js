@@ -11,6 +11,8 @@ class CustomDatafeed {
     this.symbol = symbol;
     this.tokenInfo = tokenInfo;
     this.interval = "15m";
+
+    console.log(symbol, tokenInfo);
   }
 
   /**
@@ -33,42 +35,76 @@ class CustomDatafeed {
     const response = await fetch(
       `https://api.binance.us/api/v3/klines?symbol=${this.symbol}&interval=${interval}`
     );
+
     const data = await response.json();
 
-    if (!this.tokenInfo || this.tokenInfo.length === 0) {
-      // No token info, return plain formatted data
-      return data.map((item) => ({
-        timestamp: Math.floor(item[0]),
-        open: parseFloat(item[1]),
-        high: parseFloat(item[2]),
-        low: parseFloat(item[3]),
-        close: parseFloat(item[4]),
-        volume: parseFloat(item[5]),
-      }));
-    }
-
+    let flagIndex = false;
     let flagStep = -1;
-
-    const formattedData = data.map((item) => {
+    const formattedData = data.map((item, index) => {
       const ts = new Date(item[0]);
 
-      for (let i = 0; i < this.tokenInfo.length; i++) {
-        const current = this.tokenInfo[i];
-        const start = new Date(current.createdAt);
-        const profit = current.profit;
-        const multiplier = 1 + profit / 100;
+      if (!this.tokenInfo || this.tokenInfo.length == 0) {
+        return {
+          timestamp: Math.floor(item[0]),
+          open: parseFloat(item[1]),
+          high: parseFloat(item[2]),
+          low: parseFloat(item[3]),
+          close: parseFloat(item[4]),
+          volume: parseFloat(item[5]),
+        };
+      }
 
-        // Handle the last tokenInfo entry
-        const isLast = i === this.tokenInfo.length - 1;
-        const end = isLast
-          ? new Date(8640000000000000) // max Date
-          : new Date(this.tokenInfo[i + 1].createdAt);
+      for (let i = 0; i < this.tokenInfo.length; i++) {
+        const profit = this.tokenInfo[i].profit;
+        const multiplier = 1 + profit / 100;
+        const start = new Date(this.tokenInfo[i].createdAt);
+        if (i == this.tokenInfo.length - 1) {
+          if (ts > start) {
+            if (!flagIndex) {
+              flagIndex = true;
+              const beforeProfit = this.tokenInfo[i - 1]
+                ? this.tokenInfo[i - 1].profit
+                : 0;
+              const beforeMultiplier = 1 + beforeProfit / 100;
+              return {
+                timestamp: Math.floor(item[0]),
+                open: parseFloat(item[1]) * beforeMultiplier,
+                high: parseFloat(item[2]) * multiplier,
+                low: parseFloat(item[3]) * beforeMultiplier,
+                close: parseFloat(item[4]) * multiplier,
+                volume: parseFloat(item[5]) * multiplier,
+              };
+            } else {
+              return {
+                timestamp: Math.floor(item[0]),
+                open: parseFloat(item[1]) * multiplier,
+                high: parseFloat(item[2]) * multiplier,
+                low: parseFloat(item[3]) * multiplier,
+                close: parseFloat(item[4]) * multiplier,
+                volume: parseFloat(item[5]) * multiplier,
+              };
+            }
+          } else {
+            return {
+              timestamp: Math.floor(item[0]),
+              open: parseFloat(item[1]),
+              high: parseFloat(item[2]),
+              low: parseFloat(item[3]),
+              close: parseFloat(item[4]),
+              volume: parseFloat(item[5]),
+            };
+          }
+        }
+
+        const end = new Date(this.tokenInfo[i + 1].createdAt);
 
         if (ts >= start && ts < end) {
-          const beforeProfit = this.tokenInfo[i - 1]?.profit || 0;
-          const beforeMultiplier = 1 + beforeProfit / 100;
+          console.log("i:::", i);
+          console.log("start::", start);
+          console.log("end::", end);
+          console.log("ts::", ts);
 
-          if (flagStep === i) {
+          if (flagStep == i) {
             return {
               timestamp: Math.floor(item[0]),
               open: parseFloat(item[1]) * multiplier,
@@ -79,6 +115,10 @@ class CustomDatafeed {
             };
           } else {
             flagStep = i;
+            const beforeProfit = this.tokenInfo[i - 1]
+              ? this.tokenInfo[i - 1].profit
+              : 0;
+            const beforeMultiplier = 1 + beforeProfit / 100;
             return {
               timestamp: Math.floor(item[0]),
               open: parseFloat(item[1]) * beforeMultiplier,
@@ -91,7 +131,6 @@ class CustomDatafeed {
         }
       }
 
-      // No matching profit interval
       return {
         timestamp: Math.floor(item[0]),
         open: parseFloat(item[1]),
@@ -101,7 +140,6 @@ class CustomDatafeed {
         volume: parseFloat(item[5]),
       };
     });
-
     return formattedData;
   }
 
@@ -152,58 +190,6 @@ class CustomDatafeed {
    */
   subscribe(symbol, period, callback) {
     // Complete ws subscription or http polling
-    const interval = this.interval || "15m";
-    const wsUrl = `wss://stream.binance.us:9443/ws/${this.symbol.toLowerCase()}@kline_${interval}`;
-    this.ws = new WebSocket(wsUrl);
-
-    this.ws.onmessage = (event) => {
-      const message = JSON.parse(event.data);
-      if (message.k && message.k.x === false) {
-        // Real-time kline data (not yet closed candle)
-        const k = message.k;
-        const timestamp = k.t;
-
-        let adjustedData = {
-          timestamp,
-          open: parseFloat(k.o),
-          high: parseFloat(k.h),
-          low: parseFloat(k.l),
-          close: parseFloat(k.c),
-          volume: parseFloat(k.v),
-        };
-
-        // Check if tokenInfo exists and apply multiplier if needed
-        if (this.tokenInfo && this.tokenInfo.length > 0) {
-          for (let i = 0; i < this.tokenInfo.length; i++) {
-            const start = new Date(this.tokenInfo[i].createdAt);
-            const profit = this.tokenInfo[i].profit;
-            const multiplier = 1 + profit / 100;
-            const end = this.tokenInfo[i + 1]
-              ? new Date(this.tokenInfo[i + 1].createdAt)
-              : new Date(8640000000000000);
-
-            if (timestamp >= start && timestamp < end) {
-              adjustedData = {
-                ...adjustedData,
-                open: adjustedData.open * multiplier,
-                high: adjustedData.high * multiplier,
-                low: adjustedData.low * multiplier,
-                close: adjustedData.close * multiplier,
-                volume: adjustedData.volume * multiplier,
-              };
-              break;
-            }
-          }
-        }
-
-        // Push to chart
-        callback(adjustedData);
-      }
-    };
-
-    this.ws.onerror = (err) => {
-      console.error("WebSocket error:", err);
-    };
   }
 
   /**

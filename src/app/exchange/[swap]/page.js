@@ -46,9 +46,10 @@ export default function Home({ params }) {
 
   const fetchBTCData = async () => {
     try {
-      
-     const response = await fetch(`https://api.binance.us/api/v3/ticker/24hr?symbol=${tradingSymbol}`);
-     const data = await response.json();
+      const response = await fetch(
+        `https://api.binance.us/api/v3/ticker/24hr?symbol=${tradingSymbol}`
+      );
+      const data = await response.json();
 
       console.log(data);
 
@@ -78,7 +79,9 @@ export default function Home({ params }) {
             <div className="flex items-center gap-8">
               <Menu color="dark">
                 <MenuHandler>
-                  <Button className="px-6 py-2 text-md">{swap.toUpperCase() + "/USDT"}</Button>
+                  <Button className="px-6 py-2 text-md">
+                    {swap.toUpperCase() + "/USDT"}
+                  </Button>
                 </MenuHandler>
                 <MenuList className="p-0 border-none bg-black">
                   {SwapTokenList.map((data, index) => (
@@ -92,19 +95,28 @@ export default function Home({ params }) {
               </Menu>
               <div className="flex flex-col text-[12px] items-end">
                 <p className="text-[#999]">{t("change24H")}</p>
-                <p className="text-[#999] text-warnred">{btcData?.change24h}%</p>
+                <p className="text-[#999] text-warnred">
+                  {btcData?.change24h}%
+                </p>
               </div>
               <div className="flex flex-col text-[12px] items-end">
                 <p className="text-[#999]">{t("high24H")}</p>
-                <p className="text-[#999] text-white">{Number(btcData?.high24h).toFixed(2)}</p>
+                <p className="text-[#999] text-white">
+                  {Number(btcData?.high24h).toFixed(2)}
+                </p>
               </div>
               <div className="flex flex-col text-[12px] items-end">
                 <p className="text-[#999]">{t("low24H")}</p>
-                <p className="text-[#999] text-white">{Number(btcData?.low24h).toFixed(2)}</p>
+                <p className="text-[#999] text-white">
+                  {Number(btcData?.low24h).toFixed(2)}
+                </p>
               </div>
               <div className="flex flex-col text-[12px] items-end">
                 <p className="text-[#999]">{t("volume24H")}</p>
-                <p className="text-[#999] text-white">{Number(btcData?.volume24h).toFixed(2)}{swap.toUpperCase()}</p>
+                <p className="text-[#999] text-white">
+                  {Number(btcData?.volume24h).toFixed(2)}
+                  {swap.toUpperCase()}
+                </p>
               </div>
             </div>
             <div className="flex items-center gap-8">
@@ -126,7 +138,8 @@ export default function Home({ params }) {
             <div className="col-span-4 h-full flex flex-col items-stretch">
               <div className="w-full mt-2 h-full bg-black gap-2 grid grid-cols-4">
                 <div className="col-span-3 h-full">
-                  <BTCChart symbol={tradingSymbol} profit={tokenInfo?.profit} date={tokenInfo?.updatedAt} />
+                  {/* <BTCChart symbol={tradingSymbol} profit={tokenInfo?.profit} date={tokenInfo?.updatedAt} /> */}
+                  <BTCChart symbol={tradingSymbol} tokenInfo={tokenInfo} />
                 </div>
                 <div className="max-h-[600px] overflow-auto">
                   <OrderTable swap={swap} />
