@@ -136,9 +136,6 @@ class CustomDatafeed {
   getHistoryKLineData(symbol, period, from, to) {
     const interval = this.getTimeDifference(from, to);
 
-    console.log(from, to);
-
-    console.log(interval);
     // Complete data request
     const data = this.fetchData(interval);
     return data;
