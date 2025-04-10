@@ -13,6 +13,7 @@ const SwapHistory = () => {
   const fetchHistory = async () => {
     let result = await getSwapHistory();
     if (result && result.data) {
+      console.log("SWAP HISTORY::", result.data);
       setSwapHistory(result.data);
     }
   };
@@ -27,12 +28,11 @@ const SwapHistory = () => {
         <p className="text-white">{t("history")}</p>
       </div>
       <div className="w-full h-full flex flex-col mt-2">
-        <div className="w-full grid grid-cols-6 text-white font-bold">
-          <p>{t("amount")}</p>
+        <div className="w-full grid grid-cols-5 text-white font-bold">
+          <p>{t("token")}</p>
           <p>{t("time")}</p>
           <p>{t("value")}</p>
-          <p>{t("name")}</p>
-          <p>{t("token")}</p>
+          <p>{t("amount")}</p>
           <p>{t("status")}</p>
         </div>
         <div className="w-full flex-1 max-h-[300px] overflow-auto">
@@ -41,14 +41,35 @@ const SwapHistory = () => {
               {swapHistory.map((data, index) => (
                 <div
                   key={index}
-                  className="w-full grid grid-cols-6 items-center text-white py-1"
+                  className="w-full grid grid-cols-5 items-center text-white py-1 text-sm"
                 >
-                  <p>{data.fromAmount}</p>
+                  {data.fromToken == "usdt" ? (
+                    <p className="text-green-500">
+                      {data.toToken.toUpperCase()}
+                    </p>
+                  ) : (
+                    <p className="text-red-500">
+                      {data.fromToken.toUpperCase()}
+                    </p>
+                  )}
                   <p>{getSimplifiedDateTime(data.createdAt)}</p>
-                  <p>{data.toAmount.toFixed(3)}</p>
-                  <p>{data.toToken?.toUpperCase()}</p>
-                  <p>{data.fromToken?.toUpperCase()}</p>
-                  <p>{t("success")}</p>
+                  {data.fromToken == "usdt" ? (
+                    <p className="text-green-500">{data.toAmount.toFixed(3)}</p>
+                  ) : (
+                    <p className="text-red-500">{data.fromAmount.toFixed(3)}</p>
+                  )}
+                  {data.fromToken == "usdt" ? (
+                    <p className="text-green-500">
+                      {data.fromAmount.toFixed(2)}
+                    </p>
+                  ) : (
+                    <p className="text-red-500">{data.toAmount.toFixed(2)}</p>
+                  )}
+                  <p className="text-green-500">
+                    {data.fromToken == "usdt"
+                      ? t("buy").toUpperCase() + "_" + t("success").toUpperCase()
+                      : t("sell").toUpperCase() + "_" + t("success").toUpperCase()}
+                  </p>
                 </div>
               ))}
             </div>
