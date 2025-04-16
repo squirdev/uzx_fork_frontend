@@ -8,26 +8,11 @@ import { getProfile } from "@/app/api/profile";
 import { useAlert } from "../../../../context/alertContext";
 import { useRouter } from "next/navigation";
 
-const IDVerification = () => {
+const IDVerification = ({userProfile}) => {
   const [isVerifyCardShow, setIsVerifyCardShow] = useState(false);
-  const [userProfile, setUserProfile] = useState(null);
   const { t } = useLanguage();
   const { showAlert } = useAlert();
   const router = useRouter();
-
-  const fetchProfile = async () => {
-    let result = await getProfile();
-    if (result && result.user) {
-      setUserProfile(result.user);
-    } else {
-      showAlert(t("alertErrorMsg"));
-      router.push("/login");
-    }
-  };
-
-  useEffect(() => {
-    fetchProfile();
-  }, []);
 
   if (!t) return <p className="text-white">Loading translations...</p>;
   return (

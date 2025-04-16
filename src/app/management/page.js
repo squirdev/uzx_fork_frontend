@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import GeneralView from "./generalView/main";
 import {
   Tab,
@@ -9,15 +9,32 @@ import {
   TabsBody,
   TabsHeader,
 } from "@material-tailwind/react";
-import Image from "next/image";
-import Link from "next/link";
 import { useLanguage } from "../../../context/LanguageProvider";
 import SafetyPanel from "./safety/main";
 import IDVerification from "./idVerification/main";
+import { getProfile } from "../api/profile";
+import { useAlert } from "../../../context/alertContext";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState(0);
+  const [userProfile, setUserProfile] = useState(null);
   const { t } = useLanguage();
+  const { showAlert } = useAlert();
+
+  const fetchProfile = async () => {
+    let result = await getProfile();
+    if (result && result.user) {
+      setUserProfile(result.user);
+    } else {
+      showAlert(t("alertErrorMsg"));
+      router.push("/login");
+    }
+  };
+
+  useEffect(() => {
+    fetchProfile();
+  }, []);
+
   if (!t) return <p className="text-white">Loading translations...</p>;
   const themeData = [t("generalView"), t("safety"), t("idVerify")];
   return (
@@ -54,13 +71,13 @@ export default function Home() {
             }}
           >
             <TabPanel key={0} value={0}>
-              <GeneralView />
+              <GeneralView userProfile={userProfile} />
             </TabPanel>
             <TabPanel key={1} value={1}>
-              <SafetyPanel />
+              <SafetyPanel userProfile={userProfile} />
             </TabPanel>
             <TabPanel key={2} value={2}>
-              <IDVerification />
+              <IDVerification userProfile={userProfile} />
             </TabPanel>
           </TabsBody>
         </Tabs>

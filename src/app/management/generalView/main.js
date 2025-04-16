@@ -7,11 +7,11 @@ const { default: ProofReserve } = require("./proofReserve");
 const { default: RecentRecord } = require("./recentRecord");
 const { default: TransactionHistory } = require("./transactionHistory");
 
-const GeneralView = () => {
+const GeneralView = ({userProfile}) => {
   return (
     <div className="w-full flex gap-12 mb-6">
       <div className="w-3/5  flex flex-col gap-8">
-        <CurrentEquity />
+        <CurrentEquity userProfile={userProfile} />
         <ProofReserve />
         <TransactionHistory />
       </div>

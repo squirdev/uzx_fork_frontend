@@ -1,30 +1,16 @@
 "use client";
 
-import Image from "next/image";
 import SecuritySettingItem from "./securitySetting";
 import SecurityAuthItem from "./securityPassword";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { getProfile } from "@/app/api/profile";
 import { useLanguage } from "../../../../context/LanguageProvider";
 
-const SafetyPanel = () => {
-  const [userProfile, setUserProfile] = useState(null);
+const SafetyPanel = ({userProfile}) => {
   const [isEmailBind, setIsEmailBind] = useState(false);
   const [isGoogleAuthBind, setIsGoogleAuthBind] = useState(false);
   const router = useRouter();
   const { t } = useLanguage();
-
-  const fetchProfile = async () => {
-    let result = await getProfile();
-    if (result && result.user) {
-      setUserProfile(result.user);
-    }
-  };
-
-  useEffect(() => {
-    fetchProfile();
-  }, []);
 
   useEffect(() => {
     if (userProfile && userProfile.email) setIsEmailBind(true);
