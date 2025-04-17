@@ -43,10 +43,10 @@ export default function DepositStep() {
     if (tokenInfo && tokenInfo[activeIndex]) {
       const token = tokenInfo[activeIndex]?.name;
       const addressName = token + "Address";
-      if (userProfile[addressName])
+      if (userProfile && userProfile[addressName])
         setUserWalletAddress(userProfile[addressName]);
     }
-  }, [activeIndex, tokenInfo]);
+  }, [activeIndex, tokenInfo, userProfile]);
 
   const { showAlert } = useAlert();
 
