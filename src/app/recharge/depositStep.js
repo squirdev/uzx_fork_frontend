@@ -39,7 +39,7 @@ export default function DepositStep() {
   }, []);
 
   useEffect(() => {
-    if (tokenInfo[activeIndex]) {
+    if (tokenInfo && tokenInfo[activeIndex]) {
       const token = tokenInfo[activeIndex]?.name;
       const addressName = token + "Address";
       if (userProfile[addressName])
