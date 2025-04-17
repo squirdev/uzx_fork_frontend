@@ -16,6 +16,7 @@ import { useEffect, useState } from "react";
 import { useLanguage } from "../../../context/LanguageProvider";
 import { getTokenList } from "../api/token";
 import { useAlert } from "../../../context/alertContext";
+import { getProfile } from "../api/profile";
 
 export default function DepositStep() {
   const [activeIndex, setActiveIndex] = useState(0);
