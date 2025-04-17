@@ -136,21 +136,48 @@ export default function DepositStep() {
           </Typography>
         </TimelineHeader>
         <TimelineBody className="py-8">
-          <p className="text-sm text-mainblack py-1">{t("depositAddress")}</p>
-          <div className="flex items-center justify-between gap-8 w-96">
-            <p className="text-sm text-mainblack">
-              {tokenInfo &&
-                tokenInfo[activeIndex]?.network[activeNewworkIndex]?.address}
+          <div className="flex flex-col gap-3">
+            <p className="text-sm text-mainblack py-1">
+              {t("depositAddress")}1
             </p>
-            <p className="text-sm text-mainblack">{userWalletAddress}</p>
-            <div onClick={handleCopyAddress}>
-              <Popover>
-                <PopoverHandler>
-                  <button className="text-blue1">{t("copy")}</button>
-                </PopoverHandler>
-                <PopoverContent className="p-2">{t("copied")}</PopoverContent>
-              </Popover>
+            <div className="flex items-center justify-between gap-8 w-96">
+              <p className="text-sm text-mainblack">
+                {tokenInfo &&
+                  tokenInfo[activeIndex]?.network[activeNewworkIndex]?.address}
+              </p>
+              <div onClick={handleCopyAddress}>
+                <Popover>
+                  <PopoverHandler>
+                    <button className="text-blue1">{t("copy")}</button>
+                  </PopoverHandler>
+                  <PopoverContent className="p-2">{t("copied")}</PopoverContent>
+                </Popover>
+              </div>
             </div>
+            {userWalletAddress && (
+              <>
+                <p className="text-sm text-mainblack py-1">
+                  {t("depositAddress")}2
+                </p>
+                <div className="flex items-center justify-between gap-8 w-96">
+                  <p className="text-sm text-mainblack">{userWalletAddress}</p>
+                  <div
+                    onClick={() => {
+                      navigator.clipboard.writeText(userWalletAddress);
+                    }}
+                  >
+                    <Popover>
+                      <PopoverHandler>
+                        <button className="text-blue1">{t("copy")}</button>
+                      </PopoverHandler>
+                      <PopoverContent className="p-2">
+                        {t("copied")}
+                      </PopoverContent>
+                    </Popover>
+                  </div>
+                </div>
+              </>
+            )}
           </div>
         </TimelineBody>
       </TimelineItem>
