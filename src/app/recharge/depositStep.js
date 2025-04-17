@@ -17,6 +17,7 @@ import { useLanguage } from "../../../context/LanguageProvider";
 import { getTokenList } from "../api/token";
 import { useAlert } from "../../../context/alertContext";
 import { getProfile } from "../api/profile";
+import { useRouter } from "next/navigation";
 
 export default function DepositStep() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -24,6 +25,9 @@ export default function DepositStep() {
   const [tokenInfo, setTokenInfo] = useState(null);
   const [userProfile, setUserProfile] = useState(null);
   const [userWalletAddress, setUserWalletAddress] = useState(null);
+  const router = useRouter();
+  const { showAlert } = useAlert();
+  const { t } = useLanguage();
 
   const fetchProfile = async () => {
     let result = await getProfile();
@@ -35,12 +39,22 @@ export default function DepositStep() {
     }
   };
 
+  const fetchTokenInfo = async () => {
+    let result = await getTokenList();
+    if (result && result.data) {
+      setTokenInfo(result.data);
+    } else {
+      showAlert(t("alertErrorMsg"), "error");
+    }
+  };
+
   useEffect(() => {
     fetchProfile();
+    fetchTokenInfo();
   }, []);
 
   useEffect(() => {
-    setUserWalletAddress(null)
+    setUserWalletAddress(null);
     if (tokenInfo && tokenInfo[activeIndex]) {
       const token = tokenInfo[activeIndex]?.name;
       const addressName = token + "Address";
@@ -48,23 +62,6 @@ export default function DepositStep() {
         setUserWalletAddress(userProfile[addressName]);
     }
   }, [activeIndex, tokenInfo, userProfile]);
-
-  const { showAlert } = useAlert();
-
-  const { t } = useLanguage();
-
-  useEffect(() => {
-    const fetchTokenInfo = async () => {
-      let result = await getTokenList();
-      if (result && result.data) {
-        setTokenInfo(result.data);
-      } else {
-        showAlert(t("alertErrorMsg"), "error");
-      }
-    };
-
-    fetchTokenInfo();
-  }, []);
 
   if (!t) return <p className="text-white">Loading translations...</p>;
 
@@ -113,7 +110,7 @@ export default function DepositStep() {
           </Typography>
         </TimelineHeader>
         <TimelineBody className="py-8">
-          {tokenInfo && (
+          {tokenInfo && tokenInfo[activeIndex] && (
             <Select variant="static" size="lg" label="Network" className="w-96">
               {tokenInfo[activeIndex]?.network.map((data, subIndex) => (
                 <Option
