@@ -21,6 +21,31 @@ export default function DepositStep() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [activeNewworkIndex, setActiveNewworkIndex] = useState(0);
   const [tokenInfo, setTokenInfo] = useState(null);
+  const [userProfile, setUserProfile] = useState(null);
+  const [userWalletAddress, setUserWalletAddress] = useState(null);
+
+  const fetchProfile = async () => {
+    let result = await getProfile();
+    if (result && result.user) {
+      setUserProfile(result.user);
+    } else {
+      showAlert(t("alertErrorMsg"));
+      router.push("/login");
+    }
+  };
+
+  useEffect(() => {
+    fetchProfile();
+  }, []);
+
+  useEffect(() => {
+    if (tokenInfo[activeIndex]) {
+      const token = tokenInfo[activeIndex]?.name;
+      const addressName = token + "Address";
+      if (userProfile[addressName])
+        setUserWalletAddress(userProfile[addressName]);
+    }
+  }, [activeIndex, tokenInfo]);
 
   const { showAlert } = useAlert();
 
@@ -116,6 +141,7 @@ export default function DepositStep() {
               {tokenInfo &&
                 tokenInfo[activeIndex]?.network[activeNewworkIndex]?.address}
             </p>
+            <p className="text-sm text-mainblack">{userWalletAddress}</p>
             <div onClick={handleCopyAddress}>
               <Popover>
                 <PopoverHandler>
