@@ -40,6 +40,7 @@ export default function DepositStep() {
   }, []);
 
   useEffect(() => {
+    setUserWalletAddress(null)
     if (tokenInfo && tokenInfo[activeIndex]) {
       const token = tokenInfo[activeIndex]?.name;
       const addressName = token + "Address";
