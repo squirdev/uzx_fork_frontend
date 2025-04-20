@@ -20,8 +20,8 @@ import { getProfile } from "../api/profile";
 import { useRouter } from "next/navigation";
 
 export default function DepositStep() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [activeNewworkIndex, setActiveNewworkIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(-1);
+  const [activeNewworkIndex, setActiveNewworkIndex] = useState(-1);
   const [tokenInfo, setTokenInfo] = useState(null);
   const [userProfile, setUserProfile] = useState(null);
   const [userWalletAddress, setUserWalletAddress] = useState(null);
@@ -34,7 +34,7 @@ export default function DepositStep() {
     if (result && result.user) {
       setUserProfile(result.user);
     } else {
-      showAlert(t("alertErrorMsg"));
+      // showAlert(t("alertErrorMsg"));
       router.push("/login");
     }
   };
@@ -135,23 +135,34 @@ export default function DepositStep() {
         </TimelineHeader>
         <TimelineBody className="py-8">
           <div className="flex flex-col gap-3">
-            <p className="text-sm text-mainblack py-1">
-              {t("depositAddress")}1
-            </p>
-            <div className="flex items-center justify-between gap-8 w-96">
-              <p className="text-sm text-mainblack">
-                {tokenInfo &&
-                  tokenInfo[activeIndex]?.network[activeNewworkIndex]?.address}
-              </p>
-              <div onClick={handleCopyAddress}>
-                <Popover>
-                  <PopoverHandler>
-                    <button className="text-blue1">{t("copy")}</button>
-                  </PopoverHandler>
-                  <PopoverContent className="p-2">{t("copied")}</PopoverContent>
-                </Popover>
-              </div>
-            </div>
+            {tokenInfo &&
+              tokenInfo[activeIndex] &&
+              tokenInfo[activeIndex].network &&
+              tokenInfo[activeIndex].network[activeNewworkIndex] &&
+              tokenInfo[activeIndex].network[activeNewworkIndex].address && (
+                <div>
+                  <p className="text-sm text-mainblack py-1">
+                    {t("depositAddress")}1
+                  </p>
+                  <div className="flex items-center justify-between gap-8 w-96">
+                    <p className="text-sm text-mainblack">
+                      {tokenInfo &&
+                        tokenInfo[activeIndex]?.network[activeNewworkIndex]
+                          ?.address}
+                    </p>
+                    <div onClick={handleCopyAddress}>
+                      <Popover>
+                        <PopoverHandler>
+                          <button className="text-blue1">{t("copy")}</button>
+                        </PopoverHandler>
+                        <PopoverContent className="p-2">
+                          {t("copied")}
+                        </PopoverContent>
+                      </Popover>
+                    </div>
+                  </div>
+                </div>
+              )}
             {userWalletAddress && (
               <>
                 <p className="text-sm text-mainblack py-1">
