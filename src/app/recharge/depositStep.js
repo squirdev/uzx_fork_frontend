@@ -54,21 +54,25 @@ export default function DepositStep() {
   }, []);
 
   useEffect(() => {
-    setActiveNewworkIndex(0);
+    // setActiveNewworkIndex(-1);
+    if (activeIndex != -1) {
+      setUserWalletAddress(null);
+      setActiveNewworkIndex(-1);
+    }
   }, [activeIndex]);
 
   useEffect(() => {
-    setUserWalletAddress(null);
-    if (tokenInfo && tokenInfo[activeIndex]) {
-      const token = tokenInfo[activeIndex]?.name;
-      const addressName = token + "Address";
-      if (userProfile && userProfile[addressName])
-        setUserWalletAddress(userProfile[addressName]);
+    if (activeNewworkIndex != -1) {
+      if (tokenInfo && tokenInfo[activeIndex]) {
+        const token = tokenInfo[activeIndex]?.name;
+        const addressName = token + "Address";
+        if (userProfile && userProfile[addressName])
+          setUserWalletAddress(userProfile[addressName]);
+      }
     }
-  }, [activeIndex, tokenInfo, userProfile]);
+  }, [activeNewworkIndex]);
 
   if (!t) return <p className="text-white">Loading translations...</p>;
-
   const handleCopyAddress = () => {
     navigator.clipboard.writeText(
       tokenInfo[activeIndex]?.network[activeNewworkIndex]?.address
@@ -121,6 +125,7 @@ export default function DepositStep() {
             <Select
               variant="static"
               size="lg"
+              value={activeNewworkIndex ?? ""}
               label="Network"
               className="w-96"
               onChange={(e) => setActiveNewworkIndex(e)}
@@ -176,7 +181,7 @@ export default function DepositStep() {
             {userWalletAddress && (
               <>
                 <p className="text-sm text-mainblack py-1">
-                  {t("depositAddress")}2
+                  {t("depositAddress")}
                 </p>
                 <div className="flex items-center justify-between gap-8 w-96">
                   <p className="text-sm text-mainblack">{userWalletAddress}</p>
