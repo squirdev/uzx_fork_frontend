@@ -54,6 +54,10 @@ export default function DepositStep() {
   }, []);
 
   useEffect(() => {
+    setActiveNewworkIndex(-1);
+  }, [activeIndex]);
+
+  useEffect(() => {
     setUserWalletAddress(null);
     if (tokenInfo && tokenInfo[activeIndex]) {
       const token = tokenInfo[activeIndex]?.name;
@@ -89,9 +93,12 @@ export default function DepositStep() {
               size="lg"
               label={t("crypto")}
               className="w-96"
+              onChange={(e) => {
+                setActiveIndex(e);
+              }}
             >
               {tokenInfo.map((data, index) => (
-                <Option key={index} onClick={() => setActiveIndex(index)}>
+                <Option key={index} value={index}>
                   {data.name?.toUpperCase()}
                 </Option>
               ))}
@@ -111,12 +118,15 @@ export default function DepositStep() {
         </TimelineHeader>
         <TimelineBody className="py-8">
           {tokenInfo && tokenInfo[activeIndex] && (
-            <Select variant="static" size="lg" label="Network" className="w-96">
+            <Select
+              variant="static"
+              size="lg"
+              label="Network"
+              className="w-96"
+              onChange={(e) => setActiveNewworkIndex(e)}
+            >
               {tokenInfo[activeIndex]?.network.map((data, subIndex) => (
-                <Option
-                  key={subIndex}
-                  onClick={() => setActiveNewworkIndex(subIndex)}
-                >
+                <Option key={subIndex} value={subIndex}>
                   {data.name}
                 </Option>
               ))}
@@ -135,7 +145,7 @@ export default function DepositStep() {
         </TimelineHeader>
         <TimelineBody className="py-8">
           <div className="flex flex-col gap-3">
-            {tokenInfo &&
+            {/* {tokenInfo &&
               tokenInfo[activeIndex] &&
               tokenInfo[activeIndex].network &&
               tokenInfo[activeIndex].network[activeNewworkIndex] &&
@@ -162,8 +172,8 @@ export default function DepositStep() {
                     </div>
                   </div>
                 </div>
-              )}
-            {userWalletAddress && (
+              )} */}
+            {userWalletAddress && activeNewworkIndex !== -1 && (
               <>
                 <p className="text-sm text-mainblack py-1">
                   {t("depositAddress")}2
