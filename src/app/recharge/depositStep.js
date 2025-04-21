@@ -54,7 +54,7 @@ export default function DepositStep() {
   }, []);
 
   useEffect(() => {
-    setActiveNewworkIndex(-1);
+    setActiveNewworkIndex(0);
   }, [activeIndex]);
 
   useEffect(() => {
@@ -173,7 +173,7 @@ export default function DepositStep() {
                   </div>
                 </div>
               )} */}
-            {userWalletAddress && activeNewworkIndex !== -1 && (
+            {userWalletAddress && (
               <>
                 <p className="text-sm text-mainblack py-1">
                   {t("depositAddress")}2
