@@ -1,7 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import HotAssertItem from "./components/hotAssertItem";
-import { getTokenDataById } from "./components/tokenInformation";
+import { getTokenData, getTokenDataById } from "./components/tokenInformation";
 import { useLanguage } from "../../context/LanguageProvider";
+import { getTokenList, getTokenProfit } from "./api/token";
 
 const HotAssertItemData = [
   {
@@ -134,16 +135,62 @@ const HotAssertItemData = [
 
 const HotAssertsPanel = () => {
   const { t } = useLanguage();
+  const [coinDetail, setCoinDetail] = useState(null);
+  const [tokenInfo, setTokenInfo] = useState(null);
+  const [finalCoinDetail, setFinalCoinDetail] = useState(null);
 
   if (!t) return <p className="text-white">Loading translations...</p>;
 
+  const fetchTokenProfits = async () => {
+    const info = await getTokenList();
+    setTokenInfo(info.data);
+  };
+
+  const fetchTokenData = async () => {
+    const bitcoin = await getTokenData();
+    setCoinDetail(bitcoin);
+  };
+
   useEffect(() => {
-    const fetchData = async () => {
-      const bitcoin = await getTokenDataById("bitcoin");
-      console.log("BITCOIN:", bitcoin);
-    };
-    fetchData();
+    fetchTokenData();
+    fetchTokenProfits();
   }, []);
+
+  useEffect(() => {
+    if (tokenInfo && coinDetail) {
+      let updatedCoinDetail = {};
+
+      for (const key in coinDetail) {
+        updatedCoinDetail[key] = { ...coinDetail[key] };
+      }
+      for (let i = 0; i < tokenInfo.length; i++) {
+        const tokenName = tokenInfo[i].name;
+        const tokenProfit = tokenInfo[i].profit;
+        const currentUSD = coinDetail[tokenName]?.usd;
+        if (currentUSD != null) {
+          updatedCoinDetail[tokenName].usd =
+            (currentUSD * (100 + tokenProfit)) / 100;
+        }
+      }
+
+      const arr = Object.entries(updatedCoinDetail).map(([name, values]) => ({
+        name,
+        ...values,
+      }));
+
+      const sorted = arr
+        .filter((item) => item.usd_24h_change !== null)
+        .sort((a, b) => b.usd_24h_change - a.usd_24h_change);
+
+      // Step 2: Split into 3 roughly equal parts
+      const third = Math.ceil(sorted.length / 3);
+      const part1 = sorted.slice(0, third);
+      const part2 = sorted.slice(third, third * 2);
+      const part3 = sorted.slice(third * 2);
+
+      setFinalCoinDetail([part1, part2, part3]);
+    }
+  }, [coinDetail, tokenInfo]);
 
   return (
     <div className="brands container mx-auto my-2 overflow-hidden  drop-shadow-md mt-12">
@@ -152,9 +199,10 @@ const HotAssertsPanel = () => {
           {t("hotAssert")}
         </p>
         <div className="w-full grid grid-cols-3 gap-8">
-          {HotAssertItemData.map((data, index) => (
-            <HotAssertItem itemData={data} key={index} />
-          ))}
+          {finalCoinDetail &&
+            finalCoinDetail.map((data, index) => (
+              <HotAssertItem itemData={data} key={index} subIndex={index} />
+            ))}
         </div>
       </div>
     </div>

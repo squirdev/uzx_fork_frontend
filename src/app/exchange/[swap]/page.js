@@ -129,14 +129,9 @@ export default function Home({ params }) {
       0
     );
 
-    console.log("maxIndex", maxIndex);
-    console.log("minIndex", minIndex);
-
     setChange24H(((prices[287].max - prices[0].max) * 100) / prices[287].max);
     setHigh24H(prices[maxIndex].max);
     setLow24H(prices[minIndex].min);
-
-    console.log(prices);
   };
 
   useEffect(() => {

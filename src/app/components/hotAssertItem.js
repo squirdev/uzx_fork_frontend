@@ -1,30 +1,38 @@
 import Image from "next/image";
+import Link from "next/link";
 
-const HotAssertItem = ({ itemData }) => {
-  
+const HotAssertItem = ({ itemData, subIndex }) => {
   return (
-    <div className="w-full rounded-xl bg-gradient-to-b from-hoverblack to-mainblack">
-      <div className="flex items-center gap-4 p-6">
-        <Image src={itemData.icon} width={20} height={20} alt="hot" />
-        <p className="text-white font-bold text-xl">{itemData.title}</p>
-      </div>
+    <div className="w-full rounded-xl bg-gradient-to-b from-hoverblack to-mainblack py-6">
       <div className="flex flex-col pb-6">
-        {itemData.data.map((coinData, index) => (
-          <div
-            key={index}
-            className="w-full flex items-center hover:bg-hoverblack justify-between px-6 py-4"
-          >
-            <div className="flex items-center gap-2">
-              <span className="font-bold text-white">{index + 1}</span>
-              <Image src={coinData.image} width={24} height={24} alt="icon" />
-              <span className="font-bold text-white">{coinData.coin}</span>
-            </div>
-            <div className="flex flex-col items-end">
-              <span className="text-white">${coinData.price}</span>
-              <span className="text-[#01BD8D]">{coinData.rate}%</span>
-            </div>
-          </div>
-        ))}
+        {itemData.map((coinData, index) => {
+          const fileUrl = "/coin/" + coinData.name.toUpperCase() + ".png";
+          return (
+            <Link
+              href={`/exchange/${coinData.name}`}
+              key={index}
+              className="w-full flex items-center hover:bg-hoverblack justify-between px-6 py-4"
+            >
+              <div className="flex items-center gap-2">
+                <span className="font-bold text-white">
+                  {index + 1 + subIndex * itemData.length}
+                </span>
+                <Image src={fileUrl} width={24} height={24} alt="icon" />
+                <span className="font-bold text-white">
+                  {coinData.name.toUpperCase()}/USDT
+                </span>
+              </div>
+              <div className="flex flex-col items-end">
+                <span className="text-white">${coinData.usd?.toFixed(3)}</span>
+                <span
+                  className={`${coinData.usd_24h_change > 0 ? "text-[#01BD8D]" : "text-red-500"} `}
+                >
+                  {coinData.usd_24h_change?.toFixed(3)}%
+                </span>
+              </div>
+            </Link>
+          );
+        })}
       </div>
     </div>
   );
