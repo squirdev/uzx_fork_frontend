@@ -34,7 +34,7 @@ export default function DepositPanel() {
         <p className="text-sm text-hoverblack">{t("status")}</p>
       </div>
       <div className="w-full flex justify-center items-center h-[300px] overflow-auto">
-        {depositHistory ? (
+        {depositHistory && depositHistory.length !== 0 ? (
           <div className="w-full h-full py-12 flex flex-col gap-4 items-center">
             {depositHistory.map((item, index) => (
               <div key={index} className="w-full grid grid-cols-6">

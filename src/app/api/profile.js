@@ -102,6 +102,15 @@ export const createDocument = async (formData) => {
   }
 };
 
+export const createWallet = async (formData) => {
+  try {
+    const response = await axiosApi.post("/user/create-wallet", formData);
+    return response.data;
+  } catch (error) {
+    return null;
+  }
+};
+
 export const getExchangeRate = async (base, quote) => {
   try {
     let APIKEY = process.env.NEXT_PUBLIC_COINAPI_KEY;

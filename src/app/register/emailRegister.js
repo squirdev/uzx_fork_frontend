@@ -16,6 +16,7 @@ export default function EmailRegisterPanel() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [confirmPasswordShow, setConfirmPasswordShow] = useState(false);
   const [inviteCode, setInviteCode] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const { t } = useLanguage();
   if (!t) return <p className="text-white">Loading translations...</p>;
   const { showAlert } = useAlert();
@@ -26,6 +27,7 @@ export default function EmailRegisterPanel() {
       showAlert(t("inputAllDetail"), "error");
       return;
     } else {
+      setIsLoading(true);
       let result = await signUpEmail(email, verifyCode, password);
       if (result) {
         showAlert(t("signupSuccess"), "success");
@@ -33,6 +35,7 @@ export default function EmailRegisterPanel() {
       } else {
         showAlert(t("signupFailed"), "error");
       }
+      setIsLoading(false);
     }
   };
 
@@ -110,6 +113,7 @@ export default function EmailRegisterPanel() {
             </div>
             <FooterForm
               inviteCode={inviteCode}
+              isLoading={isLoading}
               setInviteCode={setInviteCode}
               onSubmit={handleRegister}
             />

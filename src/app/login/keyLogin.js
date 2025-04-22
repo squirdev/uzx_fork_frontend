@@ -60,9 +60,9 @@ export default function KeyLoginPanel() {
           {t("forgotPriKey")}
         </Link>
         <Button
-          disabled={isLoading}
+          loading={isLoading}
           onClick={handleLoginWithKey}
-          className="bg-gradient-to-r from-blue1 to-blue2 text-black py-2 rounded-full mt-12"
+          className="bg-gradient-to-r from-blue1 to-blue2 text-black py-2 rounded-full mt-12 flex justify-center items-center"
         >
           {t("logIn")}
         </Button>

@@ -16,7 +16,7 @@ import { useEffect, useState } from "react";
 import { useLanguage } from "../../../context/LanguageProvider";
 import { getTokenList } from "../api/token";
 import { useAlert } from "../../../context/alertContext";
-import { getProfile } from "../api/profile";
+import { createWallet, getProfile } from "../api/profile";
 import { useRouter } from "next/navigation";
 
 export default function DepositStep() {
@@ -25,6 +25,7 @@ export default function DepositStep() {
   const [tokenInfo, setTokenInfo] = useState(null);
   const [userProfile, setUserProfile] = useState(null);
   const [userWalletAddress, setUserWalletAddress] = useState(null);
+  const [isLoadingAddress, setIsLoaindingAddress] = useState(false);
   const router = useRouter();
   const { showAlert } = useAlert();
   const { t } = useLanguage();
@@ -48,13 +49,26 @@ export default function DepositStep() {
     }
   };
 
+  const fetchDepositAddress = async (token) => {
+    setIsLoaindingAddress(true);
+    const formData = new FormData();
+    formData.append("token", token);
+    let result = await createWallet(formData);
+    if (result) {
+      console.log("API Request Result", result);
+      setUserWalletAddress(result.address);
+    } else {
+      showAlert(t("alertErrorMsg"), "error");
+    }
+    setIsLoaindingAddress(false);
+  };
+
   useEffect(() => {
     fetchProfile();
     fetchTokenInfo();
   }, []);
 
   useEffect(() => {
-    // setActiveNewworkIndex(-1);
     if (activeIndex != -1) {
       setUserWalletAddress(null);
       setActiveNewworkIndex(-1);
@@ -66,8 +80,13 @@ export default function DepositStep() {
       if (tokenInfo && tokenInfo[activeIndex]) {
         const token = tokenInfo[activeIndex]?.name;
         const addressName = token + "Address";
-        if (userProfile && userProfile[addressName])
-          setUserWalletAddress(userProfile[addressName]);
+        if (userProfile) {
+          if (userProfile[addressName])
+            setUserWalletAddress(userProfile[addressName]);
+          else {
+            fetchDepositAddress(token);
+          }
+        }
       }
     }
   }, [activeNewworkIndex]);
@@ -178,6 +197,18 @@ export default function DepositStep() {
                   </div>
                 </div>
               )} */}
+            {isLoadingAddress && (
+              <div className="max-w-full animate-pulse">
+                <Typography
+                  as="div"
+                  variant="h1"
+                  className="mb-4 h-6 w-96 rounded-full bg-gray-300"
+                >
+                  &nbsp;
+                </Typography>
+              </div>
+            )}
+
             {userWalletAddress && (
               <>
                 <p className="text-sm text-mainblack py-1">

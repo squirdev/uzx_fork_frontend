@@ -4,7 +4,12 @@ import { useState } from "react";
 import { BsChevronUp } from "react-icons/bs";
 import { useLanguage } from "../../../context/LanguageProvider";
 
-export default function FooterForm({ inviteCode, setInviteCode, onSubmit }) {
+export default function FooterForm({
+  inviteCode,
+  setInviteCode,
+  onSubmit,
+  isLoading,
+}) {
   const [isInviteCode, setIsInviteCode] = useState(false);
   const { t } = useLanguage();
   if (!t) return <p className="text-white">Loading translations...</p>;
@@ -61,6 +66,7 @@ export default function FooterForm({ inviteCode, setInviteCode, onSubmit }) {
       />
       <Button
         onClick={onSubmit}
+        loading={isLoading}
         className="px-24 self-center text-sm font-bold bg-gradient-to-r from-blue1 to-blue2 text-black py-2 rounded-full"
       >
         {t("register")}

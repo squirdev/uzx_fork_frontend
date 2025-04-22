@@ -18,6 +18,7 @@ export default function KeyRegisterPanel() {
   const [accountPrivateKey, setAccountPrivateKey] = useState("");
   const [nickName, setNickName] = useState("");
   const [inviteCode, setInviteCode] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const { showAlert } = useAlert();
   const { t } = useLanguage();
   if (!t) return <p className="text-white">Loading translations...</p>;
@@ -37,11 +38,13 @@ export default function KeyRegisterPanel() {
       showAlert(t("inputAllDetail"), "error");
       return;
     }
+    setIsLoading(true);
     let signUpResult = await signUpPrivate(accountPrivateKey, nickName);
     if (signUpResult) {
       showAlert(t("signupSuccess"), "success");
       router.push("/login");
     } else showAlert(t("signupFailed"), "error");
+    setIsLoading(false);
   };
 
   return (
@@ -78,6 +81,7 @@ export default function KeyRegisterPanel() {
         </div>
         <FooterForm
           inviteCode={inviteCode}
+          isLoading={isLoading}
           setInviteCode={setInviteCode}
           onSubmit={handleSubmit}
         />
