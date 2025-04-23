@@ -8,7 +8,7 @@ import { PromotionTools } from "./promotionTools";
 import { useLanguage } from "../../../context/LanguageProvider";
 
 export default function Home() {
-  const inviteLink = "https://www.uzx.com/#/register?code=SPAA";
+  const inviteLink = "https://www.uzxkr.com/#/register?code=SPAA";
   const inviteCode = "SPAA";
 
   const { t } = useLanguage();
