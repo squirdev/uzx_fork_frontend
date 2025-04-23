@@ -16,12 +16,12 @@ export default function DiscoverProductPanel() {
       description: t("tradeCryptowithTool"),
       href: "/exchange/btc",
     },
-    {
-      icon: "/contract.png",
-      title: t("perpetualContract"),
-      description: t("coinBaseUBaseContracts"),
-      href: "/exchange/btc",
-    },
+    // {
+    //   icon: "/contract.png",
+    //   title: t("perpetualContract"),
+    //   description: t("coinBaseUBaseContracts"),
+    //   href: "/exchange/btc",
+    // },
     {
       icon: "/convert.png",
       title: t("convert"),
@@ -42,7 +42,7 @@ export default function DiscoverProductPanel() {
         <p className="text-5xl font-black text-center bg-gradient-to-r from-blue1 to-blue2 bg-clip-text text-transparent  my-16">
           {t("discoverProduct")}
         </p>
-        <div className="w-full grid grid-cols-2 gap-6 pt-12">
+        <div className="w-full grid grid-cols-3 gap-6 pt-12">
           {productServiceData.map((data, index) => (
             <Link
               key={index}
