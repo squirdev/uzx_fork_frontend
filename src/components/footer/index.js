@@ -45,7 +45,7 @@ const Footer = () => {
         data: [
           {
             title: t("aboutUs"),
-            url: "/#",
+            url: "/about/aboutUs",
           },
           {
             title: t("contactUS"),
@@ -53,31 +53,23 @@ const Footer = () => {
           },
           {
             title: t("termsService"),
-            url: "/#",
+            url: "/about/termService",
           },
           {
-            title: t("privacyFPolicy"),
-            url: "/#",
+            title: t("privacyPolicy"),
+            url: "/about/privacyPolicy",
           },
           {
             title: t("disclaimer"),
-            url: "/#",
+            url: "/about/disClaimer",
           },
           {
             title: t("antiCorruption"),
-            url: "/#",
-          },
-          {
-            title: t("report"),
-            url: "/#",
+            url: "/about/antiCorrupt",
           },
           {
             title: t("lawEnforcement"),
-            url: "/#",
-          },
-          {
-            title: t("request"),
-            url: "/#",
+            url: "/about/lawEnforce",
           },
         ],
       },
@@ -115,39 +107,39 @@ const Footer = () => {
           },
         ],
       },
-      {
-        title: t("userSupport"),
-        data: [
-          {
-            title: t("support"),
-            url: "/#",
-          },
-          {
-            title: t("uZXCommunity"),
-            url: "/#",
-          },
-          {
-            title: t("transactionFees"),
-            url: "/#",
-          },
-          {
-            title: t("officialVerification"),
-            url: "/#",
-          },
-          {
-            title: t("channels"),
-            url: "/#",
-          },
-          {
-            title: t("proofReserces"),
-            url: "/#",
-          },
-          {
-            title: "API",
-            url: "/#",
-          },
-        ],
-      },
+      // {
+      //   title: t("userSupport"),
+      //   data: [
+      //     {
+      //       title: t("support"),
+      //       url: "/#",
+      //     },
+      //     {
+      //       title: t("uZXCommunity"),
+      //       url: "/#",
+      //     },
+      //     {
+      //       title: t("transactionFees"),
+      //       url: "/#",
+      //     },
+      //     {
+      //       title: t("officialVerification"),
+      //       url: "/#",
+      //     },
+      //     {
+      //       title: t("channels"),
+      //       url: "/#",
+      //     },
+      //     {
+      //       title: t("proofReserces"),
+      //       url: "/#",
+      //     },
+      //     {
+      //       title: "API",
+      //       url: "/#",
+      //     },
+      //   ],
+      // },
     ],
     [
       {
@@ -246,7 +238,9 @@ const Footer = () => {
               </div>
             ))}
             <div className="w-full flex flex-col pl-4">
-              <p className="text-white font-bold text-xl my-3">{t("community")}</p>
+              <p className="text-white font-bold text-xl my-3">
+                {t("community")}
+              </p>
               <div className="grid grid-cols-3 gap-4">
                 {communityLinkData.map((data, index) => (
                   <a key={index} href={data.url}>

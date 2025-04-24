@@ -1,0 +1,22 @@
+UZXKR.com (Universal Zone Exchange Limited, Company Registration Number: 1403704-9, MSB: 31000236749585)** is an international digital asset derivatives exchange governed by a decentralized autonomous organization (DAO).
+ It aims to provide secure, stable, convenient, fair, and reputable blockchain asset trading services to users worldwide.
+
+UZXKR DAO authorizes the Cayman Foundation to manage UZXKR.com, a governance structure that offers advantages over traditional cryptocurrency exchanges, effectively ensuring fairness and the security of user assets.
+The management team consists of members from various countries and regions, with core members having prior experience at globally renowned financial and technology companies such as Coinbase, Binance, Morgan Stanley, Amazon, Google, and possesses strong global strategic operational capabilities and extensive experience in financial risk control and management.
+
+UZXKR.com offers a one-stop solution for cryptocurrency services, including spot trading, perpetual contracts,options, NFTs, financial lending, and borrowing.
+ It supports multiple language versions, including Chinese,English, Japanese, and Korean.
+ Its technical solutions are based on platforms like Amazon AWS and Google Cloud, providing effective protection against attacks such as DDoS, support for dynamic and static data separation, hot data caching, off-site disaster recovery, parallel expansion, and more. 
+ Its globally leading technical architecture ensures secure trading for users, with features like instant blockchain asset access,multi-currency address sharing technology, and multi-factor security verification protection. 
+ Additionally,UZXKR.com boasts lower blockchain asset trading fees and withdrawal fees compared to industry standards.
+
+ As a trusted DAO governance exchange, UZXKR.com is committed to safeguarding user trading and asset information security, providing users with an exceptional trading experience.
+
+1. Digital assets involve significant risks, and market trading is subject to various uncertainties. Due to the relatively low total market capitalization of digital currencies, their prices are susceptible to significant fluctuations influenced by market manipulators and government policies.
+ Price fluctuations may lead to substantial profits or losses. Any digital asset can experience substantial volatility, and it may even become worthless.
+
+2. Digital asset trading may be suspended or prohibited at any time due to the formulation or modification of laws, regulations, and normative documents in various countries. 
+Users should assess the risks based on local laws, regulations, and policy documents when using UZXKR services.
+
+3. Users participating in digital asset trading should carefully consider and evaluate the investment value and risks of digital assets based on their financial condition. 
+They should manage their own trading risks and be prepared to bear the economic risk of losing their entire investment.

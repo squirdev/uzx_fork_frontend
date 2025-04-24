@@ -1,0 +1,223 @@
+These Terms of Use ("Terms") are entered into by you (referred to as "you" or "your") and the operator of UZXKR (as defined below). Your access, download, use, or clicking "I agree" on any UZXKR services provided by UZXKR (as defined below) signifies your acknowledgment of having read, understood, and accepted all the terms and conditions set forth in these Terms of Use (hereinafter referred to as "these Terms"), as well as our Privacy Statement posted on our official website. Additionally, when using certain features of UZXKR services, you may also be required to comply with specific additional terms and conditions applicable to those features.
+
+Please read these Terms carefully as they govern your use of UZXKR services. These Terms contain some important provisions, including a requirement that all claims be resolved through binding arbitration. The arbitration provisions are set forth in Section Ten below, titled "Dispute Resolution: Arbitration Venue, Arbitration, Class Action Waiver." Like any asset, the value of digital currencies (as defined below) may experience significant fluctuations and carry substantial risks, including the potential for economic loss when buying, selling, holding, or investing in digital currencies and their derivatives. By using UZXKR services, you confirm and agree that: (1) you understand the risks associated with trading digital currencies and derivatives; (2) you assume all risks associated with using UZXKR services and trading in digital currencies and their derivatives; (3) UZXKR bears no responsibility for such risks or adverse outcomes.
+
+Your access, use, or attempted use of UZXKR services in any capacity signifies your acceptance and agreement to be bound by these Terms. If you do not agree, please do not access UZXKR or use UZXKR services.
+
+
+
+
+
+1. Definitions
+
+
+
+1.1. UZXKR: Refers to the ecosystem created for the provision of UZXKR services, including but not limited to the UZXKR website (with domain names including, but not limited to, https://www.UZXKR.com), mobile applications, clients, and other applications. In the event of any inconsistency between the terms of use for these platforms and these Terms, the terms and conditions specified by the respective platform's applicable terms shall prevail.
+
+
+
+1.2. UZXKR Operator: Refers to the entities responsible for operating UZXKR, including but not limited to legal entities, non-legal entities, organizations, teams, and any other entities that provide UZXKR services and are responsible for such services. For the sake of convenience, within these Terms, references to "UZXKR" or "we" specifically pertain to UZXKR Operators. Under these Terms, UZXKR Operators may change due to adjustments in UZXKR's business. The change in UZXKR Operators will not affect your rights under these Terms. Additionally, the scope of UZXKR Operators may expand due to the introduction of new UZXKR services. If you continue to use UZXKR services, it will be considered as your agreement to have the new UZXKR Operators jointly fulfill these Terms. In the event of a dispute, you must determine the entity with which you are contracting and the opposing party to the dispute based on the specific service you are using and the specific subject matter affecting your rights.
+
+
+
+1.3. UZXKR Services: Refers to various services provided by UZXKR to you based on the internet and/or blockchain technology, including but not limited to services provided through various forms, such as the UZXKR website, mobile applications, clients, and any new service forms that may emerge in the future. UZXKR services include, but are not limited to, the current services provided within the UZXKR ecosystem, such as the digital asset trading platform, financial services, UZXKR Academy, and any other new services that UZXKR may launch in the future.
+
+
+
+1.4. UZXKR Platform Rules: Refers to all rules, interpretations, announcements, statements, agreements, and other content that UZXKR has already published or will publish in the future, as well as various rules, implementation details, product process descriptions, announcements, etc., published within the help center, product or service processes.
+
+
+
+1.5. User: Refers to individuals, institutions, or organizations that access, download, or use UZXKR, or use UZXKR services and meet the qualifications and conditions specified by UZXKR. If there are other agreements for entities such as developers, distributors, market makers, or digital currency exchanges, they should follow the terms of those agreements.
+
+
+
+1.6. Digital Currency: Refers to encrypted tokens, digital tokens, or cryptocurrencies with a certain value issued and managed in a decentralized manner based on blockchain technology and encryption technology.
+
+
+
+1.7. Digital Assets: Refers to digital currencies, derivative products thereof, or other types of electronic assets with a certain value.
+
+
+
+1.8. UZXKR Account: Refers to the fundamental virtual account opened by UZXKR for users, recording users' use of UZXKR services, transactions, asset changes, and basic information on UZXKR. This includes main accounts and sub-accounts. The UZXKR account is the basis for users to enjoy and exercise various rights on UZXKR.
+
+
+
+1.9. Spot Trading: Refers to the spot trading of digital currencies, where one digital currency is exchanged for another digital currency.
+
+
+
+
+
+2. General Provisions
+
+
+
+2.1. Scope of Effect
+
+a. Parties Involved These Terms are mutually binding between you and the UZXKR Operator and have contractual effect for both you and the UZXKR Operator.
+
+b. Supplementary Terms Due to the rapid development of the digital currency ecosystem and the UZXKR ecosystem, these Terms, which you enter into with the UZXKR Operator, may not fully cover all of your rights and obligations concerning UZXKR. Existing agreements cannot guarantee full compliance with future needs. Therefore, the Privacy Statement, UZXKR Platform Rules, and any other agreements you enter into with UZXKR are supplementary terms to these Terms and are inseparable from and have equal legal effect to these Terms. By using UZXKR services, you are deemed to have agreed to the aforementioned supplementary terms.
+
+c. Changes to These Terms UZXKR reserves the right to decide, modify, or change these Terms at any time. UZXKR will notify changes by updating the revised terms on the webpage at [insert webpage link] and displaying the [Last Revised] date on this page. Any and all modifications or changes to these Terms will become effective immediately upon publication on the website or after being sent to users. Therefore, by continuing to use UZXKR services, you indicate your acceptance of the modified agreement and rules. If you do not agree with any modifications to these Terms, please stop using UZXKR services immediately. UZXKR recommends that you regularly review these Terms to ensure your understanding of the terms and conditions applicable to your access and use of UZXKR services.
+
+d. Prohibited Use By accessing and using UZXKR services, you declare and warrant that you are not listed on any trade or economic sanctions list (such as the United Nations Security Council sanctions list), designated as a "Specially Designated National" by OFAC (U.S. Department of the Treasury's Office of Foreign Assets Control), or included in the "Entity List" of the U.S. Department of Commerce. UZXKR reserves the right to select the markets and jurisdictions in which it operates and may choose to restrict or deny the provision of UZXKR services in certain countries.
+
+
+
+2.2. Nature of UZXKR
+
+UZXKR is an integral part of the UZXKR ecosystem and primarily serves as a global online digital asset trading platform, offering users various services related to digital assets, including trading platform services, financing services, technical services, and other services. As further detailed in Section 3 below, users must register with UZXKR and open an account before engaging in trading and depositing digital assets. Users may apply for withdrawals of digital assets, subject to the restrictions and conditions stipulated in these Terms.
+
+While UZXKR strives to maintain the accuracy of information posted on UZXKR services, UZXKR cannot and does not guarantee the accuracy, applicability, reliability, completeness, executability, or suitability of the content provided through UZXKR services. UZXKR also assumes no responsibility for any losses or damages that may arise, directly or indirectly, from your use of this content. Information regarding UZXKR services may change without notice, and the primary purpose of providing this information is to assist users in making independent decisions. UZXKR does not provide any form of investment or advisory advice and is not responsible for the use or interpretation of information on UZXKR or other communication media. All users of UZXKR services must be aware of the risks associated with digital asset trading. UZXKR encourages all users to exercise caution and trade responsibly within their means.
+
+
+
+2.3. UZXKR Account Registration and Requirements
+
+a. Registration All users must apply for registration of a UZXKR account on the UZXKR platform before using UZXKR services. When registering a UZXKR account, you must provide the information described in this Section 3 or any other information requested by UZXKR, and accept these Terms, the Privacy Statement, and other UZXKR platform rules. UZXKR may, at its discretion, refuse to open a UZXKR account for you. You agree to provide complete and accurate information when opening a UZXKR account and agree to update any information you provide to UZXKR promptly to maintain its completeness and accuracy. Each user (including natural persons, enterprises, or legal entities) may maintain only one primary account at any given time. However, with UZXKR's consent, one or more sub-accounts may be opened under the primary account. Depending on the provisions of these Terms or supplementary terms, when using certain UZXKR services, we may require you to open additional special accounts independent of your UZXKR account. Except as otherwise provided in these Terms or supplementary terms, the rules in this section and Section 6 shall equally apply to the registration, use, protection, and management of such trading accounts.
+
+b. Eligibility By registering for and using a UZXKR account, you represent and warrant that (a) if an individual, you are at least 18 years old or have reached the legal age required to enter into binding contracts under applicable law; (b) you are an individual, legal person, or other organization with full legal capacity and authority to enter into these Terms; (c) you have not been previously suspended or terminated from using the UZXKR platform or UZXKR services; (d) you do not currently have a UZXKR account; (e) you are not a resident of or located in a restricted area or accessing the UZXKR platform or UZXKR services from a restricted area or acting on behalf of individuals or legal entities residing or located in a restricted area. For the purposes of these Terms, "restricted areas" shall include the United States, Malaysia, Ontario (Canada), and any other locations that UZXKR Operators may designate from time to time in accordance with these Terms. (f) If you are an employee or agent of a legal entity, and you are entering into these Terms on behalf of that legal entity, you represent and warrant that you have the authority to bind that legal entity and have all necessary rights and authorizations to access and use the UZXKR platform and UZXKR services on behalf of that legal entity. (g) Your use of the UZXKR platform and UZXKR services will not violate any applicable laws and regulations, including but not limited to anti-money laundering, anti-corruption, and anti-terrorism financing regulations.
+
+c. User Identity Verification By registering a UZXKR account, you agree to provide the personal information required for identity verification. This information will confirm your identity and may be used to discover clues related to money laundering, terrorism financing, fraud, and other financial crimes conducted on UZXKR or for other lawful purposes as stated by UZXKR. We will collect, use, and share this information in accordance with our published Privacy Statement. In addition to providing this information, you agree to allow us to retain records of this information during the duration of your UZXKR account and for five years after the account is closed, in compliance with industry-standard data storage practices. You also authorize us, directly or through third parties, to conduct investigations necessary to verify your identity or protect you and/or us from fraud or other financial crimes and to take necessary actions based on the results of such investigations. The required identity verification information may include, but is not limited to, your name, email address, contact information, phone number, username, government-issued identification, date of birth, and other information collected at the time of account registration. When providing this required information, you confirm its accuracy. After registration, you must ensure that the information remains true, complete, and up-to-date at all times. In the event of any change, you have an obligation to promptly update all information. If there is any reason to suspect that any information you have provided is incorrect, untrue, outdated, or incomplete, UZXKR has the right to send you notifications requesting corrections, directly delete relevant information, and (as applicable) terminate all or part of the UZXKR services provided to you. If we cannot contact you through the provided contact information, you shall be solely responsible for any loss or expenses incurred by UZXKR during your use of UZXKR services. You hereby acknowledge and agree that you have an obligation to update all information if there are any changes. By registering an account, you hereby authorize UZXKR, directly or through third parties, to conduct any investigations that UZXKR deems necessary to verify your identity or protect you, other users, and/or UZXKR from fraud or other financial crimes, and to take necessary actions based on the results of such investigations. You also acknowledge and agree that your personal information may be disclosed to credit reporting agencies and fraud prevention or financial crime prevention departments, which may respond fully to our investigations.
+
+d. Account Usage Requirements A UZXKR account may only be used by the individual who registered the account. UZXKR reserves the right to suspend, freeze, or cancel the use of a UZXKR account by anyone other than the registered account holder. If you suspect or discover any unauthorized use of your username and password, you must immediately notify UZXKR. UZXKR shall not be liable for any losses or damages incurred by you or any third party (whether authorized or not) as a result of the unauthorized use of your UZXKR account.
+
+e. Account Security UZXKR has always been committed to maintaining the security of users' entrusted funds and has implemented industry-standard protections for UZXKR services. However, individual user behavior can pose risks. You agree to treat your access credentials (such as username and password) as confidential information and not to disclose such information to any third party. You also agree to be solely responsible for taking necessary security measures to protect the security of your UZXKR account and personal information.
+
+You are solely responsible for safeguarding your UZXKR account and password and are responsible for all activities occurring under your UZXKR account. UZXKR shall not be liable for any losses or consequences resulting from the authorized or unauthorized use of your account credentials, including but not limited to information disclosure, information publication, agreement submission through website clicks, and online contract renewals.
+
+By creating a UZXKR account, you hereby agree:
+
+To promptly notify UZXKR if you become aware of any unauthorized use of your UZXKR account and password or any other violation of security rules;
+
+To strictly comply with all of UZXKR's security, authentication, transaction, charging, and exit mechanisms or procedures;
+
+To take appropriate steps to log out and exit from UZXKR after each visit.
+
+
+
+
+
+3. User Identity Verification
+
+
+
+Upon completing the UZXKR account registration and authentication process, you may use various UZXKR services in accordance with these Terms of Use (including UZXKR platform rules and other specific agreements), including but not limited to conducting spot trading, fiat trading, contract trading, leveraged trading on UZXKR, using UZXKR Wallet services, holding rebate services, accessing market data published by UZXKR, research, and other information, participating in user activities organized by UZXKR, and more. UZXKR reserves the right to:
+
+
+
+3.1. Service Usage Guidelines
+
+a. License: Subject to your continuous compliance with the specific terms and conditions outlined in these Terms of Use, UZXKR grants you a revocable, limited, fee-free, non-exclusive, non-transferable, and non-sub-licensable license to access and use UZXKR services for your personal/internal purposes through your computer or internet-compatible device. You may not use UZXKR services for resale or commercial purposes, including conducting transactions on behalf of others or other entities. All such usage is strictly prohibited and constitutes a serious violation of these Terms of Use. The content arrangement, format, functionality, and access permissions of UZXKR services shall be determined by UZXKR. UZXKR hereby reserves all rights not explicitly granted in these Terms of Use. Therefore, you are expressly prohibited from using UZXKR services in any manner not expressly authorized by these Terms of Use.These Terms of Use only grant a limited license to access and use UZXKR services. Accordingly, you agree that UZXKR will not transfer to you or any other person ownership or intellectual property rights in UZXKR services or any intellectual property contained in UZXKR services when you use UZXKR services. All text, graphics, user interfaces, visual interfaces, photographs, sounds, technical drawings, computer code (including HTML code), programs, software, products, information, and files, as well as the design, structure, selection, coordination, expression, "look and feel," and arrangement of any content contained in or made available through the services, are exclusively owned, controlled, and/or licensed by the operators of UZXKR or their members, parent companies, licensors, or affiliates.UZXKR will have ownership of any feedback, suggestions, ideas, or other information or materials ("Feedback") regarding UZXKR or UZXKR services that you provide through email, UZXKR services, or other means. You hereby transfer all rights, ownership, interests, and any related intellectual property rights to UZXKR regarding such Feedback. You have no right and hereby waive any claim for acknowledgment or compensation based on any modifications made to Feedback or based on any Feedback.
+
+b. Restrictions
+
+When you use UZXKR services, you agree and promise to adhere to the following provisions:
+
+All activities you undertake while using UZXKR services during your use of UZXKR services will comply with applicable laws, regulations, these Terms of Use, and various guidelines provided by UZXKR.
+
+Your use of UZXKR services will not infringe on public interest, public morality, or the legal rights of others, including any actions that may interfere with, disrupt, negatively affect, or prohibit other users from using UZXKR services.
+
+You agree not to use these services for market manipulation, such as price manipulation, wash trading, self-trading, front-running, order stuffing, spoofing, or layering, whether prohibited by law or not.
+
+Unless you obtain UZXKR's written consent, the following commercial activities using UZXKR data are prohibited:
+
+1)Using UZXKR quotes or market bulletin information for trading services.
+
+2)Using any market data from UZXKR for data feeds or data streaming services.
+
+3)Charging or otherwise profiting from market data obtained from UZXKR (including through advertising or referral fees) on any other website/application/service.
+
+Without prior written consent from UZXKR, you may not modify, copy, reproduce, replicate, download, store, further transmit, disseminate, transfer, decompile, broadcast, publish, remove, or alter any copyright notices or labels, license, sublicense, sell, mirror, design, rent, lease, private label, grant any part of ownership or property rights, create derivative works, or otherwise utilize any part thereof in any manner not expressly authorized by these Terms of Use.
+
+You may not (i) use any "deep link," "page scrape," "robot," "spider," or other automatic device, program, script, algorithm, or method, or any similar or equivalent manual process, to access, acquire, copy, or monitor any part of the property, or in any way reproduce or bypass the navigation structure or presentation of UZXKR services to obtain any material, documents, or information not intentionally provided through UZXKR services; (ii) attempt to access any part or feature of the property without authorization, including by hacking, "mining" passwords, or any other illegal or prohibited means, or connect to any system or network of UZXKR services or any UZXKR servers or any other system or network connected to UZXKR services through this service; (iii) probe, scan, or test the vulnerability of UZXKR services or any network connected to the property, breach the security or authentication measures on any network connected to UZXKR services, (iv) reverse look-up, trace, or seek to trace any information of any other user or visitor of UZXKR services, (v) take any action that imposes an unreasonable or disproportionately large load on the infrastructure of UZXKR services or any systems or networks connected to UZXKR services, (vi) use any device, software, or routine to interfere with the normal operation of UZXKR services or transactions conducted on UZXKR services, or the use of UZXKR services by any other person; (vii) forge headers, impersonate others, or otherwise manipulate identifiers in order to disguise your identity or the origin of any message or transmission you send to UZXKR, or (viii) use UZXKR services in an unlawful manner. By accessing UZXKR services, you agree that UZXKR has the right to investigate any violation of these Terms of Use, unilaterally determine whether you have violated these Terms of Use, and take action to comply with applicable regulations without obtaining your consent or providing prior notice. Examples of such actions include but are not limited to:
+
+Blocking and closing order requests.
+
+Freezing accounts.
+
+Reporting incidents to authorities.
+
+Disclosing alleged violations and actions taken.
+
+Deleting any prohibited information posted by you.
+
+
+
+3.2. Spot Trading
+
+After completing the registration of your UZXKR account, you can engage in spot trading on UZXKR in accordance with these Terms of Use and UZXKR platform rules.
+
+a. Orders
+
+After issuing instructions for spot trading using UZXKR services ("Orders"), your account will be immediately updated to reflect open orders, and your orders will be listed on UZXKR's market bulletin board to match with other users' orders. If your order matches all or part of another user's order, UZXKR will execute the exchange ("Trade"). After the trade is executed, your account will be updated to reflect the closure of the order due to full execution or updated to reflect partial fulfillment of the order. The order will remain unfulfilled until it is fully executed or canceled as described in subsection (b) below. To facilitate the trade, you authorize UZXKR to temporarily control the digital currency you dispose of in the trade.
+
+b. Cancellation
+
+You can only cancel orders initiated through UZXKR services before they match with other users' orders. Once your order matches with another user's order, you may not change, revoke, or cancel the authorization for UZXKR to complete the order. If any order has partially matched, you can cancel the unmatched portion of the order, but if the unmatched portion has already matched, you may not cancel it. UZXKR reserves the right to refuse any cancellation requests related to orders submitted by you after you submit the order. If there are not enough digital currencies in your account to fulfill the order, UZXKR may cancel the entire order or fulfill the portion of the order that can be covered by the digital currency in your account (in each case, deducting any fees payable to UZXKR in connection with the trade, as described in subsection (c) below).
+
+c. Fees
+
+You agree to pay UZXKR the specified fees, and UZXKR may, at its discretion, update the service fees at any time. Any updated fees will apply to any buy or sell transactions or other transactions that occur after the effective date of the updated fees. You authorize UZXKR to deduct any applicable fees you owe under these Terms of Use from your account. d. Other Forms of Spot Trading In addition to the spot trading initiated directly by users as described in subsection (a) above, UZXKR, in accordance with UZXKR platform rules established separately, may, at its discretion, provide platform services and technical services for other forms of spot trading, such as selective order delegation trading (OCO), bulk trading, and so on.
+
+
+
+3.3. Contract Trading
+
+Unless otherwise specified by UZXKR, after completing the registration of your UZXKR account, you may then engage in contract trading. You acknowledge and agree to the following:
+
+a. You fully understand the high risks associated with contract trading, including but not limited to the significant volatility of digital assets under contract trading and the amplification of adverse results in the case of leverage usage.
+
+b. You have sufficient investment knowledge and experience, and you have the ability to bear the risks of contract trading, and you agree to independently bear all the risks associated with investing in contract trading.
+
+c. Before engaging in contract trading, you have read and understood all the content of the relevant UZXKR platform rules, sought advice from relevant professionals, and decided whether and how to complete contract trading based on their advice and your reasonable judgment.
+
+d. You agree and authorize UZXKR to independently decide to take various reasonable measures (including but not limited to forced liquidation and automatic reduction) in accordance with the relevant UZXKR platform rules to protect the legitimate rights and interests of you, UZXKR, and other users.
+
+
+
+3.4.Options Trading
+
+You acknowledge and agree to the following:
+
+a. You fully understand the high risks associated with options trading, including but not limited to the significant volatility of digital assets under options trading and the amplification of adverse results in the case of leverage usage.
+
+b. You have sufficient investment knowledge and experience, and you have the ability to bear the risks of options trading, and you agree to independently bear all the risks associated with investing in options trading.
+
+c. Before engaging in options trading, you have read and understood all the content of the relevant UZXKR platform rules, sought advice from relevant professionals, and decided whether and how to complete options trading based on their advice and your reasonable judgment. d. You agree and authorize UZXKR to independently decide to take various reasonable measures (including but not limited to forced liquidation and automatic reduction) in accordance with the relevant UZXKR platform rules to protect the legitimate rights and interests of you, UZXKR, and other users.
+
+
+
+3.5.Perpetual Contract Trading
+
+You acknowledge and agree to the following:
+
+a. You fully understand the high risks associated with perpetual contract trading, including but not limited to the significant volatility of digital assets under perpetual contract trading.
+
+b. You have sufficient investment knowledge and experience, and you have the ability to bear the risks of perpetual contract trading, and you agree to independently bear all the risks associated with investing in perpetual contract trading.
+
+c. Before engaging in perpetual contract trading, you have read and understood all the content of the relevant UZXKR platform rules, sought advice from relevant professionals, and decided whether and how to complete perpetual contract trading based on their advice and your reasonable judgment.
+
+d. You agree and authorize UZXKR to independently decide to take various reasonable measures (including but not limited to forced liquidation) in accordance with the relevant UZXKR platform rules to protect the legitimate rights and interests of you, UZXKR, and other users.
+
+
+
+
+
+4. Liability
+
+
+
+4.1.Warranty Disclaimer
+
+To the extent permitted by applicable law, UZXKR services, UZXKR materials, and any products, services, or other items provided by UZXKR or on behalf of UZXKR are provided on an "as-is" and "as-available" basis, and UZXKR expressly disclaims, and you waive, all warranties of any kind, whether express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, title, or non-infringement, or warranties arising from the course of dealing, performance, or usage in trade, or warranties concerning the accuracy, completeness, reliability, availability, effectiveness, or absence of errors or viruses or other harmful components in connection with the website, UZXKR services, or UZXKR materials. UZXKR does not warrant that any orders will be executed, accepted, recorded, or remain open. Except as otherwise expressly stated in these Terms, agreements, or rules, you acknowledge and agree that you have not relied on any oral or written statements or agreements regarding the UZXKR services. Without limiting the foregoing, you understand and agree that UZXKR shall not be responsible or liable for any loss or damage due to: (A) the inaccuracy, defect, or omission of digital asset price data; (B) any error or delay in the transmission of such data; (C) interruption of such data; (D) UZXKR's periodic or sporadic maintenance, and resulting service interruptions or changes; (E) any harm caused by other users' actions, inactions, or violations of these Terms; (F) any unlawful act or unauthorized action by third parties; and (G) disclaimers and other disclaimers mentioned in UZXKR's platform rules. If applicable law in your jurisdiction prohibits such, implied warranty disclaimers may not apply to you.
+
+
+
+4.2.Limitation of Damages and Liability DisclaimerTo the maximum extent permitted by applicable law, UZXKR, its affiliates, and their respective shareholders, members, directors, officers, employees, attorneys, agents, representatives, suppliers, or contractors shall not be liable in any case for any consequential, indirect, special, punitive, incidental, or similar damages or liabilities (including but not limited to losses of data, information, revenue, profits, or other business or financial benefits), whether based on contract, statute, strict liability, or other theory, even if UZXKR has been advised of the possibility of such damages, unless such damages arise from UZXKR's gross negligence, fraud, willful misconduct, or intentional unlawful acts. Some jurisdictions do not allow the exclusion or limitation of incidental or consequential damages, so the above limitation may not apply to you. Notwithstanding the foregoing, in any event, the liability of UZXKR, its affiliates, and their respective shareholders, members, directors, officers, employees, attorneys, agents, representatives, suppliers, or contractors for any liability arising from the UZXKR services, the performance or non-performance thereof, or any other products, services, or other items, whether based on contract, statute, strict liability, or other theory, shall not exceed, in the aggregate, the amount of fees paid by you to UZXKR under these Terms during the twelve (12) months preceding the event giving rise to the liability claim.
+
+
+
+4.3.IndemnificationYou agree to

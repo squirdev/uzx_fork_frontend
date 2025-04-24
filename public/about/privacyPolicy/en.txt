@@ -1,0 +1,193 @@
+1. Parties
+
+
+
+1.1 UZXKR.COM (hereinafter referred to as the "Company") is a company registered in the Cayman Islands under the laws of the Cayman Islands. The Company operates the website http://www.UZXKR.com (hereinafter referred to as the "Website" or "Site"), which is a platform specifically designed for users to engage in digital asset trading and related services (hereinafter referred to as the "Service" or "Services"). For the convenience of this agreement, the Company and the Website are collectively referred to as "we" or other first-person pronouns.
+
+
+
+1.2 Any natural person or other entity that logs in to the Website is a user of the Website. For the convenience of this agreement, the term "you" or other second-person pronouns are used to refer to users.
+
+
+
+1.3 For the convenience of this agreement, we and you are collectively referred to as the "parties," and each of us is referred to as a "party."
+
+
+
+2. Purpose of Privacy Policy
+
+
+
+The Privacy Policy sets forth the types of information we collect from you when you log in to the Website, register on the Website, and/or use the services we provide, as well as how we use and protect the information collected.
+
+
+
+3. Your Consent
+
+
+
+To ensure that you have full confidence in us in handling personal data, you should read and understand the provisions of the Privacy Policy in detail. Specifically, once you log in to our website, whether or not you register on the Website, you indicate your acceptance, agreement, commitment, and confirmation to us as follows:
+
+
+
+3.1 You voluntarily disclose personal information to us.
+
+
+
+3.2 You will comply with all the terms and limitations of this Privacy Policy.
+
+
+
+3.3 You agree to our collection of your information through your login to the Website, registration on the Website, and/or use of the services we provide. You also agree to any future modifications to our Privacy Policy.
+
+
+
+3.4 You consent to our affiliates, subsidiaries, and employees contacting you regarding products and services that may be of interest to you (unless you have expressed a desire not to receive such messages).
+
+
+
+4. Collection of Information
+
+
+
+4.1 When you use this website, you agree that we may use cookies to track your every action and collect and remember all the information you provide, including but not limited to your IP address, geographical location, and other data.
+
+
+
+4.2 If you wish to use the services provided by this website, you are required to fill out and provide the following two types of information:
+
+
+
+4.2.1 Identity Information: This information helps us verify your eligibility to register as a member of this website, including but not limited to your name, residential address, mailing address, your country of residence, or other certificates issued by the government that prove your identity, along with relevant numbers and all other information that can help us verify your identity (collectively referred to as "Identity Information").
+
+
+
+4.2.2 Service Information: This information helps us contact you and provide services to you smoothly, including but not limited to your phone number, fax number, valid email address, mailing address, and your debit card information and/or other account information (collectively referred to as "Service Information").
+
+
+
+4.3 While using this website or its services, we may collect additional necessary information through methods posted exclusively by us on this website to improve the functionality of this website, enhance your experience in using this website and its services, or to comply with court orders, applicable laws and regulations, or orders from government agencies with jurisdiction.
+
+
+
+4.4 If you visit any links to other third-party websites on this website or collaborate with third parties, you must agree to and comply with the separate and independent privacy policies of those third-party websites. We do not assume any responsibility for the content and activities of these websites or partners.
+
+
+
+5. Cookies
+
+
+
+5.1 When you visit our website, we use cookies with Google Stats to record our performance and verify the effectiveness of online advertising. A cookie is a small amount of data sent to your browser and stored on your computer's hard drive. Cookies can only be sent to your computer's hard drive when you use your computer to access our website.
+
+
+
+5.2 Cookies are commonly used to record the habits and preferences of visitors as they browse various items on our website. The data collected by cookies is anonymous and consists of aggregate statistical data and does not contain personal information.
+
+
+
+5.3 Cookies cannot be used to access data on your hard drive, your email address, or your private data. They enable our website or service provider systems to recognize your browser and capture and remember information. Most browsers are set to accept cookies by default. You can choose to set your browser to refuse cookies or to notify you when cookies are being sent. However, if you disable cookies, you may not be able to access or use certain features of our website.
+
+
+
+6. Use of Information
+
+
+
+6.1 We use the information we collect from you for the following purposes or in the following ways:
+
+
+
+6.1.1 To provide you with our various services through our website.
+
+
+
+6.1.2 To identify and confirm your identity when you use our website.
+
+
+
+6.1.3 To improve and enhance the services of the website (based on the information and feedback we receive from you, helping us improve the services of the website, and responding more effectively to your service requests and support needs).
+
+
+
+6.1.4 Data analysis of website usage and cooperation with government agencies and public institutions.
+
+
+
+6.1.5 Personalizing your experience (your information will help us respond better to your individual needs).
+
+
+
+6.1.6 Processing transactions (your information, whether public or private, will not be sold, exchanged, transferred, or given to any other company for any reason whatsoever, without your consent, other than for the express purpose of delivering the requested transaction).
+
+
+
+6.1.7 Sending periodic emails (the email address you provide for order processing may be used to send you information and updates pertaining to your order, in addition to receiving occasional company news, updates, related product or service information, etc.).
+
+
+
+6.1.8 To fulfill other purposes as set out in the Website User Agreement and to use all lawful means to fulfill such purposes.
+
+
+
+6.2 We will not sell, trade, or otherwise transfer information to outside parties unless you give your consent, except for the following other parties and information: our affiliates, trusted third parties who help us operate our website, conduct our business, or provide services to you, as long as those parties agree to keep this information confidential; when we believe that disclosure is appropriate, such as to comply with laws, regulations, rules, orders from the court or competent authorities, enforce our website policies, or protect ours or others' rights, property, or safety. However, your information will not be provided to other parties for marketing, advertising, or other purposes.
+
+
+
+7. Protection of Personal Data
+
+
+
+7.1 We implement appropriate physical, electronic, managerial, and technical measures to protect and safeguard your personal data. We strive to ensure that any personal data collected through our website is free from any interference by unrelated third parties. The security measures we take include but are not limited to:
+
+
+
+7.1.1 Physical Measures: Records containing your personal data are kept in locked places.
+
+
+
+7.1.2 Electronic Measures: Computer data containing your personal data is stored on computer systems and storage media with strict login restrictions.
+
+
+
+7.1.3 Managerial Measures: Only authorized staff can access your personal data, and these employees must adhere to our internal data protection guidelines.
+
+
+
+7.1.4 Technical Measures: Encryption technologies like Secure Socket Layer Encryption may be used to transmit your personal data.
+
+
+
+7.1.5 Other Measures: Our network servers are protected by firewalls.
+
+
+
+7.2 If you become aware of any security vulnerabilities on our website, please contact us immediately so that we can take appropriate action promptly.
+
+
+
+7.3 Despite the implementation of the above-mentioned technical and security measures, we cannot guarantee the absolute security of data transmitted over the internet, and therefore, we cannot be held responsible for any events involving unauthorized access to your personal data. We do not accept responsibility for any loss or damage resulting from or related to such events.
+
+
+
+8. Revision of the Privacy Policy
+
+
+
+We reserve the right to modify this Privacy Policy at any time. We will inform you of the revisions by updating and providing a new effective date for the Privacy Policy and highlighting the revisions. Sometimes we may provide notice that the Privacy Policy has been revised, but this is not an obligation on our part. You should regularly review the Privacy Policy and monitor revisions. If you do not agree with the revised content, you should immediately cease accessing this website. By continuing to access this website when updated versions of the Privacy Policy are posted, you indicate your agreement with the updated content and consent to abide by the updated Privacy Policy.
+
+
+
+9. Communication with Us
+
+
+
+9.1 If you have any requests or opinions, you can contact us via email at contact@UZXKR.com. This is the only valid and official email for communication with us, so we are not responsible for any actions or inactions resulting from your failure to use the valid contact method.
+
+
+
+9.2 We only post notices and information through valid contact methods on this website or post notices on this website. Therefore, we are not responsible for any losses incurred due to your trust in information obtained through methods other than those mentioned above.
+
+
+
+9.3 If you have any questions about our Privacy Policy, please feel free to contact us at any time.

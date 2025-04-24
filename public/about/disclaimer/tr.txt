@@ -1,0 +1,55 @@
+Risk Uyarısı
+
+1. Dijital varlıklar önemli riskler içerir ve piyasa ticaretinde birçok belirsizlik vardır. Ek olarak, dijital para birimlerinin genel olarak küçük piyasa kapitalizasyonu nedeniyle, fiyatlar dünya çapında piyasa manipülasyonu ve hükümet politikalarından etkilenen önemli dalgalanmalara açıktır. Fiyat oynaklığı nedeniyle önemli kazançlar veya kayıplar yaşayabilirsiniz. Herhangi bir dijital varlık önemli dalgalanmalar yaşayabilir ve hatta değersiz hale gelebilir.
+
+2. Çeşitli ülkelerdeki yasaların, yönetmeliklerin ve normatif belgelerin formülasyonu veya değişikliği nedeniyle, dijital varlık ticareti herhangi bir zamanda askıya alınabilir veya yasaklanabilir. Kullanıcılara, UZXKR hizmetlerini kullanırken yerel yasalara, yönetmeliklere ve politika belgelerine göre riskleri değerlendirmeleri önerilir.
+
+3. Dijital varlık ticaretine katılan kullanıcılar, dijital varlıkların yatırım değerini ve yatırım risklerini finansal durumlarına göre dikkatlice değerlendirmeli ve değerlendirmelidir. Kullanıcılar, ticaret risklerini bağımsız olarak kontrol etmeli ve tüm yatırımlarını kaybetme ekonomik riskini üstlenmelidir.
+
+Yasal Uyarı
+
+1. Hakların Sahipliği
+
+UZXKR tarafından aksi belirtilmediği sürece, UZXKR içindeki tüm ürünler, teknolojiler, yazılımlar, programlar, veriler ve diğer bilgiler (metin, simgeler, resimler, fotoğraflar, ses, video, grafikler, renk kombinasyonları, düzen tasarımı vb. dahil) üzerindeki tüm haklar (telif hakları, ticari markalar, patent hakları, ticari sırlar ve diğer ilgili haklar dahil) UZXKR'nin hizmet sağlayıcılarına ve/veya bağlı şirketlerine aittir. UZXKR hizmet sağlayıcılarının ve/veya bağlı şirketlerinin izni olmadan, hiç kimse UZXKR içindeki hiçbir içeriği robotlar, örümcekler veya diğer programlar veya cihazlar aracılığıyla izleme, kopyalama, dağıtma, görüntüleme, yansıtma, yükleme, indirme vb. dahil olmak üzere hiçbir şekilde kullanamaz.
+
+UZXKR'nin metni ve logoları ile UZXKR'nin diğer logoları, amblemleri, ürün ve hizmet adları, UZXKR hizmet sağlayıcılarının ve/veya bağlı şirketlerinin ticari markalarıdır. Herhangi bir tanıtım veya gösterim amaçlı kullanım için, UZXKR hizmet sağlayıcılarından ve/veya bağlı şirketlerinden önceden yazılı izin almalısınız.
+
+2. Sorumluluğun Sınırlandırılması
+
+UZXKR'nin dijital varlıkları içeren bir çevrimiçi ticaret platformu sağlaması göz önüne alındığında, UZXKR, bir "ağ hizmeti sağlayıcısı" üçüncü taraf platformu olarak, web sitesi platformundaki bilgi ve hizmetlerin kullanıcının ihtiyaçlarını tam olarak karşılayacağını garanti etmez. UZXKR tarafından yeniden üretilen çalışmalar (kullanıcı yorumları dahil) daha fazla bilgi iletme amacına yöneliktir ve görüşlerini onayladığımız veya içeriklerinin gerçekliğini doğruladığımız anlamına gelmez.
+
+2.1. Kullanıcılar, UZXKR'nin hizmetlerinin mevcut teknoloji ve koşullara göre olduğu gibi sağlandığını anlar ve kabul eder. UZXKR, kullanıcılara hizmet sağlamak için elinden gelenin en iyisini yapacak ve hizmetlerin sürekliliğini ve güvenliğini sağlayacaktır. Ancak UZXKR, mücbir sebepler, virüsler, Truva atları, hacker saldırıları, sistem istikrarsızlığı, üçüncü taraf hizmetlerdeki kusurlar, hükümet eylemleri vb. dahil ancak bunlarla sınırlı olmamak üzere yasal, teknik ve diğer riskleri öngöremez ve önleyemez ve bu da hizmet kesintilerine, veri kaybına ve diğer kayıplara ve risklere neden olabilir. UZXKR, aşağıdakiler dahil ancak bunlarla sınırlı olmamak üzere aşağıdaki durumlarda herhangi bir hasar tazminatı yükümlülüğünden muaftır:
+
+UZXKR platformu tarafından duyurulan bakım için sistem kesintisi;
+
+Veri iletimini engelleyen telekomünikasyon ekipmanı arızası;
+
+Tayfun, deprem, tsunami, sel, elektrik kesintileri, savaşlar, terörist saldırıları vb. gibi mücbir sebep olaylarından kaynaklanan hizmet kesintileri;
+
+Hacker saldırıları, bilgisayar virüsü saldırısı veya salgını, telekomünikasyon departmanının teknik ayarlamaları veya arızaları, web sitesi yükseltmeleri, bankalarla ilgili sorunlar, hükümet düzenlemeleri nedeniyle geçici kapanmalar vb. gibi nedenlerle oluşan hizmet kesintileri veya gecikmeleri;
+
+Sektördeki mevcut teknoloji olanakları nedeniyle öngörülemeyen veya çözülemeyen teknik sorunların neden olduğu kayıplar;
+
+Üçüncü tarafların hatası veya gecikmesi nedeniyle kullanıcıların veya diğer üçüncü tarafların uğradığı kayıplar;
+
+Sistem arızaları, ağ sorunları, DDos, hacker saldırıları ve diğer beklenmeyen faktörler nedeniyle anormal işlemler, piyasa kesintileri ve diğer olası anormal durumlar olması durumunda, UZXKR anormal işlem sonuçlarını iptal etme ve belirli bir süre boyunca tüm işlemleri geri alma hakkına sahiptir.
+
+2.2 Kullanıcılar, UZXKR hizmetlerini kullanırken, ticaret risklerini tam olarak anlamış ve UZXKR'nin hiçbir koşulda aşağıdaki hususlar için herhangi bir tazminattan sorumlu olmayacağını kabul etmiştir:
+
+Gelir kaybı;
+
+Ticaret karları veya sözleşme kayıpları;
+
+İş kesintisi;
+
+Beklenen tasarrufların kaybı;
+
+Bilgi kaybı;
+
+Fırsat, itibar veya itibar kaybı;
+
+Veri hasarı veya kaybı;
+
+Alternatif ürün veya hizmet satın alma maliyetleri;
+
+Dijital varlıkların piyasadan kaybolması veya çekilmesi.

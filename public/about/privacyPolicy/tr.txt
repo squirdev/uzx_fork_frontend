@@ -1,0 +1,45 @@
+1. Taraflar
+
+1.1 UZXKR.COM (bundan böyle "Şirket" olarak anılacaktır), Cayman Adaları yasalarına göre Cayman Adaları'nda kayıtlı bir şirkettir. Şirket, özellikle kullanıcıların dijital varlık ticareti ve ilgili hizmetlerde bulunmaları için tasarlanmış bir platform olan http://www.UZXKR.com web sitesini (bundan böyle "Web Sitesi" veya "Site" olarak anılacaktır) işletmektedir (bundan böyle "Hizmet" veya "Hizmetler" olarak anılacaktır). Bu sözleşmenin kolaylığı için, Şirket ve Web Sitesi toplu olarak "biz" veya diğer birinci şahıs zamirleri olarak anılacaktır.
+
+1.2 Web Sitesine giriş yapan herhangi bir gerçek kişi veya diğer kuruluş, Web Sitesinin bir kullanıcısıdır. Bu sözleşmenin kolaylığı için, kullanıcıları ifade etmek için "siz" veya diğer ikinci şahıs zamirleri terimi kullanılmaktadır.
+
+1.3 Bu sözleşmenin kolaylığı için, biz ve siz toplu olarak "taraflar" olarak anılırız ve her birimiz bir "taraf" olarak anılırız.
+
+2. Gizlilik Politikasının Amacı
+
+Gizlilik Politikası, Web Sitesine giriş yaptığınızda, Web Sitesine kaydolduğunuzda ve/veya sunduğumuz hizmetleri kullandığınızda sizden topladığımız bilgi türlerini ve toplanan bilgileri nasıl kullandığımızı ve koruduğumuzu belirtir.
+
+3. Onayınız
+
+Kişisel verileri işleme konusunda bize tam olarak güvendiğinizden emin olmak için, Gizlilik Politikasının hükümlerini ayrıntılı olarak okumalı ve anlamalısınız. Özellikle, Web Sitemize giriş yaptığınızda, Web Sitesine kayıt yaptırıp yaptırmamanıza bakılmaksızın, aşağıdaki şekilde kabulünüzü, anlaşmanızı, taahhüdünüzü ve onayınızı bize bildirirsiniz:
+
+3.1 Kişisel bilgileri bize gönüllü olarak ifşa edersiniz.
+
+3.2 Bu Gizlilik Politikasının tüm şartlarına ve sınırlamalarına uyacaksınız.
+
+3.3 Web Sitesine girişiniz, Web Sitesine kayıt olmanız ve/veya sunduğumuz hizmetleri kullanmanız yoluyla bilgilerinizin toplanmasına izin veriyorsunuz. Ayrıca Gizlilik Politikamızda gelecekte yapılacak değişiklikleri de kabul ediyorsunuz.
+
+3.4 Bağlı şirketlerimizin, iştiraklerimizin ve çalışanlarımızın ilginizi çekebilecek ürün ve hizmetlerle ilgili olarak sizinle iletişime geçmesine izin veriyorsunuz (bu tür mesajları almak istemediğinizi belirtmediğiniz sürece).
+
+4. Bilgi Toplanması
+
+4.1 Bu web sitesini kullandığınızda, her eyleminizi izlemek ve IP adresiniz, coğrafi konumunuz ve diğer veriler dahil ancak bunlarla sınırlı olmamak üzere sağladığınız tüm bilgileri toplamak ve hatırlamak için çerez kullanabileceğimizi kabul ediyorsunuz.
+
+4.2 Bu web sitesi tarafından sağlanan hizmetleri kullanmak istiyorsanız, aşağıdaki iki tür bilgiyi doldurmanız ve sağlamanız gerekir:
+
+4.2.1 Kimlik Bilgileri: Bu bilgiler, adınız, ikamet adresiniz, posta adresiniz, ikamet ettiğiniz ülke veya kimliğinizi kanıtlayan hükümet tarafından verilen diğer sertifikalar, ilgili numaralar ve kimliğinizi doğrulamamıza yardımcı olabilecek diğer tüm bilgiler dahil ancak bunlarla sınırlı olmamak üzere, bu web sitesinin bir üyesi olarak kaydolmaya uygunluğunuzu doğrulamamıza yardımcı olur (toplu olarak "Kimlik Bilgileri" olarak anılır).
+
+4.2.2 Hizmet Bilgileri: Bu bilgiler, telefon numaranız, faks numaranız, geçerli e-posta adresiniz, posta adresiniz ve banka kartı bilgileriniz ve/veya diğer hesap bilgileriniz dahil ancak bunlarla sınırlı olmamak üzere, sizinle iletişim kurmamıza ve size sorunsuz bir şekilde hizmet sunmamıza yardımcı olur (toplu olarak "Hizmet Bilgileri" olarak anılır).
+
+4.3 Bu web sitesini veya hizmetlerini kullanırken, bu web sitesinin işlevselliğini iyileştirmek, bu web sitesini ve hizmetlerini kullanma deneyiminizi geliştirmek veya mahkeme emirlerine, yürürlükteki yasalara ve düzenlemelere veya yargı yetkisine sahip devlet kurumlarının emirlerine uymak için yalnızca bizim tarafımızdan bu web sitesinde yayınlanan yöntemlerle ek gerekli bilgileri toplayabiliriz.
+
+4.4 Bu web sitesinde diğer üçüncü taraf web sitelerine giden bağlantıları ziyaret ederseniz veya üçüncü taraflarla işbirliği yaparsanız, söz konusu üçüncü taraf web sitelerinin ayrı ve bağımsız gizlilik politikalarını kabul etmeli ve bunlara uymalısınız. Bu web sitelerinin veya ortakların içerikleri ve faaliyetleri için hiçbir sorumluluk kabul etmiyoruz.
+
+5. Çerezler
+
+5.1 Web sitemizi ziyaret ettiğinizde, performansımızı kaydetmek ve çevrimiçi reklamcılığın etkinliğini doğrulamak için Google Stats ile çerezleri kullanırız. Çerez, tarayıcınıza gönderilen ve bilgisayarınızın sabit sürücüsünde depolanan küçük miktarda veridir. Çerezler yalnızca bilgisayarınızı web sitemize erişmek için kullandığınızda bilgisayarınızın sabit sürücüsüne gönderilebilir.
+
+5.2 Çerezler, ziyaretçilerin web sitemizdeki çeşitli öğelere göz atarken alışkanlıklarını ve tercihlerini kaydetmek için yaygın olarak kullanılır. Çerezler tarafından toplanan veriler anonimdir ve toplu istatistiksel verilerden oluşur ve kişisel bilgi içermez.
+
+5.3 Çerezler, sabit diskinizdeki verilere, e-posta adresinize veya özel verilerinize erişmek için kullanılamaz. Web sitemizin veya hizmet sağlayıcı sistemlerimizin tarayıcınızı tanımasını ve bilgileri yakalamasını ve hatırlamasını sağlarlar. Çoğu tarayıcı varsayılan olarak çerezleri kabul edecek şekilde ayarlanmıştır. Tarayıcınızı çerezleri reddedecek veya çerezler gönderildiğinde sizi bilgilendirecek şekilde ayarlamayı seçebilirsiniz.

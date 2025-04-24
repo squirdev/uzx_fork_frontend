@@ -1,0 +1,24 @@
+UZXKR.com (Universal Zone Exchange Limited, Número de Registro Mercantil: 1403704-9, MSB: 31000236749585)** es una plataforma internacional de intercambio de derivados de activos digitales, gobernada por una organización autónoma descentralizada (DAO).
+Su objetivo es proporcionar servicios de negociación de activos blockchain seguros, estables, convenientes, justos y de buena reputación a usuarios de todo el mundo.
+
+La DAO de UZXKR autoriza a la Fundación Caimán a gestionar UZXKR.com, una estructura de gobernanza que ofrece ventajas sobre las plataformas de intercambio de criptomonedas tradicionales, garantizando eficazmente la imparcialidad y la seguridad de los activos de los usuarios.
+El equipo directivo está formado por miembros de diversos países y regiones, y sus principales miembros cuentan con experiencia previa en empresas financieras y tecnológicas de renombre mundial como Coinbase, Binance, Morgan Stanley, Amazon y Google. Además, posee sólidas capacidades operativas estratégicas globales y una amplia experiencia en el control y la gestión de riesgos financieros.
+
+UZXKR.com ofrece una solución integral para servicios de criptomonedas, incluyendo trading al contado, contratos perpetuos, opciones, NFT, préstamos financieros y préstamos.
+Disponible en varios idiomas, como chino, inglés, japonés y coreano.
+Sus soluciones técnicas se basan en plataformas como Amazon AWS y Google Cloud, lo que proporciona protección eficaz contra ataques como DDoS, compatibilidad con separación de datos dinámicos y estáticos, almacenamiento en caché de datos activos, recuperación ante desastres externa, expansión paralela y más.
+
+Su arquitectura técnica líder a nivel mundial garantiza la seguridad en el trading para los usuarios, con características como acceso instantáneo a activos blockchain, tecnología de intercambio de direcciones multidivisa y protección con verificación de seguridad multifactor.
+
+Además, UZXKR.com presume de comisiones de trading y de retiro de activos blockchain más bajas en comparación con los estándares del sector.
+
+Como plataforma de intercambio de gobernanza de DAO de confianza, UZXKR.com se compromete a salvaguardar la seguridad de las operaciones de los usuarios y la información de los activos, brindándoles una experiencia de trading excepcional.
+
+1. Los activos digitales conllevan riesgos significativos y la negociación en el mercado está sujeta a diversas incertidumbres. Debido a la relativamente baja capitalización de mercado total de las monedas digitales, sus precios son susceptibles a fluctuaciones significativas influenciadas por manipuladores del mercado y políticas gubernamentales.
+Las fluctuaciones de precios pueden generar ganancias o pérdidas sustanciales. Cualquier activo digital puede experimentar una volatilidad considerable e incluso perder su valor.
+
+2. La negociación de activos digitales puede suspenderse o prohibirse en cualquier momento debido a la formulación o modificación de leyes, regulaciones y documentos normativos en diversos países.
+
+Los usuarios deben evaluar los riesgos con base en las leyes, regulaciones y políticas locales al utilizar los servicios de UZXKR.
+
+3. Los usuarios que participen en la negociación de activos digitales deben considerar y evaluar cuidadosamente el valor de la inversión y los riesgos de los activos digitales en función de su situación financiera.
