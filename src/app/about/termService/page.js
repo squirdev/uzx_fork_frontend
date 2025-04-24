@@ -22,7 +22,7 @@ export default function Home() {
     <div className="content bg-white">
       <div className="brands container mx-auto my-2 overflow-hidden">
         <div className="w-full my-12">
-          <p className="text-4xl font-bold">{t("antiCorruption")}</p>
+          <p className="text-4xl font-bold">{t("termsService")}</p>
           <p className="text-[12px] text-[#666] my-2">{t("publishedOnData")}</p>
           <p className="whitespace-pre-wrap text-[#111] font-transparent text-sm">
             {content}

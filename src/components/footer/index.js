@@ -49,7 +49,7 @@ const Footer = () => {
           },
           {
             title: t("contactUS"),
-            url: "/#",
+            url: "/contactUs",
           },
           {
             title: t("termsService"),
