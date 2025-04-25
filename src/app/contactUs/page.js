@@ -46,7 +46,7 @@ export default function Home() {
       <div className="w-full bg-white py-12 pb-36">
         <div className="brands container mx-auto flex flex-col overflow-hidden drop-shadow-md">
           <div className="w-2/3 self-center flex flex-col gap-6">
-            <Typography variant="h2">E-mail Address</Typography>
+            <Typography variant="h2">{t("emailAddress")}</Typography>
             <div className="flex flex-col gap-1">
               <Typography variant="h6">
                 {t("customerService")}: CS@UZXKR.com
@@ -57,7 +57,9 @@ export default function Home() {
               <Typography variant="h6">
                 {t("coinApplication")}: Listing@UZXKR.com
               </Typography>
-              <Typography variant="h6">{t("cooperation")}: X@UZXKR.com</Typography>
+              <Typography variant="h6">
+                {t("cooperation")}: X@UZXKR.com
+              </Typography>
               <Typography variant="h6">
                 {t("humanResources")}: HR@UZXKR.com
               </Typography>

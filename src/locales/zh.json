@@ -421,5 +421,6 @@
     "coinApplication": "幣種申請",
     "cooperation": "合作",
     "humanResources": "人力資源",
-    "riskControlDepartment": "風控部門"
+    "riskControlDepartment": "風控部門",
+    "emailAddress": "電子郵件地址"
 }

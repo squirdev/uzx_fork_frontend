@@ -421,5 +421,6 @@
     "coinApplication": "Solicitud de Moneda",
     "cooperation": "Cooperación",
     "humanResources": "Recursos Humanos",
-    "riskControlDepartment": "Departamento de Control de Riesgos"
+    "riskControlDepartment": "Departamento de Control de Riesgos",
+    "emailAddress": "Dirección de correo electrónico"
 }

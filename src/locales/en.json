@@ -421,5 +421,6 @@
     "coinApplication": "Coin Application",
     "cooperation": "Cooperation",
     "humanResources": "Human Resources",
-    "riskControlDepartment": "Risk Control Department"
+    "riskControlDepartment": "Risk Control Department",
+    "emailAddress": "E-mail Address"
 }
