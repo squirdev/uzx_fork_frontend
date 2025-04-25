@@ -336,7 +336,7 @@
     "aboutUs": "Über uns",
     "contactUS": "Kontakt",
     "termsService": "Nutzungsbedingungen",
-    "privacyFPolicy": "Datenschutzrichtlinie",
+    "privacyFooterPolicy": "Datenschutzrichtlinie",
     "antiCorruption": "Korruptionsbekämpfung",
     "report": "Melden",
     "lawEnforcement": "Strafverfolgung",
@@ -415,5 +415,11 @@
     "setting": "Einstellung",
     "alreadyBound": "Bereits gebunden",
     "notBound": "Nicht gebunden",
-    "bind": "Binden"
+    "bind": "Binden",
+    "customerService": "Kundendienst",
+    "technicalSupport": "Technischer Support",
+    "coinApplication": "Münzantrag",
+    "cooperation": "Zusammenarbeit",
+    "humanResources": "Personalabteilung",
+    "riskControlDepartment": "Risikokontrollabteilung"
 }

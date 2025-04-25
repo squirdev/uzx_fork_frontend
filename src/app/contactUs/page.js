@@ -49,30 +49,30 @@ export default function Home() {
             <Typography variant="h2">E-mail Address</Typography>
             <div className="flex flex-col gap-1">
               <Typography variant="h6">
-                Customer Service: CS@UZXKR.com
+                {t("customerService")}: CS@UZXKR.com
               </Typography>
               <Typography variant="h6">
-                Technical Support: CS@UZXKR.com
+                {t("technicalSupport")}: TS@UZXKR.com
               </Typography>
               <Typography variant="h6">
-                Coin Application: CS@UZXKR.com
+                {t("coinApplication")}: Listing@UZXKR.com
               </Typography>
-              <Typography variant="h6">Cooperation: CS@UZXKR.com</Typography>
+              <Typography variant="h6">{t("cooperation")}: X@UZXKR.com</Typography>
               <Typography variant="h6">
-                Human Resources: CS@UZXKR.com
+                {t("humanResources")}: HR@UZXKR.com
               </Typography>
               <Typography variant="h6">
-                Risk Control Department: CS@UZXKR.com
+                {t("riskControlDepartment")}: RCD@UZXKR.com
               </Typography>
             </div>
-            <Typography variant="h2">Social Media</Typography>
+            {/* <Typography variant="h2">Social Media</Typography>
             <div className="flex items-center gap-8">
               {communityLinkData.map((data, index) => (
                 <a key={index} href={data.url}>
                   <Image src={data.icon} width={26} height={26} alt="icon" />
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

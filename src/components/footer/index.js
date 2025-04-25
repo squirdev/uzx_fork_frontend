@@ -56,7 +56,7 @@ const Footer = () => {
             url: "/about/termService",
           },
           {
-            title: t("privacyPolicy"),
+            title: t("privacyFooterPolicy"),
             url: "/about/privacyPolicy",
           },
           {

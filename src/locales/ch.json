@@ -336,10 +336,10 @@
     "aboutUs": "关于我们",
     "contactUS": "联系我们",
     "termsService": "服务条款",
-    "privacyFPolicy": "隐私政策",
-    "antiCorruption": "反腐败",
+    "privacyFooterPolicy": "隐私政策",
+    "antiCorruption": "廉政举报",
     "report": "举报",
-    "lawEnforcement": "执法",
+    "lawEnforcement": "执法请求",
     "request": "请求",
     "products": "产品",
     "service": "服务",
@@ -415,5 +415,11 @@
     "setting": "设置",
     "alreadyBound": "已绑定",
     "notBound": "未绑定",
-    "bind": "绑定"
+    "bind": "绑定",
+    "customerService": "客户服务",
+    "technicalSupport": "技术支持",
+    "coinApplication": "上币申请",
+    "cooperation": "合作",
+    "humanResources": "人力资源部",
+    "riskControlDepartment": "风控部"
 }

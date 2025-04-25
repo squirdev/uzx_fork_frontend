@@ -336,10 +336,10 @@
     "aboutUs": "About US",
     "contactUS": "Contact US",
     "termsService": "Terms of Service",
-    "privacyFPolicy": "Privacy Policy",
-    "antiCorruption": "Anti-Corruption",
+    "privacyFooterPolicy": "Privacy Policy",
+    "antiCorruption": "Anti-Corruption Report",
     "report": "Report",
-    "lawEnforcement": "Law Enforcement",
+    "lawEnforcement": "Law Enforcement Report",
     "request": "Request",
     "products": "Products",
     "service": "Service",
@@ -415,5 +415,11 @@
     "setting": "Setting",
     "alreadyBound": "Already bound",
     "notBound": "Not bound",
-    "bind": "Bind"
+    "bind": "Bind",
+    "customerService": "Customer Service",
+    "technicalSupport": "Technical Support",
+    "coinApplication": "Coin Application",
+    "cooperation": "Cooperation",
+    "humanResources": "Human Resources",
+    "riskControlDepartment": "Risk Control Department"
 }

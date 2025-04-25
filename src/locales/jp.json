@@ -336,7 +336,7 @@
     "aboutUs": "私たちについて",
     "contactUS": "お問い合わせ",
     "termsService": "利用規約",
-    "privacyFPolicy": "プライバシーポリシー",
+    "privacyFooterPolicy": "プライバシーポリシー",
     "antiCorruption": "反汚職",
     "report": "報告",
     "lawEnforcement": "法執行機関",
@@ -415,5 +415,11 @@
     "setting": "設定",
     "alreadyBound": "すでにバインドされています",
     "notBound": "バインドされていません",
-    "bind": "バインド"
+    "bind": "バインド",
+    "customerService": "カスタマーサービス",
+    "technicalSupport": "技術サポート",
+    "coinApplication": "コイン申請",
+    "cooperation": "協力",
+    "humanResources": "人事部",
+    "riskControlDepartment": "リスク管理部門"
 }

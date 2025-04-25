@@ -336,7 +336,7 @@
     "aboutUs": "關於我們",
     "contactUS": "聯繫我們",
     "termsService": "服務條款",
-    "privacyFPolicy": "隱私政策",
+    "privacyFooterPolicy": "隱私政策",
     "antiCorruption": "反貪腐",
     "report": "舉報",
     "lawEnforcement": "執法",
@@ -415,5 +415,11 @@
     "setting": "設置",
     "alreadyBound": "已綁定",
     "notBound": "未綁定",
-    "bind": "綁定"
+    "bind": "綁定",
+    "customerService": "客戶服務",
+    "technicalSupport": "技術支援",
+    "coinApplication": "幣種申請",
+    "cooperation": "合作",
+    "humanResources": "人力資源",
+    "riskControlDepartment": "風控部門"
 }

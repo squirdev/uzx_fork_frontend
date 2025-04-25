@@ -336,7 +336,7 @@
     "aboutUs": "Hakkımızda",
     "contactUS": "Bize Ulaşın",
     "termsService": "Hizmet Şartları",
-    "privacyFPolicy": "Gizlilik Politikası",
+    "privacyFooterPolicy": "Gizlilik Politikası",
     "antiCorruption": "Yolsuzlukla Mücadele",
     "report": "Rapor",
     "lawEnforcement": "Hukuk Uygulama",
@@ -415,5 +415,11 @@
     "setting": "Ayarlar",
     "alreadyBound": "Zaten bağlı",
     "notBound": "Bağlı değil",
-    "bind": "Bağla"
+    "bind": "Bağla",
+    "customerService": "Müşteri Hizmetleri",
+    "technicalSupport": "Teknik Destek",
+    "coinApplication": "Coin Başvurusu",
+    "cooperation": "İşbirliği",
+    "humanResources": "İnsan Kaynakları",
+    "riskControlDepartment": "Risk Kontrol Departmanı"
 }
