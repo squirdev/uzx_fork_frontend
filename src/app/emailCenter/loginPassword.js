@@ -9,6 +9,7 @@ import { AiFillInfoCircle } from "react-icons/ai";
 import { getProfile, updatePassword } from "../api/profile";
 import { useRouter } from "next/navigation";
 import { isValidChangeLoginPassword } from "../helper";
+import LoadingScreen from "../components/loading";
 
 const LoginPassword = () => {
   const [oldPassword, setOldPassword] = useState("");
@@ -59,7 +60,7 @@ const LoginPassword = () => {
     setIsLoading(false);
   };
 
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   return (
     <div className="my-12 flex flex-col gap-8 w-96">
       <Typography variant="h4" className="font-bold">

@@ -12,6 +12,7 @@ import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { useAlert } from "../../../../context/alertContext";
 import { useLanguage } from "../../../../context/LanguageProvider";
+import LoadingScreen from "../loading";
 
 export function InputOneTimePassword({ userId, open, setOpen }) {
   const inputRefs = useRef([]);
@@ -21,7 +22,7 @@ export function InputOneTimePassword({ userId, open, setOpen }) {
   const router = useRouter();
   const dispatch = useDispatch();
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   const handleChange = (index, value) => {
     const newOtp = [...otp];
     newOtp[index] = value.replace(/[^0-9]/g, "");

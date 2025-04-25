@@ -14,6 +14,7 @@ import SafetyPanel from "./safety/main";
 import IDVerification from "./idVerification/main";
 import { getProfile } from "../api/profile";
 import { useAlert } from "../../../context/alertContext";
+import LoadingScreen from "../components/loading";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState(0);
@@ -35,7 +36,7 @@ export default function Home() {
     fetchProfile();
   }, []);
 
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   const themeData = [t("generalView"), t("safety"), t("idVerify")];
   return (
     <div className="content bg-white">

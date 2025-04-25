@@ -5,6 +5,7 @@ import { getSimplifiedDateTime } from "@/app/helper";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useLanguage } from "../../../../context/LanguageProvider";
+import LoadingScreen from "@/app/components/loading";
 
 const SwapHistory = () => {
   const [swapHistory, setSwapHistory] = useState(null);
@@ -21,7 +22,7 @@ const SwapHistory = () => {
   useEffect(() => {
     fetchHistory();
   }, []);
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   return (
     <div className="w-full overflow-auto min-h-[300px] p-4 bg-mainblack mt-2">
       <div className="w-full border-b border-white pb-1">

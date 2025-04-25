@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { getSimplifiedDateTime } from "@/app/helper";
 import { getDepositHistory } from "@/app/api/token";
 import { useLanguage } from "../../../../context/LanguageProvider";
+import LoadingScreen from "@/app/components/loading";
 
 const DepositRecord = () => {
   const [depositHistory, setDepositHistory] = useState(null);
@@ -18,7 +19,7 @@ const DepositRecord = () => {
   useEffect(() => {
     fetchRepositHistory();
   }, []);
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   return (
     <div className="w-full flex flex-col">
       <div className="w-full grid grid-cols-3 mt-4">

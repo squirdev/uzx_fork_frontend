@@ -2,6 +2,7 @@ import { Drawer, Typography } from "@material-tailwind/react";
 import Image from "next/image";
 import { useState } from "react";
 import { useLanguage } from "../../../context/LanguageProvider";
+import LoadingScreen from "../components/loading";
 
 export const PromotionTools = () => {
   const [open, setOpen] = useState(false);
@@ -10,7 +11,7 @@ export const PromotionTools = () => {
   const closeDrawer = () => setOpen(false);
 
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   return (
     <div className="brands container mx-auto my-2 my-16">
       <p className="text-4xl font-bold mb-8">{t("promotionTools")}</p>

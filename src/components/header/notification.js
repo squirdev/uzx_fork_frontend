@@ -7,6 +7,7 @@ import {
 import { useState } from "react";
 import { BiSolidBell } from "react-icons/bi";
 import { useLanguage } from "../../../context/LanguageProvider";
+import LoadingScreen from "@/app/components/loading";
 
 const Notification = ({ message }) => {
   const [open, setOpen] = useState(false);
@@ -15,7 +16,7 @@ const Notification = ({ message }) => {
   const closeDrawer = () => setOpen(false);
 
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   return (
     <div>
       <div onClick={openDrawer}>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { BsChevronUp } from "react-icons/bs";
 import { useLanguage } from "../../../context/LanguageProvider";
+import LoadingScreen from "../components/loading";
 
 export default function FooterForm({
   inviteCode,
@@ -12,7 +13,7 @@ export default function FooterForm({
 }) {
   const [isInviteCode, setIsInviteCode] = useState(false);
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   return (
     <>
       <div className="w-full flex flex-col gap-2">

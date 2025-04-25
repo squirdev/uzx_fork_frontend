@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "../../../../context/LanguageProvider";
+import LoadingScreen from "@/app/components/loading";
 
 export default function TransactionHistory() {
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   return (
     <div className="w-full flex flex-col">
       <div className="w-full flex justify-between items-end">

@@ -1,7 +1,6 @@
 "use client";
 
 import { CarouselWithContent } from "./components/carousels";
-import { Button } from "@material-tailwind/react";
 import HotAssertsPanel from "./hotAsserts";
 import NewUserPanel from "./newUserPanel";
 import DiscoverProductPanel from "./discoverProduct";
@@ -12,9 +11,8 @@ import ExplorePanel from "./explorePanel";
 import { useLanguage } from "../../context/LanguageProvider";
 import { useSelector } from "react-redux";
 import Link from "next/link";
-import ScrollLaptop from "./lapTop";
-import TransformingImage from "./lapTop";
 import LeadingDigitalExchange from "./lapTop";
+import LoadingScreen from "./components/loading";
 
 export default function Home() {
   const marqueeData = [
@@ -41,8 +39,8 @@ export default function Home() {
 
   const { isAuth } = useSelector((state) => state.auth);
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
 
+  if (!t) return <LoadingScreen />;
   return (
     <div className="content">
       <div className="brands container mx-auto my-2 overflow-hidden  drop-shadow-md">

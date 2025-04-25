@@ -6,10 +6,11 @@ import OnlineProject from "./onlineProject";
 import JoinUZX from "./joinUZX";
 import CommonProblem from "./commonProblem";
 import Link from "next/link";
+import LoadingScreen from "../components/loading";
 
 export default function Home() {
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   return (
     <div className="content">
       <div className="brands container mx-auto my-2 overflow-hidden  drop-shadow-md">

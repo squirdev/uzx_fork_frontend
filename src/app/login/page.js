@@ -9,13 +9,14 @@ import AppLoginPanel from "./appLogin";
 import LoginLeftPanel from "../components/login/leftPanel";
 import { useLanguage } from "../../../context/LanguageProvider";
 import { InputOneTimePassword } from "../components/login/inputOneTimePassword";
+import LoadingScreen from "../components/loading";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState(0);
   const [appLogin, setAppLogin] = useState(false);
 
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   const loginOption = [t("anonymous"), t("email")];
 
   return (

@@ -1,9 +1,10 @@
 import Image from "next/image";
 import { useLanguage } from "../../../context/LanguageProvider";
+import LoadingScreen from "../components/loading";
 
 export const ExclusiveServices = () => {
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   const descData = [
     {
       image: "/partner/enjoy.png",

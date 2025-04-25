@@ -7,6 +7,7 @@ import { BiRefresh } from "react-icons/bi";
 import { CoinGeckoBTCData } from "@/app/components/tradingViewMiniChart";
 import DetailsPanel from "./DetailsPanel";
 import { useLanguage } from "../../../../context/LanguageProvider";
+import LoadingScreen from "@/app/components/loading";
 
 const coinListData = [
   "All",
@@ -33,7 +34,7 @@ export default function Home() {
   const [isOverView, setIsOverView] = useState(false);
 
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   return (
     <div className="content bg-white">
       <div className="brands container mx-auto my-2 overflow-hidden">

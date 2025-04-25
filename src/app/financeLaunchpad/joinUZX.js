@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { useLanguage } from "../../../context/LanguageProvider";
-import { Button } from "@material-tailwind/react";
+import LoadingScreen from "../components/loading";
 
 export default function JoinUZX() {
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
 
   return (
     <div className="bg-white brands container mx-auto my-16">

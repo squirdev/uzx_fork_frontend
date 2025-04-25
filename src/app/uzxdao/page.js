@@ -6,10 +6,11 @@ import { TokenRoadMap } from "./tokenRoadMap";
 import { SecurityEmpower } from "./securityEmpower";
 import { VotingElection } from "./votingElection";
 import { useLanguage } from "../../../context/LanguageProvider";
+import LoadingScreen from "../components/loading";
 
 export default function Home() {
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   return (
     <div className="content">
       <div className="brands container mx-auto my-2 overflow-hidden  drop-shadow-md">

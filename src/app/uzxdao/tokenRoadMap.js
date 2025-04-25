@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { useLanguage } from "../../../context/LanguageProvider";
+import LoadingScreen from "../components/loading";
 
 export const TokenRoadMap = () => {
   const [activeMapIndex, setActiveMapIndex] = useState(0);
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   const roadMapData = [
     {
       title: t("issuingMillionTokens"),

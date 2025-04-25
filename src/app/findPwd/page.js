@@ -12,6 +12,7 @@ import { useLanguage } from "../../../context/LanguageProvider";
 import { resetPassword, sendVerifyEmail } from "../api/auth";
 import { useAlert } from "../../../context/alertContext";
 import { useRouter } from "next/navigation";
+import LoadingScreen from "../components/loading";
 
 function isValidEmailPassword(email, verifyCode, password, confirmPassword) {
   if (!email || !verifyCode || !password || !confirmPassword) return false;
@@ -28,7 +29,7 @@ export default function Home() {
   const [confirmPasswordShow, setConfirmPasswordShow] = useState(false);
 
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
 
   const { showAlert } = useAlert();
   const router = useRouter();

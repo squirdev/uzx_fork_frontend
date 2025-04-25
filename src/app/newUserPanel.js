@@ -12,11 +12,12 @@ import {
 } from "@material-tailwind/react";
 import Link from "next/link";
 import { useSelector } from "react-redux";
+import LoadingScreen from "./components/loading";
 
 const NewUserPanel = () => {
   const { isAuth } = useSelector((state) => state.auth);
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
 
   return (
     <div className="brands container mx-auto my-2 overflow-hidden  drop-shadow-md my-12">

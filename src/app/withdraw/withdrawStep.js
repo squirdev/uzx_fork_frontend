@@ -19,6 +19,7 @@ import { useLanguage } from "../../../context/LanguageProvider";
 import { getTokenList, withdraw } from "../api/token";
 import { useAlert } from "../../../context/alertContext";
 import { getProfile } from "../api/profile";
+import LoadingScreen from "../components/loading";
 
 export default function WithdrawStep() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -84,7 +85,7 @@ export default function WithdrawStep() {
     }
   };
 
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
 
   return (
     <Timeline>

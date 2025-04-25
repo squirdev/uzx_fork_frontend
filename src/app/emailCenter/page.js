@@ -8,10 +8,11 @@ import EmailVerify from "./emailVerify";
 import GoogleVerify from "./googleVerify";
 import LoginPassword from "./loginPassword";
 import FundPassword from "./fundPassword";
+import LoadingScreen from "../components/loading";
 
 export default function Home() {
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   const searchParams = useSearchParams();
   const classify = searchParams.get("classify");
 

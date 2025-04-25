@@ -19,7 +19,7 @@ export default function DepositPanel() {
   useEffect(() => {
     fetchRepositHistory();
   }, []);
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   return (
     <div className="w-full flex flex-col">
       <Typography variant="h5" color="blue-gray">

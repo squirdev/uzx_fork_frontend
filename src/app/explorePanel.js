@@ -1,11 +1,12 @@
 import Image from "next/image";
 import { useLanguage } from "../../context/LanguageProvider";
 import Link from "next/link";
+import LoadingScreen from "./components/loading";
 
 const ExplorePanel = () => {
   const { t } = useLanguage();
 
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
 
   return (
     <div className="w-full bg-mainblack py-12">

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useLanguage } from "../../../context/LanguageProvider";
+import LoadingScreen from "@/app/components/loading";
 
 const {
   Menu,
@@ -11,7 +12,7 @@ const { AiOutlineCaretDown } = require("react-icons/ai");
 
 const GrowMenuItem = () => {
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   const menuData = [
     {
       icon: "/earn.svg",

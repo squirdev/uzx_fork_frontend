@@ -25,6 +25,7 @@ import BTCChart from "@/app/components/tradingViewWidget";
 import { getTokenProfit } from "@/app/api/token";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import LoadingScreen from "@/app/components/loading";
 
 export default function Home({ params }) {
   const [tokenInfo, setTokenInfo] = useState(null);
@@ -144,7 +145,7 @@ export default function Home({ params }) {
   }, [tokenInfo]);
 
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   return (
     <>
       <div className="w-full p-2 bg-black">

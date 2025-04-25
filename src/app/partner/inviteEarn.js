@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { useLanguage } from "../../../context/LanguageProvider";
+import LoadingScreen from "../components/loading";
 
 const invitePrice = [
   {
@@ -32,7 +33,7 @@ const invitePrice = [
 export const UserInviteEarn = () => {
   const [activeUserCnt, setActiveUserCnt] = useState(0);
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   return (
     <div className="brands container mx-auto my-2 overflow-hidden mt-16">
       <div className="w-full flex justify-center items-center text-center gap-2">

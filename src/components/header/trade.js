@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import Link from "next/link";
 import { useLanguage } from "../../../context/LanguageProvider";
+import LoadingScreen from "@/app/components/loading";
 const {
   Menu,
   MenuHandler,
@@ -12,7 +13,7 @@ const { AiOutlineCaretDown } = require("react-icons/ai");
 
 const TradeMenuItem = () => {
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
 
   const menuData = [
     {

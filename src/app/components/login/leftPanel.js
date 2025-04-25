@@ -1,9 +1,10 @@
 import Image from "next/image";
 import { useLanguage } from "../../../../context/LanguageProvider";
+import LoadingScreen from "../loading";
 
 export default function LoginLeftPanel() {
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
 
   return (
     <div className="w-2/5 h-auto py-24 relative bg-black flex flex-col items-center justify-center">

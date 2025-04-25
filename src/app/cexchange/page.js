@@ -19,6 +19,7 @@ import { getExchangeRate, getProfile, swapToken } from "../api/profile";
 import { useAlert } from "../../../context/alertContext";
 import { getTokenList, getTokenProfit } from "../api/token";
 import { useSelector } from "react-redux";
+import LoadingScreen from "../components/loading";
 
 export default function Home() {
   const { isAuth } = useSelector((state) => state.auth);
@@ -159,7 +160,7 @@ export default function Home() {
   };
 
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   return (
     <div className="content">
       <HeaderPanel />

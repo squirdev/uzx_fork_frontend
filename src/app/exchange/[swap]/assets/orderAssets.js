@@ -9,6 +9,7 @@ import { useAlert } from "../../../../../context/alertContext";
 import { useLanguage } from "../../../../../context/LanguageProvider";
 import { getProfile, swapToken } from "@/app/api/profile";
 import { useSelector } from "react-redux";
+import LoadingScreen from "@/app/components/loading";
 
 const percentData = [0, 25, 50, 75, 100];
 
@@ -100,7 +101,7 @@ const OrderAssets = ({ swap }) => {
     setIsLoading(false);
   };
 
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   return (
     <div className="w-full h-full bg-mainblack p-4">
       <div className="w-full border-b border-white p-4">

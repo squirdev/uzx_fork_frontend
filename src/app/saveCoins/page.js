@@ -9,13 +9,14 @@ import FixedEarnTab from "./fixedEarn";
 import Link from "next/link";
 import { DialogDefault } from "../components/defaultDialog";
 import { useLanguage } from "../../../context/LanguageProvider";
+import LoadingScreen from "../components/loading";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState(0);
   const [dialogOpen, setDialogOpen] = useState(false);
 
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
 
   const tabHeaderData = [t("flexible"), t("fixed")];
   return (

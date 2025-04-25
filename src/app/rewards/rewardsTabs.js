@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useLanguage } from "../../../context/LanguageProvider";
 import Link from "next/link";
+import LoadingScreen from "../components/loading";
 
 const {
   Tabs,
@@ -15,7 +16,7 @@ export const RewardsPanel = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
 
   const themeData = [
     t("digitalCurrency"),

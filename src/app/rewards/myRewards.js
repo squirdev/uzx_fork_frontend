@@ -1,10 +1,11 @@
 import Image from "next/image";
 import { RewardsPanel } from "./rewardsTabs";
 import { useLanguage } from "../../../context/LanguageProvider";
+import LoadingScreen from "../components/loading";
 
 export const MyRewards = () => {
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   return (
     <div className="w-full brands container mx-auto my-2 overflow-hidden">
       <div className="w-full flex items-end justify-between">

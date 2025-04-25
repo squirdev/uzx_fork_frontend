@@ -18,6 +18,7 @@ import { getTokenList } from "../api/token";
 import { useAlert } from "../../../context/alertContext";
 import { createWallet, getProfile } from "../api/profile";
 import { useRouter } from "next/navigation";
+import LoadingScreen from "../components/loading";
 
 export default function DepositStep() {
   const [activeIndex, setActiveIndex] = useState(-1);
@@ -91,7 +92,7 @@ export default function DepositStep() {
     }
   }, [activeNewworkIndex]);
 
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   const handleCopyAddress = () => {
     navigator.clipboard.writeText(
       tokenInfo[activeIndex]?.network[activeNewworkIndex]?.address

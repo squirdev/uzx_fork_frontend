@@ -4,6 +4,7 @@ import Image from "next/image";
 
 import Logo from "../header/logo";
 import { useLanguage } from "../../../context/LanguageProvider";
+import LoadingScreen from "@/app/components/loading";
 
 const communityLinkData = [
   {
@@ -37,7 +38,7 @@ const communityLinkData = [
 ];
 const Footer = () => {
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   const footerNavData = [
     [
       {

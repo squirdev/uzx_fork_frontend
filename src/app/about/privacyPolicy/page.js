@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useLanguage } from "../../../../context/LanguageProvider";
+import LoadingScreen from "@/app/components/loading";
 
 export default function Home() {
   const { t, locale } = useLanguage();
@@ -16,7 +17,7 @@ export default function Home() {
 
   if (!content) return <p>Loading…</p>;
 
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
 
   return (
     <div className="content bg-white">

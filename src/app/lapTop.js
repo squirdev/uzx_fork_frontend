@@ -1,10 +1,11 @@
 import Image from "next/image";
 import { useLanguage } from "../../context/LanguageProvider";
 import { useEffect, useRef, useState } from "react";
+import LoadingScreen from "./components/loading";
 
 const LeadingDigitalExchange = () => {
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
 
   const [yPosition, setYPosition] = useState(0);
   const componentRef = useRef(null);

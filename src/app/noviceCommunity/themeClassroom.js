@@ -8,12 +8,13 @@ import {
 } from "@material-tailwind/react";
 import Image from "next/image";
 import { useLanguage } from "../../../context/LanguageProvider";
+import LoadingScreen from "../components/loading";
 
 const ThemeClassroom = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   const themeData = [
     {
       label: t("noviceStrategy"),

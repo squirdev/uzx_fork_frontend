@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { getWithdrawHistory } from "../api/token";
 import { getSimplifiedAddress, getSimplifiedDateTime } from "../helper";
 import { BsArrowRepeat } from "react-icons/bs";
+import LoadingScreen from "../components/loading";
 
 export default function WithdrawPanel() {
   const [isLoading, setIsLoading] = useState(false);
@@ -23,7 +24,7 @@ export default function WithdrawPanel() {
   useEffect(() => {
     fetchWithdrawHistory();
   }, []);
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   return (
     <div className="w-full flex flex-col">
       <div className="w-full flex justify-between item-end pr-12">

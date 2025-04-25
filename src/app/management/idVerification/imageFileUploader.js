@@ -5,12 +5,13 @@ import { uploadImage } from "@/app/api/upload";
 import { useLanguage } from "../../../../context/LanguageProvider";
 import { useAlert } from "../../../../context/alertContext";
 import { Spinner } from "@material-tailwind/react";
+import LoadingScreen from "@/app/components/loading";
 
 const ImageFileUploader = ({ imageUrl, setImageUrl, description }) => {
   const { showAlert } = useAlert();
   const [isFullLoadImg, setIsFullLoadImg] = useState(false);
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
 
   const fileInputRef = useRef(null);
 

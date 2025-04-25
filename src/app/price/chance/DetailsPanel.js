@@ -6,6 +6,7 @@ import { BiRefresh } from "react-icons/bi";
 import { CoinGeckoBTCData } from "@/app/components/tradingViewMiniChart";
 import { useLanguage } from "../../../../context/LanguageProvider";
 import { getTokenList } from "@/app/api/token";
+import LoadingScreen from "@/app/components/loading";
 
 const coinListData = [
   "All",
@@ -65,7 +66,6 @@ export default function DetailsPanel() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [tokenList, setTokenList] = useState(null);
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
 
   const fetchTokenList = async () => {
     let result = await getTokenList();
@@ -76,6 +76,7 @@ export default function DetailsPanel() {
     fetchTokenList();
   }, []);
 
+  if (!t) return <LoadingScreen />;
   return (
     <div className="w-full flex flex-col mt-24">
       <div className="w-full flex justify-between gap-12 items-start">

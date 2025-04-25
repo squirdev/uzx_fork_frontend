@@ -23,11 +23,12 @@ import LanguageSetting from "./languageSetting";
 import Notification from "./notification";
 import { useLanguage } from "../../../context/LanguageProvider";
 import { useSelector } from "react-redux";
+import LoadingScreen from "@/app/components/loading";
 
 const Header = () => {
   const { isAuth } = useSelector((state) => state.auth);
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   return (
     <div className="w-full bg-black flex justify-between items-center p-3 px-5">
       <div className="flex items-center gap-12">

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useLanguage } from "../../../context/LanguageProvider";
 import { logout } from "../../../redux/authSlice";
 import Link from "next/link";
+import LoadingScreen from "@/app/components/loading";
 
 const {
   Menu,
@@ -17,7 +18,7 @@ const UserProfileItem = () => {
   const { username, email } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   const menuData = [
     {
       icon: "/general.svg",

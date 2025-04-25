@@ -1,5 +1,6 @@
 "use client";
 
+import LoadingScreen from "@/app/components/loading";
 import { useLanguage } from "../../../../context/LanguageProvider";
 
 const { Button } = require("@material-tailwind/react");
@@ -18,7 +19,7 @@ export default function SecuritySettingItem({
   onClick,
 }) {
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   return (
     <div className="w-full flex justify-between items-center py-4 border-b border-hoverblack/10">
       <div className="w-full flex items-center gap-4">

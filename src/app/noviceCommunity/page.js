@@ -8,10 +8,11 @@ import RequiredForBegineer from "./requiredForBeginner";
 import BlockchainGlossary from "./blockchainGlossary";
 import IssueSupport from "./issueSupport";
 import { useLanguage } from "../../../context/LanguageProvider";
+import LoadingScreen from "../components/loading";
 
 export default function NoviceCommunity() {
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   return (
     <div className="content ">
       <div className="brands container mx-auto my-2 overflow-hidden  drop-shadow-md">

@@ -1,9 +1,10 @@
 import Image from "next/image";
 import { useLanguage } from "../../../context/LanguageProvider";
+import LoadingScreen from "../components/loading";
 
 export const UzxAdvantage = () => {
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   const advantage = [
     {
       title: t("upLifetimeComm"),

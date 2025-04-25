@@ -1,9 +1,10 @@
 import Image from "next/image";
 import { useLanguage } from "../../../context/LanguageProvider";
+import LoadingScreen from "../components/loading";
 
 export const GetCommission = () => {
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   return (
     <div className="brands container mx-auto my-2 overflow-hidden mt-16">
       <p className="text-5xl text-center font-bold">

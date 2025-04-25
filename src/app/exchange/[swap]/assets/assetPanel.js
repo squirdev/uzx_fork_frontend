@@ -1,8 +1,9 @@
+import LoadingScreen from "@/app/components/loading";
 import { useLanguage } from "../../../../../context/LanguageProvider";
 
 const AssetPanel = ({ swap }) => {
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   return (
     <div className="w-full border-t border-white">
       <p className="text-white my-6">{t("assets")}</p>

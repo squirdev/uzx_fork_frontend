@@ -13,6 +13,7 @@ import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { login } from "../../../redux/authSlice";
 import { InputOneTimePassword } from "../components/login/inputOneTimePassword";
+import LoadingScreen from "../components/loading";
 
 function isValidEmail(email) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -36,7 +37,7 @@ export default function EmailLoginPanel() {
   const router = useRouter();
   const dispatch = useDispatch();
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
 
   const handleLogin = async (e) => {
     e.preventDefault();

@@ -1,9 +1,10 @@
 import { useLanguage } from "../../../context/LanguageProvider";
+import LoadingScreen from "../components/loading";
 import TradingVideoItem from "../components/recharge/tradeVideo";
 
 const TradingVideo = () => {
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
 
   const tradeVideoData = [
     {

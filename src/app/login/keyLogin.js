@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { login } from "../../../redux/authSlice";
 import { InputOneTimePassword } from "../components/login/inputOneTimePassword";
+import LoadingScreen from "../components/loading";
 
 export default function KeyLoginPanel() {
   const [privateKey, setprivateKey] = useState("");
@@ -15,7 +16,7 @@ export default function KeyLoginPanel() {
   const [otpDialogShow, setOtpDialogShow] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   const { showAlert } = useAlert();
   const router = useRouter();
   const dispatch = useDispatch();

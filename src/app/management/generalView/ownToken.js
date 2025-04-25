@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import { useLanguage } from "../../../../context/LanguageProvider";
 import { getBalanceDetail } from "@/app/api/profile";
 import { SwapTokenList } from "@/constants/supportCryptoInfo";
+import LoadingScreen from "@/app/components/loading";
 
 export default function OwnToken() {
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+
   const [balanceInfo, setBalanceInfo] = useState(null);
   const [showTokenList, setShowTokenList] = useState(SwapTokenList);
 
@@ -20,6 +21,7 @@ export default function OwnToken() {
     setShowTokenList((prevList) => [...prevList, "USDT", "USDC"]);
   }, []);
 
+  if (!t) return <LoadingScreen />;
   return (
     <div className="w-full border border-black rounded-md p-4">
       <div className="w-full flex justify-between items-end">

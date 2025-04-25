@@ -5,6 +5,7 @@ import {
 } from "@material-tailwind/react";
 import { useState } from "react";
 import { useLanguage } from "../../context/LanguageProvider";
+import LoadingScreen from "./components/loading";
 
 function Icon({ id, open }) {
   return (
@@ -32,7 +33,7 @@ const FaqPanel = () => {
 
   const { t } = useLanguage();
 
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
 
   const faqQuenstionAnswer = [
     {

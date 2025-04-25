@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { AiOutlineSync } from "react-icons/ai";
 import { useLanguage } from "../../../../context/LanguageProvider";
 import Image from "next/image";
+import LoadingScreen from "@/app/components/loading";
 
 const OrderTable = ({ swap }) => {
   const { t } = useLanguage();
@@ -20,7 +21,7 @@ const OrderTable = ({ swap }) => {
     fetchTradingHistory();
   }, []);
 
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   return (
     <div className="h-full bg-mainblack">
       <div className="w-full flex justify-between border-b border-white p-2 pb-1">

@@ -7,6 +7,7 @@ import { useAlert } from "../../../context/alertContext";
 import { useLanguage } from "../../../context/LanguageProvider";
 import { useRouter } from "next/navigation";
 import { getProfile } from "../api/profile";
+import LoadingScreen from "../components/loading";
 
 const EmailVerify = () => {
   const [email, setEmail] = useState("");
@@ -34,7 +35,7 @@ const EmailVerify = () => {
   }, [userProfile]);
 
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
 
   const handleSendVerifyEmail = async () => {
     let result = await sendVerifyEmail(email);

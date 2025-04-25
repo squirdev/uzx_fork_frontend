@@ -5,6 +5,7 @@ import CoinItemButton from "@/app/components/coinItemButtom";
 import { BiRefresh } from "react-icons/bi";
 import { CoinGeckoBTCData } from "@/app/components/tradingViewMiniChart";
 import { useLanguage } from "../../../../context/LanguageProvider";
+import LoadingScreen from "@/app/components/loading";
 
 const coinListData = [
   "All",
@@ -62,7 +63,7 @@ const cryptoData = [
 export default function Home() {
   const [activeIndex, setActiveIndex] = useState(0);
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
 
   return (
     <div className="content bg-white">

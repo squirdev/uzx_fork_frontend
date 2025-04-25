@@ -5,6 +5,7 @@ import {
   AccordionBody,
   AccordionHeader,
 } from "@material-tailwind/react";
+import LoadingScreen from "../components/loading";
 
 function Icon({ id, open }) {
   return (
@@ -27,7 +28,7 @@ function Icon({ id, open }) {
 
 export default function CommonProblem() {
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
 
   const [open, setOpen] = useState(0);
 

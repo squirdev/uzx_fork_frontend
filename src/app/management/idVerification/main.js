@@ -4,17 +4,15 @@ import { Button, Card, Typography } from "@material-tailwind/react";
 import { useLanguage } from "../../../../context/LanguageProvider";
 import BasicVerification from "./basicVerification";
 import { useEffect, useState } from "react";
-import { getProfile } from "@/app/api/profile";
 import { useAlert } from "../../../../context/alertContext";
 import { useRouter } from "next/navigation";
+import LoadingScreen from "@/app/components/loading";
 
-const IDVerification = ({userProfile}) => {
+const IDVerification = ({ userProfile }) => {
   const [isVerifyCardShow, setIsVerifyCardShow] = useState(false);
   const { t } = useLanguage();
-  const { showAlert } = useAlert();
-  const router = useRouter();
 
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   return (
     <div className="w-full flex gap-12 mb-6">
       <div className="w-full my-8 flex flex-col gap-8">

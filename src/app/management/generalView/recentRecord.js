@@ -3,11 +3,12 @@ import { useState } from "react";
 import DepositRecord from "./depositRecord";
 import { useLanguage } from "../../../../context/LanguageProvider";
 import WithdrawRecord from "./withDrawRecord";
+import LoadingScreen from "@/app/components/loading";
 
 export default function RecentRecord() {
   const [depositShow, setDepositShow] = useState(false);
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   return (
     <div className="w-full border border-black rounded-md p-4">
       <div className="w-full flex justify-between items-end">

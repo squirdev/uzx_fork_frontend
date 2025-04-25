@@ -8,13 +8,14 @@ import { AiFillInfoCircle } from "react-icons/ai";
 import { useLanguage } from "../../../context/LanguageProvider";
 import { sendVerifyEmail } from "../api/auth";
 import { useAlert } from "../../../context/alertContext";
+import LoadingScreen from "../components/loading";
 
 export default function Home() {
   const [email, setEmail] = useState("");
   const [verifyCode, setVerifyCode] = useState("");
 
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
 
   const { showAlert } = useAlert();
 

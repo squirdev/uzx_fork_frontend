@@ -4,10 +4,11 @@ import Image from "next/image";
 import { Activity } from "./activity";
 import { MyRewards } from "./myRewards";
 import { useLanguage } from "../../../context/LanguageProvider";
+import LoadingScreen from "../components/loading";
 
 export default function Home() {
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   return (
     <div className="content">
       <div className="brands container mx-auto my-2">

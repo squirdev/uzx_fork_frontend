@@ -7,6 +7,7 @@ import { sendVerifyEmail, signUpEmail } from "../api/auth";
 import { useAlert } from "../../../context/alertContext";
 import { useRouter } from "next/navigation";
 import { isValidEmailRegister } from "../helper";
+import LoadingScreen from "../components/loading";
 
 export default function EmailRegisterPanel() {
   const [email, setEmail] = useState("");
@@ -18,7 +19,7 @@ export default function EmailRegisterPanel() {
   const [inviteCode, setInviteCode] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   const { showAlert } = useAlert();
   const router = useRouter();
 

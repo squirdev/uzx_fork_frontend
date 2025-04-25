@@ -3,6 +3,7 @@ import HotAssertItem from "./components/hotAssertItem";
 import { getTokenData, getTokenDataById } from "./components/tokenInformation";
 import { useLanguage } from "../../context/LanguageProvider";
 import { getTokenList, getTokenProfit } from "./api/token";
+import LoadingScreen from "./components/loading";
 
 const HotAssertItemData = [
   {
@@ -139,7 +140,7 @@ const HotAssertsPanel = () => {
   const [tokenInfo, setTokenInfo] = useState(null);
   const [finalCoinDetail, setFinalCoinDetail] = useState(null);
 
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
 
   const fetchTokenProfits = async () => {
     const info = await getTokenList();

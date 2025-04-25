@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 import { getPrivateKey, signUpPrivate } from "../api/auth";
 import { useAlert } from "../../../context/alertContext";
 import { useRouter } from "next/navigation";
+import LoadingScreen from "../components/loading";
 
 export default function KeyRegisterPanel() {
   const [accountPrivateKey, setAccountPrivateKey] = useState("");
@@ -21,7 +22,7 @@ export default function KeyRegisterPanel() {
   const [isLoading, setIsLoading] = useState(false);
   const { showAlert } = useAlert();
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   const router = useRouter();
 
   useEffect(() => {

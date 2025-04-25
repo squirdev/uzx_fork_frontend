@@ -1,10 +1,11 @@
 import Image from "next/image";
 import { useLanguage } from "../../../context/LanguageProvider";
 import Link from "next/link";
+import LoadingScreen from "../components/loading";
 
 export const Activity = () => {
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   return (
     <div className="brands container mx-auto my-2 overflow-hidden mt-16">
       <p className="text-4xl font-bold">{t("activity")}</p>

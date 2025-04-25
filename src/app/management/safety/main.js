@@ -5,6 +5,7 @@ import SecurityAuthItem from "./securityPassword";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useLanguage } from "../../../../context/LanguageProvider";
+import LoadingScreen from "@/app/components/loading";
 
 const SafetyPanel = ({userProfile}) => {
   const [isEmailBind, setIsEmailBind] = useState(false);
@@ -17,7 +18,7 @@ const SafetyPanel = ({userProfile}) => {
     if (userProfile && userProfile.isOtp) setIsGoogleAuthBind(true);
   }, [userProfile]);
 
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   return (
     <div className="w-full flex flex-col mb-6 text-black">
       <p className="text-3xl font-bold mt-8">{t("security")}</p>

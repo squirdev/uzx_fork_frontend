@@ -7,11 +7,12 @@ import LoginLeftPanel from "../components/login/leftPanel";
 import KeyRegisterPanel from "./keyRegister";
 import EmailRegisterPanel from "./emailRegister";
 import { useLanguage } from "../../../context/LanguageProvider";
+import LoadingScreen from "../components/loading";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState(0);
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
 
   const loginOption = [t("anonymous"), t("email")];
   return (

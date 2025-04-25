@@ -16,6 +16,7 @@ import { useLanguage } from "../../../context/LanguageProvider";
 import { QRCodeCanvas } from "qrcode.react";
 import { getOTP, verifyOTP } from "../api/profile";
 import { useRouter } from "next/navigation";
+import LoadingScreen from "../components/loading";
 
 const GoogleVerify = () => {
   const { showAlert } = useAlert();
@@ -54,7 +55,7 @@ const GoogleVerify = () => {
       showAlert(t("googleVerificationFailed"));
     }
   };
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   return (
     <div className="my-12 flex flex-col gap-8 w-96">
       <Typography variant="h4" className="font-bold">

@@ -6,13 +6,14 @@ import { UserInviteEarn } from "./inviteEarn";
 import { GetCommission } from "./getCommission";
 import { PromotionTools } from "./promotionTools";
 import { useLanguage } from "../../../context/LanguageProvider";
+import LoadingScreen from "../components/loading";
 
 export default function Home() {
   const inviteLink = "https://www.uzxkr.com/#/register?code=SPAA";
   const inviteCode = "SPAA";
 
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   return (
     <div className="content">
       <div className="brands container mx-auto my-8 overflow-hidden drop-shadow-md">

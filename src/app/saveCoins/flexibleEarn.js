@@ -1,6 +1,7 @@
 import { TabPanel } from "@material-tailwind/react";
 import Image from "next/image";
 import { useLanguage } from "../../../context/LanguageProvider";
+import LoadingScreen from "../components/loading";
 
 const flexibleData = [
   {
@@ -35,7 +36,7 @@ const flexibleData = [
 
 export default function FlexibleEarnTab() {
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   return (
     <TabPanel value={0}>
       <div className="w-full flex flex-col items-center">

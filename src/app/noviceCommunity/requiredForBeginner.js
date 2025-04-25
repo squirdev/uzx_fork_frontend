@@ -1,10 +1,11 @@
 import Image from "next/image";
 import { AiOutlineDoubleRight } from "react-icons/ai";
 import { useLanguage } from "../../../context/LanguageProvider";
+import LoadingScreen from "../components/loading";
 
 const RequiredForBegineer = () => {
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
 
   const requiredData = [
     {

@@ -3,11 +3,12 @@ import { Carousel } from "@material-tailwind/react";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { useLanguage } from "../../context/LanguageProvider";
 import Link from "next/link";
+import LoadingScreen from "./components/loading";
 
 export default function DiscoverProductPanel() {
   const { t } = useLanguage();
 
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
 
   const productServiceData = [
     {

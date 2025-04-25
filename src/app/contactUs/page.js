@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Typography } from "@material-tailwind/react";
 import { useLanguage } from "../../../context/LanguageProvider";
 import HeaderPanel from "./headerPanel";
+import LoadingScreen from "../components/loading";
 
 const communityLinkData = [
   {
@@ -39,7 +40,7 @@ const communityLinkData = [
 
 export default function Home() {
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   return (
     <div className="content">
       <HeaderPanel />

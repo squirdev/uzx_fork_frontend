@@ -15,6 +15,7 @@ import { useAlert } from "../../../../context/alertContext";
 import { useRouter } from "next/navigation";
 import { useLanguage } from "../../../../context/LanguageProvider";
 import { createDocument } from "@/app/api/profile";
+import LoadingScreen from "@/app/components/loading";
 
 const BasicVerification = () => {
   const { countries } = useCountries();
@@ -27,7 +28,7 @@ const BasicVerification = () => {
   const { showAlert } = useAlert();
   const router = useRouter();
   const { t } = useLanguage();
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
 
   const handleSubmitDocument = async () => {
     if (

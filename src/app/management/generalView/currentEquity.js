@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useLanguage } from "../../../../context/LanguageProvider";
+import LoadingScreen from "@/app/components/loading";
 
 const { Button } = require("@material-tailwind/react");
 const { default: Image } = require("next/image");
@@ -15,7 +16,7 @@ export default function CurrentEquity({ userProfile }) {
     );
   }, [userProfile]);
 
-  if (!t) return <p className="text-white">Loading translations...</p>;
+  if (!t) return <LoadingScreen />;
   return (
     <div className="border border-hoverblack rounded-md flex flex-col justify-between items-center gap-8 py-16 bg-gradient-to-r from-blue1/10 to-white">
       <Image src="/management/token.png" width={74} height={74} alt="image" />
