@@ -9,7 +9,7 @@ export default function Home() {
   const [content, setContent] = useState("");
 
   useEffect(() => {
-    fetch(`/about/antiCorrupt/${locale}.txt`)
+    fetch(`/about/termService/${locale}.txt`)
       .then((res) => res.text())
       .then(setContent)
       .catch(console.error);
