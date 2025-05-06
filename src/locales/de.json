@@ -422,5 +422,18 @@
     "cooperation": "Zusammenarbeit",
     "humanResources": "Personalabteilung",
     "riskControlDepartment": "Risikokontrollabteilung",
-    "emailAddress": "E-Mail-Adresse"
+    "emailAddress": "E-Mail-Adresse",
+    "term": "Laufzeit",
+    "invested": "Investiert",
+    "ARPTerm": "ARP und Laufzeit",
+    "all": "Alle",
+    "days": "Tage",
+    "cancelEarnWaring": "Bei vorzeitiger Kündigung des Festauftrags wird eine Gebühr von 1% fällig. Nach Ablauf wird die Position automatisch geschlossen, und Kapital sowie Zinsen werden Ihrem Coin-Konto gutgeschrieben.",
+    "cancel": "Abbrechen",
+    "warning": "Warnung",
+    "percent": "Prozent",
+    "completeTime": "Abschlusszeit",
+    "restTime": "Verbleibende Zeit",
+    "finished": "Abgeschlossen",
+    "waiting": "Warten..."
 }

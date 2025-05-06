@@ -422,5 +422,18 @@
     "cooperation": "合作",
     "humanResources": "人力资源部",
     "riskControlDepartment": "风控部",
-    "emailAddress": "邮箱地址"
+    "emailAddress": "邮箱地址",
+    "term": "期限",
+    "invested": "已投资",
+    "ARPTerm": "年化收益率与期限",
+    "all": "全部",
+    "days": "天",
+    "cancelEarnWaring": "如果定期订单提前终止，需支付1%的手续费。到期后，系统将自动平仓，本金和利息将存入您的币账户。",
+    "cancel": "取消",
+    "warning": "警告",
+    "percent": "百分比",
+    "completeTime": "完成时间",
+    "restTime": "剩余时间",
+    "finished": "已完成",
+    "waiting": "等待中..."
 }

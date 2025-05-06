@@ -422,5 +422,18 @@
     "cooperation": "協力",
     "humanResources": "人事部",
     "riskControlDepartment": "リスク管理部門",
-    "emailAddress": "メールアドレス"
+    "emailAddress": "メールアドレス",
+    "term": "期間",
+    "invested": "投資済み",
+    "ARPTerm": "ARPと期間",
+    "all": "すべて",
+    "days": "日",
+    "cancelEarnWaring": "定期注文を早期に終了する場合、1%の手数料が必要です。満期後、システムは自動的にポジションをクローズし、元本と利息をコインアカウントに入金します。",
+    "cancel": "キャンセル",
+    "warning": "警告",
+    "percent": "パーセント",
+    "completeTime": "完了時間",
+    "restTime": "残り時間",
+    "finished": "完了",
+    "waiting": "待機中..."
 }

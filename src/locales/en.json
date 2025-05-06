@@ -422,5 +422,18 @@
     "cooperation": "Cooperation",
     "humanResources": "Human Resources",
     "riskControlDepartment": "Risk Control Department",
-    "emailAddress": "E-mail Address"
+    "emailAddress": "E-mail Address",
+    "term": "Term",
+    "invested": "Invested",
+    "ARPTerm": "ARP and term",
+    "all": "All",
+    "days": "days",
+    "cancelEarnWaring": "If the regular order is terminated early, payment is required 1% handling fees. After the expiration, the system will automatically close the position, and the principal and interest will be deposited into your coin account.",
+    "cancel": "Cancel",
+    "warning": "Warning",
+    "percent": "Percent",
+    "completeTime": "Complete Time",
+    "restTime": "Rest Time",
+    "finished": "Finished",
+    "waiting": "Waiting..."
 }

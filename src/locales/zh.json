@@ -422,5 +422,18 @@
     "cooperation": "合作",
     "humanResources": "人力資源",
     "riskControlDepartment": "風控部門",
-    "emailAddress": "電子郵件地址"
+    "emailAddress": "電子郵件地址",
+    "term": "期限",
+    "invested": "已投資",
+    "ARPTerm": "年化報酬率與期限",
+    "all": "全部",
+    "days": "天",
+    "cancelEarnWaring": "若提早終止定存訂單，需支付 1% 手續費。到期後，系統將自動平倉，本金與利息將存入您的錢包帳戶。",
+    "cancel": "取消",
+    "warning": "警告",
+    "percent": "百分比",
+    "completeTime": "完成時間",
+    "restTime": "剩餘時間",
+    "finished": "已完成",
+    "waiting": "等待中..."
 }

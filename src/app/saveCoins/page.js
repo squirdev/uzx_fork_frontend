@@ -41,7 +41,7 @@ export default function Home() {
       <div className="w-full bg-white py-12">
         <div className="brands container mx-auto overflow-hidden">
           <div className="relative flex w-full items-center justify-center my-9">
-            <Tabs id="custom-animation" value={activeTab} className="w-full">
+            {/* <Tabs id="custom-animation" value={activeTab} className="w-full">
               <TabsHeader
                 className="w-96 rounded-none border-b border-blue-gray-50 bg-transparent p-0"
                 indicatorProps={{
@@ -70,15 +70,12 @@ export default function Home() {
                   mount: { x: 0 },
                   unmount: { x: -1000 },
                 }}
-              >
-                <FlexibleEarnTab />
-                <FixedEarnTab />
-              </TabsBody>
-            </Tabs>
-            <Link
-              href="#"
-              className="text-blue1 absolute top-0 right-0"
-            >
+              > */}
+            {/* <FlexibleEarnTab /> */}
+            <FixedEarnTab />
+            {/* </TabsBody>
+            </Tabs> */}
+            <Link href="/saveCoins/detail" className="text-blue1 absolute top-0 right-0">
               {t("myOrder")}
             </Link>
           </div>

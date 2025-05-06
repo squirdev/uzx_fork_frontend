@@ -73,3 +73,17 @@ export function isValidDocument(
   else if (documentType == 1 && !backImageUrl) return false;
   else return true;
 }
+
+export function getRemainingTime(expireAt) {
+  const now = new Date();
+  const expireDate = new Date(expireAt);
+  let diff = Math.max(0, expireDate - now); // 确保不为负数
+
+  const hours = Math.floor(diff / (1000 * 60 * 60));
+  diff %= 1000 * 60 * 60;
+  const minutes = Math.floor(diff / (1000 * 60));
+  diff %= 1000 * 60;
+  const seconds = Math.floor(diff / 1000);
+
+  return `${String(hours).padStart(2, "0")}H ${String(minutes).padStart(2, "0")}M ${String(seconds).padStart(2, "0")}S`;
+}

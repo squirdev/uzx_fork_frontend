@@ -422,5 +422,18 @@
     "cooperation": "Cooperación",
     "humanResources": "Recursos Humanos",
     "riskControlDepartment": "Departamento de Control de Riesgos",
-    "emailAddress": "Dirección de correo electrónico"
+    "emailAddress": "Dirección de correo electrónico",
+    "term": "Plazo",
+    "invested": "Invertido",
+    "ARPTerm": "ARP y plazo",
+    "all": "Todo",
+    "days": "días",
+    "cancelEarnWaring": "Si se cancela anticipadamente la orden fija, se requiere el pago de una comisión del 1%. Tras el vencimiento, el sistema cerrará automáticamente la posición, y el capital e intereses se depositarán en su cuenta de monedas.",
+    "cancel": "Cancelar",
+    "warning": "Advertencia",
+    "percent": "Porcentaje",
+    "completeTime": "Hora de finalización",
+    "restTime": "Tiempo restante",
+    "finished": "Finalizado",
+    "waiting": "Esperando..."
 }

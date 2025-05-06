@@ -422,5 +422,18 @@
     "cooperation": "İşbirliği",
     "humanResources": "İnsan Kaynakları",
     "riskControlDepartment": "Risk Kontrol Departmanı",
-    "emailAddress": "E-posta Adresi"
+    "emailAddress": "E-posta Adresi",
+    "term": "Vade",
+    "invested": "Yatırıldı",
+    "ARPTerm": "ARP ve vade",
+    "all": "Tümü",
+    "days": "gün",
+    "cancelEarnWaring": "Sabit sipariş erken sonlandırılırsa, %1 işlem ücreti ödenmesi gerekir. Vade sonunda sistem pozisyonu otomatik olarak kapatır ve ana para ile faiz coin hesabınıza yatırılır.",
+    "cancel": "İptal",
+    "warning": "Uyarı",
+    "percent": "Yüzde",
+    "completeTime": "Tamamlanma Zamanı",
+    "restTime": "Kalan Süre",
+    "finished": "Tamamlandı",
+    "waiting": "Bekleniyor..."
 }
