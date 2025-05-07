@@ -40,7 +40,7 @@ export const SecurityEmpower = () => {
         <p className="text-5xl text-center font-bold bg-gradient-to-r from-blue1 to-blue2 bg-clip-text text-transparent my-24">
           {t("securityEmpowerment")}
         </p>
-        <div className="self-center grid grid-cols-3 gap-8">
+        <div className="self-center grid md:grid-cols-3 grid-cols-1 gap-8">
           {securityEmpowerData.map((data, index) => (
             <div
               key={index}

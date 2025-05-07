@@ -42,14 +42,14 @@ export default function Home() {
 
   if (!t) return <LoadingScreen />;
   return (
-    <div className="content">
+    <div className="content md:px-0 px-4">
       <div className="brands container mx-auto my-2 overflow-hidden  drop-shadow-md">
-        <div className="w-full flex items-center mt-9">
-          <div className="w-1/2 flex flex-col items-start gap-6 ">
-            <p className="text-6xl font-black bg-gradient-to-r from-blue1 to-blue2 bg-clip-text text-transparent">
+        <div className="w-full flex items-center mt-9 md:flex-row flex-col">
+          <div className="md:w-1/2 flex flex-col md:items-start items-center gap-6 w-full">
+            <p className="md:text-6xl text-3xl font-black bg-gradient-to-r from-blue1 to-blue2 bg-clip-text text-transparent text-center md:text-left">
               {isAuth ? t("welcomeMessage") : t("unleashUZXUniverse")}
             </p>
-            <p className="text-hoverblack text-3xl">
+            <p className="text-hoverblack md:text-3xl text-xl">
               {isAuth ? t("journey") : t("unleashUZXUniverseDesc")}
             </p>
             {isAuth ? (
@@ -71,7 +71,7 @@ export default function Home() {
               </div>
             )}
           </div>
-          <div className="w-1/2 flex items-center justify-center">
+          <div className="md:w-1/2 flex items-center justify-center w-full mt-10 md:mt-0">
             <CarouselWithContent />
           </div>
         </div>

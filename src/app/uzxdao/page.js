@@ -14,8 +14,8 @@ export default function Home() {
   return (
     <div className="content">
       <div className="brands container mx-auto my-2 overflow-hidden  drop-shadow-md">
-        <div className="w-full flex items-center mt-24">
-          <div className="w-2/3 flex flex-col items-start gap-6 ">
+        <div className="w-full flex md:flex-row flex-col-reverse items-center mt-24">
+          <div className="md:w-2/3 w-full flex flex-col items-start gap-6 ">
             <p className="text-6xl font-black bg-gradient-to-r from-blue1 to-blue2 bg-clip-text text-transparent">
               {t("welcomeUZXOpenGov")}
             </p>
@@ -30,7 +30,7 @@ export default function Home() {
               <Image src={"/dec.png"} width={24} height={18} alt="part" />
             </div>
           </div>
-          <div className="w-1/3 flex items-center justify-center">
+          <div className="md:w-1/3 w-full flex items-center justify-center">
             <Image src={"/dao.png"} width={450} height={300} alt="part" />
           </div>
         </div>

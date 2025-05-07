@@ -36,7 +36,7 @@ export default function Home() {
   const { t } = useLanguage();
   if (!t) return <LoadingScreen />;
   return (
-    <div className="content bg-white">
+    <div className="content bg-white  md:px-0 px-2">
       <div className="brands container mx-auto my-2 overflow-hidden">
         <div className="w-full my-12">
           <div className="flex items-center gap-6">

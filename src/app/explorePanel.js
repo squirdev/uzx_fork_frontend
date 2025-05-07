@@ -9,9 +9,9 @@ const ExplorePanel = () => {
   if (!t) return <LoadingScreen />;
 
   return (
-    <div className="w-full bg-mainblack py-12">
+    <div className="w-full bg-mainblack md:py-12 py-2">
       <div className="brands container mx-auto overflow-hidden drop-shadow-md">
-        <div className="flex items-center justify-center my-9">
+        <div className="flex md:flex-row flex-col gap-8 md:gap-0 items-center justify-center my-9">
           <div className="w-1/2 flex flex-col items-center gap-6 bg-[url('/explore_back.png')]">
             <p className="text-5xl font-black text-center bg-gradient-to-r from-blue1 to-blue2 bg-clip-text text-transparent">
               {t("exploreUZXUniverse")}

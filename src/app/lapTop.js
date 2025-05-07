@@ -37,7 +37,7 @@ const LeadingDigitalExchange = () => {
         <p className="text-white text-xl text-center my-9">
           {t("leadingExchangeDesc")}
         </p>
-        <div className="w-full h-[800px]">
+        <div className="w-full md:h-[800px] h-auto">
           <div
             ref={componentRef}
             className="relative flex flex-col items-center transition-transform origin-top duration-300"

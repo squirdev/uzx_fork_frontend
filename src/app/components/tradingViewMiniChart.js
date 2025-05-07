@@ -33,7 +33,7 @@ export const TradingViewMiniChart = ({ coinId }) => {
   }, []);
 
   return (
-    <div className="w-full min-h-[50px]">
+    <div className="w-full min-h-[50px] hidden md:block">
       <ResponsiveContainer width="100%" height="100%">
         <LineChart data={data}>
           <Line
@@ -85,12 +85,12 @@ export const CoinGeckoBTCData = ({ image, coin, coinId, profit }) => {
   }, []);
 
   return btcData ? (
-    <div className="w-full grid grid-cols-9 p-3 text-sm items-center rounded-sm border-b hover:bg-black/10">
+    <div className="w-full grid md:grid-cols-9 grid-cols-3 p-3 text-sm items-center rounded-sm border-b hover:bg-black/10">
       <div className="flex items-center gap-2">
         <Image src={image} width={16} height={16} alt="logo" />
         <p>{coin}</p>
       </div>
-      <h2>${(btcData.price * (1 + profit/100)).toLocaleString()}</h2>
+      <h2>${(btcData.price * (1 + profit / 100)).toLocaleString()}</h2>
       <p
         className={`flex items-center gap-1 ${btcData.change24h > 0 ? "text-green-500" : "text-red-500"}`}
       >
@@ -101,12 +101,12 @@ export const CoinGeckoBTCData = ({ image, coin, coinId, profit }) => {
           <AiOutlineFall className="w-5 h-5" />
         )}
       </p>
-      <p>${btcData.high24h.toLocaleString()}</p>
-      <p>${btcData.low24h.toLocaleString()}</p>
-      <p>${btcData.volume24h.toLocaleString()}</p>
-      <p>{btcData.turnover24h.toFixed(2)}%</p>
+      <p className="hidden md:block">${btcData.high24h.toLocaleString()}</p>
+      <p className="hidden md:block">${btcData.low24h.toLocaleString()}</p>
+      <p className="hidden md:block">${btcData.volume24h.toLocaleString()}</p>
+      <p className="hidden md:block">{btcData.turnover24h.toFixed(2)}%</p>
       <TradingViewMiniChart coinId={coinId} />
-      <button className="text-sm text-blue1">Trade</button>
+      <button className="text-sm text-blue1 hidden md:block">Trade</button>
     </div>
   ) : (
     <p className="p-6">Loading...</p>

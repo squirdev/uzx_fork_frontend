@@ -21,12 +21,12 @@ export default function TutorialVideoPanel() {
     },
   ];
   return (
-    <div className="brands container mx-auto overflow-hidden  drop-shadow-md my-12 mb-36">
+    <div className="brands container mx-auto overflow-hidden  drop-shadow-md my-12 md:mb-36">
       <div className="w-full">
         <p className="text-xl text-center text-white mt-16">
           {t("watchTutorials")}
         </p>
-        <div className="w-full gap-6 mt-12 grid grid-cols-3">
+        <div className="w-full gap-6 mt-12 md:grid grid-cols-3 flex flex-col">
           {tutorialVideoData.map((data, index) => (
             <div key={index} className="w-full flex flex-col">
               <video

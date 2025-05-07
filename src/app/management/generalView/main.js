@@ -7,17 +7,22 @@ const { default: ProofReserve } = require("./proofReserve");
 const { default: RecentRecord } = require("./recentRecord");
 const { default: TransactionHistory } = require("./transactionHistory");
 
-const GeneralView = ({userProfile}) => {
+const GeneralView = ({ userProfile }) => {
   return (
-    <div className="w-full flex gap-12 mb-6">
-      <div className="w-3/5  flex flex-col gap-8">
+    <div className="w-full flex md:flex-row flex-col gap-12 mb-6">
+      <div className=" md:w-3/5 w-full flex flex-col gap-8">
         <CurrentEquity userProfile={userProfile} />
         <ProofReserve />
-        <TransactionHistory />
+        <div className="hidden md:block">
+          <TransactionHistory />
+        </div>
       </div>
-      <div className="w-2/5 flex flex-col gap-8">
+      <div className="md:w-2/5 w-full flex flex-col gap-8">
         <RecentRecord />
         <OwnToken />
+      </div>
+      <div className="block md:hidden">
+        <TransactionHistory />
       </div>
     </div>
   );

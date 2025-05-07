@@ -28,7 +28,7 @@ export const UzxAdvantage = () => {
         />
         <p className="text-3xl text-white font-bold">{t("uZXAdvantages")}</p>
       </div>
-      <div className="w-full grid grid-cols-2 gap-8 my-16">
+      <div className="w-full grid md:grid-cols-2 grid-cols-1 gap-8 my-16">
         {advantage.map((data, index) => (
           <div
             key={index}

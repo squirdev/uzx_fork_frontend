@@ -46,25 +46,25 @@ export default function FixedEarnTab() {
         setOpen={setDialogOpen}
       />
       <div className="w-full flex flex-col items-center">
-        <div className="w-full grid grid-cols-5 px-6 pb-3 items-center">
+        <div className="w-full grid grid-cols-3 md:grid-cols-5 px-6 pb-3 items-center">
           <p>{t("crypto")}</p>
           <p>Est APR</p>
-          <p>{t("term")}</p>
-          <p>{t("invested")}</p>
+          <p className="hidden md:block">{t("term")}</p>
+          <p className="hidden md:block">{t("invested")}</p>
           <p>{t("operation")}</p>
         </div>
         {fixedData.map((data, index) => (
           <div
             key={index}
-            className="w-full grid grid-cols-5 items-start text-black font-bold cursor-pointer p-6 border-b hover:bg-[#f0f0f0]"
+            className="w-full grid grid-cols-3 md:grid-cols-5 items-start text-black font-bold cursor-pointer p-6 border-b hover:bg-[#f0f0f0]"
           >
             <div className="flex items-center gap-2">
               <Image src={data.image} width={18} height={18} alt="img" />
               <span>{data.coin?.toUpperCase()}</span>
             </div>
             <p>{data.apr}</p>
-            <p>{t("flexible")}</p>
-            <p>{data.invest}</p>
+            <p className="hidden md:block">{t("flexible")}</p>
+            <p className="hidden md:block">{data.invest}</p>
             <div className="w-full">
               <button
                 onClick={() => handleFixedDeposit(data.coin)}

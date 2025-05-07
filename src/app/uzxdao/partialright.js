@@ -33,7 +33,7 @@ export const PartialRightPanel = () => {
         <p className="text-5xl font-black text-center bg-gradient-to-r from-blue1 to-blue2 bg-clip-text text-transparent  my-16">
           {t("uZXPartialRights")}
         </p>
-        <div className="self-center grid grid-cols-2 gap-12">
+        <div className="self-center grid md:grid-cols-2 grid-cols-1 gap-12">
           {partialRightData.map((data, index) => (
             <div key={index} className="w-full flex gap-7">
               <div className="w-[112px] h-auto">

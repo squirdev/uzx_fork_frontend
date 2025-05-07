@@ -51,7 +51,7 @@ const FaqPanel = () => {
   ];
 
   return (
-    <div className="brands container mx-auto my-2 overflow-hidden  drop-shadow-md my-12">
+    <div className="brands container mx-auto md:px-0 px-2 overflow-hidden  drop-shadow-md my-12">
       <div className="w-full">
         <p className="text-5xl font-black text-center bg-gradient-to-r from-blue1 to-blue2 bg-clip-text text-transparent  mt-16">
           {t("faq")}

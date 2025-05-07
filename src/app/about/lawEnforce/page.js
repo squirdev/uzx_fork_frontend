@@ -20,7 +20,7 @@ export default function Home() {
   if (!t) return <LoadingScreen />;
 
   return (
-    <div className="content bg-white">
+    <div className="content bg-white md:px-0 px-2">
       <div className="brands container mx-auto my-2 overflow-hidden">
         <div className="w-full my-12">
           <p className="text-4xl font-bold">{t("lawEnforcement")}</p>

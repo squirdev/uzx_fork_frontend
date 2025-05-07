@@ -43,7 +43,7 @@ export default function Home() {
       <div className="brands container mx-auto my-2 overflow-hidden">
         <Tabs id="custom-animation" value={activeTab}>
           <TabsHeader
-            className="w-[600px] rounded-none border-b border-blue-gray-50 mt-8 bg-transparent p-0"
+            className="md:w-[600px] w-full rounded-none border-b border-blue-gray-50 mt-8 bg-transparent p-0"
             indicatorProps={{
               className:
                 "bg-transparent border-b-[2px] border-white shadow-none rounded-none",
@@ -56,8 +56,8 @@ export default function Home() {
                 onClick={() => setActiveTab(index)}
                 className={
                   activeTab === index
-                    ? "text-blue1 text-xl font-bold"
-                    : "text-[#939393] text-xl font-bold"
+                    ? "text-blue1 md:text-xl text-sm font-bold"
+                    : "text-[#939393] md:text-xl text-sm font-bold"
                 }
               >
                 {data}

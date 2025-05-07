@@ -66,7 +66,7 @@ const BasicVerification = () => {
   return (
     <Card className="w-full p-8 ">
       <Typography>{t("basicVerificationDocDesc")}</Typography>
-      <div className="w-full flex justifyc-center items-center gap-8 my-12">
+      <div className="w-full flex md:flex-row flex-col justifyc-center items-center gap-8 my-12">
         <div className="w-full flex flex-col items-start gap-1">
           <Typography className="font-bold">{t("selectDocCountry")}</Typography>
           <div className="w-full">
@@ -114,7 +114,7 @@ const BasicVerification = () => {
       </div>
       <div className="mt-6">
         <Typography variant="h6">{t("documentPhotos")}</Typography>
-        <div className="w-full flex gap-12">
+        <div className="w-full flex md:flex-row flex-col items-center gap-12">
           <ImageFileUploader
             imageUrl={frontImageUrl}
             description={t("uploadFrontSideDocument")}

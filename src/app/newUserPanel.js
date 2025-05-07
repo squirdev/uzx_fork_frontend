@@ -28,7 +28,7 @@ const NewUserPanel = () => {
         <p className="text-white text-center mt-4 mb-12 text-xl">
           {t("newUserSignup")}
         </p>
-        <div className="w-full grid grid-cols-2 gap-8 pt-12">
+        <div className="w-full md:grid grid-cols-2 gap-8 pt-12">
           <div>
             <Timeline className="h-full flex flex-col justify-between">
               <TimelineItem>

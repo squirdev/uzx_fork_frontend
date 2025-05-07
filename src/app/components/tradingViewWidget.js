@@ -268,7 +268,7 @@ const BTCChart = ({ symbol, tokenInfo }) => {
   }, [symbol, tokenInfo]);
 
   return (
-    <div>
+    <div className="">
       {/* Chart Container */}
       <div
         id="btc-kline-chart"

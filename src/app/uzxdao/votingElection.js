@@ -45,7 +45,7 @@ export const VotingElection = () => {
             <p className="text-white">{t("tokenHoldersDecisionsDesc")}</p>
           </div>
         </div>
-        <ul className="self-center grid grid-cols-2 gap-4 mt-24">
+        <ul className="self-center grid md:grid-cols-2 grid-cols-1 gap-4 mt-24">
           {votingElectionData.map((data, index) => (
             <li key={index} className="w-full flex flex-col py-4 px-4 gap-4">
               <p className="text-white font-bold text-2xl">{data.title}</p>

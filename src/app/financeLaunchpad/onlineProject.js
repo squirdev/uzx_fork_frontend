@@ -38,9 +38,9 @@ export default function OnlineProject() {
     },
   ];
   return (
-    <div className="bg-white brands container mx-auto mt-16">
+    <div className="bg-white brands container mx-auto mt-16 md:py-0 py-2">
       <p className="text-4xl font-bold">{t("oneLineProject")}</p>
-      <div className="w-full grid grid-cols-3 gap-x-16 gap-y-2 mt-8">
+      <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-2 mt-8">
         {onlineProjectData.map((data, index) => (
           <div key={index} className="flex flex-col gap-4">
             <Image src={data.image} width={330} height={200} alt="image" />

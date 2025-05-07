@@ -23,12 +23,12 @@ export const ExclusiveServices = () => {
     },
   ];
   return (
-    <div className="brands container mx-auto my-2 overflow-hidden mt-16">
+    <div className="brands container mx-auto my-2 overflow-hidden mt-16 md:px-0 px-2">
       <div className="w-full flex justify-center items-center text-center gap-2">
         <Image src={"/partner/cor.png"} width={24} height={18} alt="cor" />
         <p className="text-3xl font-bold">{t("enjoyExclusiveServices")}</p>
       </div>
-      <div className="my-12 w-full grid grid-cols-3 gap-12">
+      <div className="my-12 w-full grid md:grid-cols-3 grid-cols-1 gap-12">
         {descData.map((data, index) => (
           <div
             key={index}

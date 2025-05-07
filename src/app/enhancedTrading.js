@@ -39,7 +39,7 @@ const EnhancedTradingPanel = () => {
         <p className="text-5xl font-black text-center text-blue2 mt-6">
           {t("assetProtection")}
         </p>
-        <div className="flex w-full justify-between items-center gap-8 mt-12">
+        <div className="flex md:flex-row flex-col w-full justify-between items-center gap-8 mt-12">
           {enhancedTradingData.map((data, index) => (
             <div key={index} className="w-full flex flex-col items-center">
               <Image src={data.icon} width={136} height={126} alt="security" />

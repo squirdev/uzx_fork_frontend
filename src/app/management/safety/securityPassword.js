@@ -20,7 +20,9 @@ export default function SecurityAuthItem({
         <Image src={image} width={36} height={36} alt="image" />
         <div className="flex flex-col">
           <p>{title}</p>
-          <p className="text-sm text-hoverblack/70">{description}</p>
+          <p className="text-sm text-hoverblack/70  md:block hidden">
+            {description}
+          </p>
         </div>
       </div>
       <div className="w-full flex justify-end">

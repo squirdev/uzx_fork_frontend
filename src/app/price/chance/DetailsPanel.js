@@ -98,16 +98,16 @@ export default function DetailsPanel() {
 
       <div className="w-full flex flex-col items-center mt-12">
         {/* Header */}
-        <div className="w-full grid grid-cols-9 gap-2 px-3 text-sm">
+        <div className="w-full grid md:grid-cols-9 grid-cols-3 gap-2 px-3 text-sm">
           <p># {t("crypto")}</p>
           <p>{t("price")}</p>
           <p>{t("change24H")}</p>
-          <p>{t("high24H")}</p>
-          <p>{t("low24H")}</p>
-          <p>{t("volume24H")}</p>
-          <p>{t("turnover24H")}</p>
-          <p>{t("priceTrend")}</p>
-          <p>{t("operation")}</p>
+          <p className="hidden md:block">{t("high24H")}</p>
+          <p className="hidden md:block">{t("low24H")}</p>
+          <p className="hidden md:block">{t("volume24H")}</p>
+          <p className="hidden md:block">{t("turnover24H")}</p>
+          <p className="hidden md:block">{t("priceTrend")}</p>
+          <p className="hidden md:block">{t("operation")}</p>
         </div>
         {/* Body */}
         <div className="w-full flex flex-col mt-4">

@@ -43,7 +43,7 @@ export default function DiscoverProductPanel() {
         <p className="text-5xl font-black text-center bg-gradient-to-r from-blue1 to-blue2 bg-clip-text text-transparent  my-16">
           {t("discoverProduct")}
         </p>
-        <div className="w-full grid grid-cols-3 gap-6 pt-12">
+        <div className="w-full md:grid grid-cols-3 gap-6 pt-12 flex flex-col">
           {productServiceData.map((data, index) => (
             <Link
               key={index}
@@ -62,7 +62,7 @@ export default function DiscoverProductPanel() {
           ))}
         </div>
         <Carousel
-          className="w-full h-auto rounded-xl overflow-hidden mt-8"
+          className="w-full md:h-auto h-[200px] rounded-xl overflow-hidden mt-8"
           autoplay={true}
           autoplayDelay={5000}
           loop={true}

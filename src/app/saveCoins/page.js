@@ -33,14 +33,14 @@ export default function Home() {
               {t("whatIsEarn")}
             </button>
           </div>
-          <div className="w-1/3 flex items-center justify-center">
+          <div className="md:w-1/3 w-1/2 flex items-center justify-center">
             <Image src="/earnCoin.png" width={460} height={250} alt="image" />
           </div>
         </div>
       </div>
       <div className="w-full bg-white py-12">
         <div className="brands container mx-auto overflow-hidden">
-          <div className="relative flex w-full items-center justify-center my-9">
+          <div className="relative flex flex-col w-full items-center justify-center my-9">
             {/* <Tabs id="custom-animation" value={activeTab} className="w-full">
               <TabsHeader
                 className="w-96 rounded-none border-b border-blue-gray-50 bg-transparent p-0"
@@ -72,12 +72,15 @@ export default function Home() {
                 }}
               > */}
             {/* <FlexibleEarnTab /> */}
+            <Link
+              href="/saveCoins/detail"
+              className="text-blue1 absolute -top-[40px] right-[90px]"
+            >
+              {t("myOrder")}
+            </Link>
             <FixedEarnTab />
             {/* </TabsBody>
             </Tabs> */}
-            <Link href="/saveCoins/detail" className="text-blue1 absolute top-0 right-0">
-              {t("myOrder")}
-            </Link>
           </div>
         </div>
       </div>
