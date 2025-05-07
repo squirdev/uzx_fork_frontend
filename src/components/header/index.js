@@ -1,8 +1,9 @@
 import Image from "next/image";
+import { useState } from "react";
 
 import { BiWalletAlt } from "react-icons/bi";
-import { BiWindowAlt } from "react-icons/bi";
-import { BiSolidBell } from "react-icons/bi";
+import { BiWindowAlt, BiChevronDown } from "react-icons/bi";
+import { BiMenu } from "react-icons/bi";
 import { CiGlobe } from "react-icons/ci";
 
 import {
@@ -11,6 +12,7 @@ import {
   Drawer,
   Typography,
   IconButton,
+  Collapse,
 } from "@material-tailwind/react";
 import DiscoverMenuItem from "./discover";
 import TradeMenuItem from "./trade";
@@ -24,9 +26,11 @@ import Notification from "./notification";
 import { useLanguage } from "../../../context/LanguageProvider";
 import { useSelector } from "react-redux";
 import LoadingScreen from "@/app/components/loading";
+import MobileMenu from "./mobileMenu";
 
 const Header = () => {
   const { isAuth } = useSelector((state) => state.auth);
+  const [open, setOpen] = useState(false);
   const { t } = useLanguage();
   if (!t) return <LoadingScreen />;
   return (
@@ -35,7 +39,7 @@ const Header = () => {
         <Link href="/">
           <Image src={"/logo.svg"} width={60} height={24} alt="logo" />
         </Link>
-        <div className="flex items-center gap-9">
+        <div className="hidden md:flex items-center gap-9">
           <MainMenuItem />
           <DiscoverMenuItem />
           <TradeMenuItem />
@@ -65,7 +69,7 @@ const Header = () => {
           </>
         ) : (
           <>
-            <Link href="/login">
+            <Link href="/login" className="hidden md:flex">
               <Button className="px-8 py-2">
                 <span className="text-white text-md">{t("login")}</span>
               </Button>
@@ -75,11 +79,18 @@ const Header = () => {
                 <span className="text-white text-md">{t("signUp")}</span>
               </Button>
             </Link>
+            <BiMenu
+              onClick={() => setOpen(true)}
+              color="white"
+              size={30}
+              className="md:hidden block"
+            />
           </>
         )}
         <LanguageSetting />
         <DownloadAppItem />
       </div>
+      <MobileMenu open={open} setOpen={setOpen} />
     </div>
   );
 };

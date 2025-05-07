@@ -435,5 +435,6 @@
     "completeTime": "完成時間",
     "restTime": "剩餘時間",
     "finished": "已完成",
-    "waiting": "等待中..."
+    "waiting": "等待中...",
+    "more": "更多的"
 }

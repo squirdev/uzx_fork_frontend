@@ -7,7 +7,7 @@ const DownloadAppItem = () => {
   return (
     <Menu allowHover className="border-none" placement="bottom-end">
       <MenuHandler>
-        <BiArrowToBottom className="text-white w-7 h-7" />
+        <BiArrowToBottom className="text-white w-7 h-7 hidden md:flex" />
       </MenuHandler>
       <MenuList className="bg-mainblack border-none">
         <div className="flex items-center gap-2">

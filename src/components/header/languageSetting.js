@@ -68,7 +68,7 @@ const LanguageSetting = () => {
     setSelected(value.target.value);
   };
   return (
-    <div>
+    <div className="hidden md:flex">
       <button onClick={handleOpen} href="/management">
         <CiGlobe className="text-white w-6 h-6" />
       </button>

@@ -1,10 +1,12 @@
-"use client";
-
 import Image from "next/image";
+import Link from "next/link";
 
 import Logo from "../header/logo";
 import { useLanguage } from "../../../context/LanguageProvider";
 import LoadingScreen from "@/app/components/loading";
+import { useState } from "react";
+import { Collapse } from "@material-tailwind/react";
+import { BiChevronRight, BiChevronDown, BiChevronUp } from "react-icons/bi";
 
 const communityLinkData = [
   {
@@ -38,7 +40,14 @@ const communityLinkData = [
 ];
 const Footer = () => {
   const { t } = useLanguage();
+
+  const [aboutUZX, setAboutUZX] = useState(false);
+  const [products, setProducts] = useState(false);
+  const [service, setService] = useState(false);
+  const [trade, setTrade] = useState(false);
+
   if (!t) return <LoadingScreen />;
+
   const footerNavData = [
     [
       {
@@ -108,39 +117,6 @@ const Footer = () => {
           },
         ],
       },
-      // {
-      //   title: t("userSupport"),
-      //   data: [
-      //     {
-      //       title: t("support"),
-      //       url: "/#",
-      //     },
-      //     {
-      //       title: t("uZXCommunity"),
-      //       url: "/#",
-      //     },
-      //     {
-      //       title: t("transactionFees"),
-      //       url: "/#",
-      //     },
-      //     {
-      //       title: t("officialVerification"),
-      //       url: "/#",
-      //     },
-      //     {
-      //       title: t("channels"),
-      //       url: "/#",
-      //     },
-      //     {
-      //       title: t("proofReserces"),
-      //       url: "/#",
-      //     },
-      //     {
-      //       title: "API",
-      //       url: "/#",
-      //     },
-      //   ],
-      // },
     ],
     [
       {
@@ -217,9 +193,9 @@ const Footer = () => {
   return (
     <div className="bg-black">
       <div className="container mx-auto py-20 flex justify-between gap-8">
-        <div className="w-full flex flex-col items-start">
+        <div className="w-full flex flex-col items-start px-2 md:px-0">
           <Logo />
-          <div className="w-full grid grid-cols-6 mt-8 ">
+          <div className="hidden w-full md:grid grid-cols-6 mt-8">
             {footerNavData.map((footItem, index) => (
               <div key={index} className="w-full flex flex-col pl-4">
                 {footItem.map((footSubItem, subIndex) => (
@@ -249,6 +225,104 @@ const Footer = () => {
                   </a>
                 ))}
               </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-4 text-white mt-8 md:hidden text-[14px]">
+            <div>
+              <div
+                className="flex flex-row gap-4 items-center cursor-pointer pr-[10px]"
+                onClick={() => setAboutUZX(!aboutUZX)}
+              >
+                {aboutUZX ? (
+                  <BiChevronDown color="white" size={20} />
+                ) : (
+                  <BiChevronRight color="white" size={20} />
+                )}
+                <p>{footerNavData[0][0].title}</p>
+              </div>
+              <Collapse open={aboutUZX}>
+                <div className="flex flex-col gap-4 mt-4 pl-[50px]">
+                  {footerNavData[0][0].data.map((item, index) => (
+                    <Link key={index} href={item.url}>
+                      {item.title}
+                    </Link>
+                  ))}
+                </div>
+              </Collapse>
+            </div>
+            <div>
+              <div
+                className="flex flex-row gap-4 items-center cursor-pointer pr-[10px]"
+                onClick={() => setProducts(!products)}
+              >
+                {products ? (
+                  <BiChevronDown color="white" size={20} />
+                ) : (
+                  <BiChevronRight color="white" size={20} />
+                )}
+                <p>{footerNavData[1][0].title}</p>
+              </div>
+              <Collapse open={products}>
+                <div className="flex flex-col gap-4 mt-4 pl-[50px]">
+                  {footerNavData[1][0].data.map((item, index) => (
+                    <Link key={index} href={item.url}>
+                      {item.title}
+                    </Link>
+                  ))}
+                </div>
+              </Collapse>
+            </div>
+            <div>
+              <div
+                className="flex flex-row gap-4 items-center cursor-pointer pr-[10px]"
+                onClick={() => setService(!service)}
+              >
+                {service ? (
+                  <BiChevronDown color="white" size={20} />
+                ) : (
+                  <BiChevronRight color="white" size={20} />
+                )}
+                <p>{footerNavData[2][0].title}</p>
+              </div>
+              <Collapse open={service}>
+                <div className="flex flex-col gap-4 mt-4 pl-[50px]">
+                  {footerNavData[2][0].data.map((item, index) => (
+                    <Link key={index} href={item.url}>
+                      {item.title}
+                    </Link>
+                  ))}
+                </div>
+              </Collapse>
+            </div>
+            <div>
+              <div
+                className="flex flex-row gap-4 items-center cursor-pointer pr-[10px]"
+                onClick={() => setTrade(!trade)}
+              >
+                {trade ? (
+                  <BiChevronDown color="white" size={20} />
+                ) : (
+                  <BiChevronRight color="white" size={20} />
+                )}
+                <p>{footerNavData[3][0].title}</p>
+              </div>
+              <Collapse open={trade}>
+                <div className="flex flex-col gap-4 mt-4 pl-[50px]">
+                  {footerNavData[3][0].data.map((item, index) => (
+                    <Link key={index} href={item.url}>
+                      {item.title}
+                    </Link>
+                  ))}
+                </div>
+              </Collapse>
+            </div>
+            <div className="flex flex-row gap-2">
+              {communityLinkData.map((data, index) => (
+                <a key={index} href={data.url}>
+                  <Image src={data.icon} width={26} height={26} alt="icon" />
+                </a>
+              ))}
             </div>
           </div>
         </div>

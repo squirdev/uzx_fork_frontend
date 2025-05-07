@@ -435,5 +435,6 @@
     "completeTime": "Abschlusszeit",
     "restTime": "Verbleibende Zeit",
     "finished": "Abgeschlossen",
-    "waiting": "Warten..."
+    "waiting": "Warten...",
+    "more": "Meer"
 }
