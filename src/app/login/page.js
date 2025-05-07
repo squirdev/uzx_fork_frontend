@@ -21,10 +21,9 @@ export default function Home() {
 
   return (
     <div className="content">
-      
       <div className="w-full flex items-center bg-white">
         <LoginLeftPanel />
-        <div className="w-3/5 flex items-center justify-center">
+        <div className="md:w-3/5 w-full flex items-center justify-center md:mt-0 mt-12">
           <div className="w-[500px]">
             <div className="w-full flex justify-between">
               <p className="text-4xl font-bold">{t("login")}</p>

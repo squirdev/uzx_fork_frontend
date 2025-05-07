@@ -105,7 +105,7 @@ export default function WithdrawStep() {
               variant="static"
               size="lg"
               label={t("crypto")}
-              className="w-96"
+              className="md:w-96 w-64"
             >
               {tokenInfo.map((data, index) => (
                 <Option key={index} onClick={() => setActiveIndex(index)}>
@@ -132,7 +132,7 @@ export default function WithdrawStep() {
               variant="static"
               size="lg"
               label={t("network")}
-              className="w-96"
+              className="md:w-96 w-64"
             >
               {tokenInfo[activeIndex]?.network.map((data, subIndex) => (
                 <Option

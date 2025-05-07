@@ -66,6 +66,12 @@ const Header = () => {
             </Link>
             <UserProfileItem />
             <Notification message={0} />
+            <BiMenu
+              onClick={() => setOpen(true)}
+              color="white"
+              size={30}
+              className="md:hidden block"
+            />
           </>
         ) : (
           <>

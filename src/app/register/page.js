@@ -19,7 +19,7 @@ export default function Home() {
     <div className="content">
       <div className="w-full h-full flex bg-white">
         <LoginLeftPanel />
-        <div className="w-3/5 h-full flex flex-row justify-center">
+        <div className="md:w-3/5 w-full h-full flex flex-row justify-center md:mt-0 mt-12">
           <div className="w-[500px] h-full flex items-center">
             <div className="w-full flex flex-col gap-6 mt-24">
               <p className="text-4xl font-bold">{t("register")}</p>

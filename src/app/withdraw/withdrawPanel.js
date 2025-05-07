@@ -35,11 +35,15 @@ export default function WithdrawPanel() {
           <BsArrowRepeat className="text-2xl hover:rotate-180 duration-300 text-blue1" />
         </button>
       </div>
-      <div className="w-full grid grid-cols-6 mt-4">
+      <div className="w-full grid md:grid-cols-6 grid-cols-4 mt-4">
         <p className="text-sm text-hoverblack">{t("arrivalTime")}</p>
         <p className="text-sm text-hoverblack">{t("crypto")}</p>
-        <p className="text-sm text-hoverblack">{t("networkProtocol")}</p>
-        <p className="text-sm text-hoverblack">{t("withdrawAddress")}</p>
+        <p className="text-sm text-hoverblack hidden md:block">
+          {t("networkProtocol")}
+        </p>
+        <p className="text-sm text-hoverblack hidden md:block">
+          {t("withdrawAddress")}
+        </p>
         <p className="text-sm text-hoverblack">{t("amount")}</p>
         <p className="text-sm text-hoverblack">{t("status")}</p>
       </div>
@@ -58,8 +62,10 @@ export default function WithdrawPanel() {
                 <p className="text-sm text-hoverblack">
                   {item.token.toUpperCase()}
                 </p>
-                <p className="text-sm text-hoverblack">{item.network}</p>
-                <p className="text-sm text-hoverblack">
+                <p className="text-sm text-hoverblack hidden md:block">
+                  {item.network}
+                </p>
+                <p className="text-sm text-hoverblack hidden md:block">
                   {getSimplifiedAddress(item.address)}
                 </p>
                 <p className="text-sm text-hoverblack">{item.amount}</p>

@@ -18,7 +18,7 @@ const Notification = ({ message }) => {
   const { t } = useLanguage();
   if (!t) return <LoadingScreen />;
   return (
-    <div>
+    <div className="md:block hidden">
       <div onClick={openDrawer}>
         <Badge>
           <BiSolidBell className="text-white w-6 h-6" />

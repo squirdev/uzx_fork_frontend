@@ -42,14 +42,14 @@ export default function FooterForm({
         label={
           <Typography
             color="blue-gray"
-            className="flex items-center text-sm font-medium"
+            className="flex items-center md:text-sm text-[10px] font-medium"
           >
             Accept
             <Typography
               as="a"
               href="/aboutUZX"
               color="blue"
-              className="font-medium transition-colors hover:text-blue-700 text-sm"
+              className="font-medium transition-colors hover:text-blue-700 md:text-sm text-[10px]"
             >
               &nbsp; {t("userAgreement")}
             </Typography>
@@ -58,7 +58,7 @@ export default function FooterForm({
               as="a"
               href="/aboutUZX"
               color="blue"
-              className="font-medium transition-colors hover:text-blue-700 text-sm"
+              className="font-medium transition-colors hover:text-blue-700 md:text-sm text-[10px]"
             >
               &nbsp; {t("privacyPolicy")}
             </Typography>

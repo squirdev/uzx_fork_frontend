@@ -116,7 +116,7 @@ export default function DepositStep() {
               variant="static"
               size="lg"
               label={t("crypto")}
-              className="w-96"
+              className="md:w-96 w-64"
               onChange={(e) => {
                 setActiveIndex(e);
               }}
@@ -147,7 +147,7 @@ export default function DepositStep() {
               size="lg"
               value={activeNewworkIndex ?? ""}
               label="Network"
-              className="w-96"
+              className="md:w-96 w-64"
               onChange={(e) => setActiveNewworkIndex(e)}
             >
               {tokenInfo[activeIndex]?.network.map((data, subIndex) => (

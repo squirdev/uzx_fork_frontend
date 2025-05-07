@@ -199,7 +199,7 @@ const HotAssertsPanel = () => {
         <p className="text-5xl font-black text-center bg-gradient-to-r from-blue1 to-blue2 bg-clip-text text-transparent  my-16">
           {t("hotAssert")}
         </p>
-        <div className="w-full grid grid-cols-3 gap-8">
+        <div className="w-full grid md:grid-cols-3 grid-cols-1 gap-8">
           {finalCoinDetail &&
             finalCoinDetail.map((data, index) => (
               <HotAssertItem itemData={data} key={index} subIndex={index} />

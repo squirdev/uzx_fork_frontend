@@ -1,3 +1,4 @@
+"use client";
 import { use, useState } from "react";
 import {
   Button,
@@ -10,6 +11,8 @@ import {
 import { BiWindowAlt, BiChevronDown, BiChevronUp } from "react-icons/bi";
 import { useLanguage } from "../../../context/LanguageProvider";
 import Link from "next/link";
+import { useSelector } from "react-redux";
+import LoadingScreen from "@/app/components/loading";
 
 const supportLanguage = [
   {
@@ -43,14 +46,16 @@ const supportLanguage = [
 ];
 
 const MobileMenu = ({ open, setOpen }) => {
-  const { t, setLocale } = useLanguage();
-  if (!t) return <LoadingScreen />;
+  const { isAuth } = useSelector((state) => state.auth);
 
   const [discover, setDiscover] = useState(false);
   const [trade, setTrade] = useState(false);
   const [grow, setGrow] = useState(false);
   const [more, setMore] = useState(false);
   const [language, setLanguage] = useState(false);
+
+  const { t, setLocale } = useLanguage();
+  if (!t) return <LoadingScreen />;
 
   const handleSelectLanguage = (code) => {
     localStorage.setItem("language", code);
@@ -91,12 +96,25 @@ const MobileMenu = ({ open, setOpen }) => {
       </div>
 
       <div className="flex flex-col gap-4 text-[14px]">
-        <div className="flex flex-row gap-4 items-center">
-          <p className="border-[1px] border-white rounded-3xl px-[6px] py-[1px]">
-            {t("signUp")}
-          </p>
-          <p className="p-1">{t("login")}</p>
-        </div>
+        {!isAuth && (
+          <div className="flex flex-row gap-4 items-center">
+            <Link
+              onClick={() => setOpen(false)}
+              href={"/register"}
+              className="border-[1px] border-white rounded-3xl px-[6px] py-[1px]"
+            >
+              {t("signUp")}
+            </Link>
+            <Link
+              onClick={() => setOpen(false)}
+              href={"/login"}
+              className="p-1"
+            >
+              {t("login")}
+            </Link>
+          </div>
+        )}
+
         <div>
           <div
             className="flex flex-row justify-between items-center cursor-pointer pr-[10px]"
