@@ -62,7 +62,7 @@ const Home = () => {
 
   if (!t) return <LoadingScreen />;
   return (
-    <div className="w-full flex flex-col items-center py-32 bg-white">
+    <div className="w-full flex flex-col items-center py-32 bg-white md:px-0 px-4">
       <Dialog open={confirmModalShow} handler={setConfirmModalShow}>
         <DialogHeader>{t("warning")}</DialogHeader>
         <DialogBody>{t("cancelEarnWaring")}</DialogBody>
@@ -85,40 +85,44 @@ const Home = () => {
           </Button>
         </DialogFooter>
       </Dialog>
-      <div className="w-full grid grid-cols-7 px-6 pb-3 items-center">
-        <p>{t("amount")}</p>
-        <p>{t("token")}</p>
-        <p>{t("percent")}</p>
-        <p>{t("completeTime")}</p>
-        <p>{t("restTime")}</p>
-        <p>{t("status")}</p>
-        <p>{t("operation")}</p>
+      <div className="w-full md:overflow-hidden overflow-x-scroll">
+        <div className="w-[1000px] md:w-full grid grid-cols-7 px-6 pb-3 items-center">
+          <p>{t("amount")}</p>
+          <p>{t("token")}</p>
+          <p>{t("percent")}</p>
+          <p>{t("completeTime")}</p>
+          <p>{t("restTime")}</p>
+          <p>{t("status")}</p>
+          <p>{t("operation")}</p>
+        </div>
+        <div className="w-[1000px] md:w-full">
+          {earnTaskList &&
+            earnTaskList.map((data, index) => (
+              <div
+                key={index}
+                className="w-full grid grid-cols-7 items-center text-black font-bold cursor-pointer p-6 border-b hover:bg-[#f0f0f0]"
+              >
+                <p>{data.amount}</p>
+                <p>{data.token?.toUpperCase()}</p>
+                <p>{data.percent}%</p>
+                <p>{getSimplifiedDateTime(data.expireAt)}</p>
+                <Countdown expireAt={data.expireAt} />
+                <p>{data.isFinished ? t("finished") : t("waiting")}</p>
+                <div>
+                  {!data.isFinished && (
+                    <Button
+                      color="red"
+                      size="sm"
+                      onClick={() => handleClickCancelEarnTask(index)}
+                    >
+                      {t("cancel")}
+                    </Button>
+                  )}
+                </div>
+              </div>
+            ))}
+        </div>
       </div>
-      {earnTaskList &&
-        earnTaskList.map((data, index) => (
-          <div
-            key={index}
-            className="w-full grid grid-cols-7 items-center text-black font-bold cursor-pointer p-6 border-b hover:bg-[#f0f0f0]"
-          >
-            <p>{data.amount}</p>
-            <p>{data.token?.toUpperCase()}</p>
-            <p>{data.percent}%</p>
-            <p>{getSimplifiedDateTime(data.expireAt)}</p>
-            <Countdown expireAt={data.expireAt} />
-            <p>{data.isFinished ? t("finished") : t("waiting")}</p>
-            <div>
-              {!data.isFinished && (
-                <Button
-                  color="red"
-                  size="sm"
-                  onClick={() => handleClickCancelEarnTask(index)}
-                >
-                  {t("cancel")}
-                </Button>
-              )}
-            </div>
-          </div>
-        ))}
     </div>
   );
 };
