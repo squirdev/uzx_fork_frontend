@@ -28,7 +28,7 @@ export const CryptoBlindBox = () => {
       <p className="text-5xl text-center font-bold">
         {t("howToReceiveCrypto")}
       </p>
-      <div className="w-full my-8 grid grid-cols-3 gap-12">
+      <div className="w-full my-8 grid md:grid-cols-3 grid-cols-1 gap-12">
         {descData.map((data, index) => (
           <div key={index} className="px-12 flex gap-5 flex-col items-center">
             <Image src={data.image} width={160} height={160} alt="icon" />

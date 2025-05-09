@@ -10,7 +10,7 @@ export const GetCommission = () => {
       <p className="text-5xl text-center font-bold">
         {t("inviteFriendsGetComm")}
       </p>
-      <div className="w-full flex justify-between items-center gap-24">
+      <div className="w-full flex md:flex-row flex-col justify-between items-center gap-24">
         <div className="flex-1 my-12 flex flex-col gap-4">
           <p>{t("inviteFriendsGetCommDesc1")}</p>
           <p>{t("inviteFriendsGetCommDesc2")}</p>

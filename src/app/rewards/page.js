@@ -17,9 +17,7 @@ export default function Home() {
             <p className="text-5xl font-bold text-white">
               {t("rewardsCenter")}
             </p>
-            <p className="text-[#939393] text-lg">
-              {t("chanceWinMore")}
-            </p>
+            <p className="text-[#939393] text-lg">{t("chanceWinMore")}</p>
           </div>
           <div className="w-1/2 flex items-center justify-center">
             <Image src={"/rewards/top.png"} width={465} height={287} alt="" />

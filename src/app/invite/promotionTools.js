@@ -13,7 +13,7 @@ export const PromotionTools = () => {
   const { t } = useLanguage();
   if (!t) return <LoadingScreen />;
   return (
-    <div className="brands container mx-auto my-2 my-16">
+    <div className="brands container mx-auto my-16">
       <p className="text-4xl font-bold mb-8">{t("promotionTools")}</p>
       <div onClick={openDrawer} className="w-[345px] cursor-pointer mb-16">
         <div className="w-full h-[210px] bg-[url('/invite/back.png')] bg-cover flex flex-col items-center justify-center gap-2">

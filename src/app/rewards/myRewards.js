@@ -9,10 +9,10 @@ export const MyRewards = () => {
   return (
     <div className="w-full brands container mx-auto my-2 overflow-hidden">
       <div className="w-full flex items-end justify-between">
-        <p className="text-4xl font-bold">{t("myRewards")}</p>
-        <a href="#" className="text-hoverblack">
+        <p className="md:text-4xl font-bold text-xl">{t("myRewards")}</p>
+        {/* <a href="#" className="text-hoverblack">
           {t("myRewardsDesc")} &gt;
-        </a>
+        </a> */}
       </div>
       <div className="w-full my-6">
         <RewardsPanel />
