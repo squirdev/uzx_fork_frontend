@@ -60,7 +60,7 @@ export default function Home() {
                 {t("deposit")}
               </Link>
             ) : (
-              <div className="relative w-96 mt-9">
+              <div className="relative md:w-96 w-full mt-9">
                 <input className="w-full h-full rounded-full border border-blue1 bg-black p-4 px-6 outline-none text-hoverblack" />
                 <Link
                   href="/register"
