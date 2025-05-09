@@ -35,7 +35,7 @@ const RequiredForBegineer = () => {
           <AiOutlineDoubleRight className="text-blue1" />
         </button>
       </div>
-      <div className="w-full grid grid-cols-3 items-center gap-12">
+      <div className="w-full grid md:grid-cols-3 grid-cols-1 items-center gap-12">
         {requiredData.map((data, index) => (
           <div key={index} className="w-full flex flex-col gap-2">
             <Image src={data.image} width={374} height={210} alt="img" />

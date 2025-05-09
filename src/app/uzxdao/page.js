@@ -12,7 +12,7 @@ export default function Home() {
   const { t } = useLanguage();
   if (!t) return <LoadingScreen />;
   return (
-    <div className="content">
+    <div className="content md:px-0 px-2">
       <div className="brands container mx-auto my-2 overflow-hidden  drop-shadow-md">
         <div className="w-full flex md:flex-row flex-col-reverse items-center mt-24">
           <div className="md:w-2/3 w-full flex flex-col items-start gap-6 ">

@@ -24,8 +24,8 @@ const TradingVideo = () => {
     },
   ];
   return (
-    <div className="brands container mx-auto my-2 overflow-hidden  drop-shadow-md">
-      <div className="w-full grid grid-cols-3 gap-12 mt-9">
+    <div className="brands container mx-auto my-2 overflow-hidden drop-shadow-md">
+      <div className="w-full grid md:grid-cols-3 grid-cols-1 gap-12 mt-9">
         {tradeVideoData.map((data, index) => (
           <TradingVideoItem key={index} data={data} />
         ))}

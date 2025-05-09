@@ -14,10 +14,10 @@ export default function NoviceCommunity() {
   const { t } = useLanguage();
   if (!t) return <LoadingScreen />;
   return (
-    <div className="content ">
+    <div className="content md:px-0 px-2">
       <div className="brands container mx-auto my-2 overflow-hidden  drop-shadow-md">
-        <div className="w-full flex items-center mt-9">
-          <div className="w-1/2 flex flex-col items-start gap-6 ">
+        <div className="w-full flex items-center mt-9 md:flex-row flex-col-reverse">
+          <div className="md:w-1/2 w-full flex flex-col items-start gap-6 ">
             <p className="text-5xl font-bold text-white">
               {t("playWithDigCurrency")}
             </p>
@@ -25,7 +25,7 @@ export default function NoviceCommunity() {
               {t("playWithDigCurrencyDesc")}
             </p>
           </div>
-          <div className="w-1/2 flex items-center justify-center">
+          <div className="md:w-1/2 w-full flex items-center justify-center">
             <Image src={"/noviceHeader.png"} width={465} height={287} alt="" />
           </div>
         </div>

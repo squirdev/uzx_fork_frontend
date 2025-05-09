@@ -94,8 +94,8 @@ const ThemeClassroom = () => {
           {themeData.map((data, index) => (
             <TabPanel key={index} value={index}>
               {/* {data.label} */}
-              <div className="flex w-full items-center gap-8">
-                <div className="w-2/3">
+              <div className="flex md:flex-row flex-col w-full items-center gap-8">
+                <div className="md:w-2/3 w-full">
                   <video
                     autoPlay
                     muted
@@ -106,7 +106,7 @@ const ThemeClassroom = () => {
                     <source src={data.mainVideoUrl} type="video/mp4" />
                   </video>
                 </div>
-                <div className="w-1/3 h-full flex flex-col items-start justify-between gap-8">
+                <div className="md:w-1/3 w-full h-full flex flex-col items-start justify-between gap-8">
                   {data.desc.map((detail, index) => (
                     <div key={index} className="flex gap-4 items-center">
                       <Image
