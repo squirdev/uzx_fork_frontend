@@ -102,7 +102,7 @@ const Home = () => {
                 key={index}
                 className="w-full grid grid-cols-7 items-center text-black font-bold cursor-pointer p-6 border-b hover:bg-[#f0f0f0]"
               >
-                <p>{data.amount}</p>
+                <p>{Number(data.amount).toFixed(3)}</p>
                 <p>{data.token?.toUpperCase()}</p>
                 <p>{data.percent}%</p>
                 <p>{getSimplifiedDateTime(data.expireAt)}</p>
