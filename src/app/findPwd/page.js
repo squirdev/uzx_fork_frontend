@@ -13,6 +13,7 @@ import { resetPassword, sendVerifyEmail } from "../api/auth";
 import { useAlert } from "../../../context/alertContext";
 import { useRouter } from "next/navigation";
 import LoadingScreen from "../components/loading";
+import VerifyButton from "../components/verifyButton";
 
 function isValidEmailPassword(email, verifyCode, password, confirmPassword) {
   if (!email || !verifyCode || !password || !confirmPassword) return false;
@@ -29,7 +30,6 @@ export default function Home() {
   const [confirmPasswordShow, setConfirmPasswordShow] = useState(false);
 
   const { t } = useLanguage();
-  if (!t) return <LoadingScreen />;
 
   const { showAlert } = useAlert();
   const router = useRouter();
@@ -54,7 +54,7 @@ export default function Home() {
       }
     }
   };
-
+  if (!t) return <LoadingScreen />;
   return (
     <div className="content">
       <div className="w-full flex items-center bg-white">
@@ -83,14 +83,11 @@ export default function Home() {
                       className: "min-w-0",
                     }}
                   />
-                  <Button
-                    size="sm"
-                    disabled={!email}
-                    onClick={handleSendVerifyCode}
-                    className="!absolute right-1 top-1 rounded bg-inherit shadow-none text-blue1"
-                  >
-                    {t("send")}
-                  </Button>
+                  <VerifyButton
+                    t={t}
+                    email={email}
+                    handleSendVerifyEmail={handleSendVerifyCode}
+                  />
                 </div>
                 <div className="flex flex-col gap-1">
                   <Input

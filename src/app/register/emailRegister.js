@@ -8,6 +8,7 @@ import { useAlert } from "../../../context/alertContext";
 import { useRouter } from "next/navigation";
 import { isValidEmailRegister } from "../helper";
 import LoadingScreen from "../components/loading";
+import VerifyButton from "../components/verifyButton";
 
 export default function EmailRegisterPanel() {
   const [email, setEmail] = useState("");
@@ -68,14 +69,11 @@ export default function EmailRegisterPanel() {
                 className: "min-w-0",
               }}
             />
-            <Button
-              size="sm"
-              disabled={!email}
-              onClick={handleSendVerifyEmail}
-              className="!absolute right-1 top-1 rounded bg-inherit shadow-none text-blue1"
-            >
-              {t("send")}
-            </Button>
+            <VerifyButton
+              t={t}
+              email={email}
+              handleSendVerifyEmail={handleSendVerifyEmail}
+            />
           </div>
           <div className="flex flex-col gap-1">
             <Input
