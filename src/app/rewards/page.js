@@ -12,12 +12,14 @@ export default function Home() {
   return (
     <div className="content">
       <div className="brands container mx-auto my-2">
-        <div className="w-full flex items-center mt-9">
+        <div className="w-full flex items-center mt-9 md:flex-row flex-col-reverse">
           <div className="w-1/2 flex flex-col items-start gap-6 ">
-            <p className="text-5xl font-bold text-white">
+            <p className="text-5xl font-bold text-white md:text-left text-center">
               {t("rewardsCenter")}
             </p>
-            <p className="text-[#939393] text-lg">{t("chanceWinMore")}</p>
+            <p className="text-[#939393] text-lg md:text-left text-center">
+              {t("chanceWinMore")}
+            </p>
           </div>
           <div className="w-1/2 flex items-center justify-center">
             <Image src={"/rewards/top.png"} width={465} height={287} alt="" />

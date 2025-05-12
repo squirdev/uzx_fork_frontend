@@ -255,7 +255,7 @@ export default function Home() {
                   </Menu>
                 </div>
               </div>
-              <div className="w-full flex justify-between items-center">
+              <div className="w-full flex justify-between items-center md:text-[16px] text-xs">
                 <p className="text-[#94959e]">
                   {t("exchangePrice")}: 1{sourceCoin[fromIndex]} ≈{" "}
                   {exchangeRate * curCurrencyProfit} {targetCoin[toIndex]}

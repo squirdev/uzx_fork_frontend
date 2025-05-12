@@ -30,7 +30,9 @@ export default function HeaderPanel() {
               />
               <div className="flex flex-col items-center justify-between">
                 <p className="text-white font-bold text-4xl">{t("convert")}</p>
-                <p className="text-white">{t("convertDesc")}</p>
+                <p className="text-white md:text-left text-center">
+                  {t("convertDesc")}
+                </p>
               </div>
             </div>
           </div>
