@@ -436,5 +436,6 @@
     "restTime": "Verbleibende Zeit",
     "finished": "Abgeschlossen",
     "waiting": "Warten...",
-    "more": "Meer"
+    "more": "Meer",
+    "withdrawNote": "Sie können nur zweimal pro Tag eine Auszahlung vornehmen."
 }

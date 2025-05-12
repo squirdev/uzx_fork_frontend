@@ -2,9 +2,6 @@ import {
   Button,
   Input,
   Option,
-  Popover,
-  PopoverContent,
-  PopoverHandler,
   Select,
   Timeline,
   TimelineBody,
@@ -20,6 +17,7 @@ import { getTokenList, withdraw } from "../api/token";
 import { useAlert } from "../../../context/alertContext";
 import { getProfile } from "../api/profile";
 import LoadingScreen from "../components/loading";
+import { useRouter } from "next/navigation";
 
 export default function WithdrawStep() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -29,28 +27,32 @@ export default function WithdrawStep() {
   const [tokenInfo, setTokenInfo] = useState(null);
   const [balanceInfo, setBalanceInfo] = useState(null);
   const [currentCoinBalance, setCurrentCoinBalance] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
 
   const { showAlert } = useAlert();
   const { t } = useLanguage();
+  const router = useRouter();
 
   const fetchUserProfile = async () => {
     let result = await getProfile();
     if (result) setBalanceInfo(result.user);
     else {
       showAlert(t("alertErrorMsg"), "error");
+      router.push("/login");
+    }
+  };
+
+  const fetchTokenInfo = async () => {
+    let result = await getTokenList();
+    console.log("TOKEN LIST", result);
+    if (result && result.data) {
+      setTokenInfo(result.data);
+    } else {
+      showAlert(t("alertErrorMsg"), "error");
     }
   };
 
   useEffect(() => {
-    const fetchTokenInfo = async () => {
-      let result = await getTokenList();
-      console.log("TOKEN LIST", result);
-      if (result && result.data) {
-        setTokenInfo(result.data);
-      } else {
-        showAlert(t("alertErrorMsg"), "error");
-      }
-    };
     fetchTokenInfo();
     fetchUserProfile();
   }, []);
@@ -72,21 +74,27 @@ export default function WithdrawStep() {
   };
 
   const handleWithdraw = async () => {
-    const network = tokenInfo[activeIndex]?.network[activeNewworkIndex].name;
-    const amount = withdrawAmount;
-    const token = tokenInfo[activeIndex].name;
-    const withdrawAddress = address;
+    try {
+      setIsLoading(true);
+      const network = tokenInfo[activeIndex]?.network[activeNewworkIndex].name;
+      const amount = withdrawAmount;
+      const token = tokenInfo[activeIndex].name;
+      const withdrawAddress = address;
 
-    let result = await withdraw(token, amount, network, withdrawAddress);
-    if (result) {
-      showAlert(t("withdrawSuccess"), "success");
-    } else {
-      showAlert(t("withdrawFailed"), "error");
+      let result = await withdraw(token, amount, network, withdrawAddress);
+      if (result) {
+        showAlert(t("withdrawSuccess"), "success");
+      } else {
+        showAlert(t("withdrawFailed"), "error");
+      }
+    } catch (error) {
+      console.log("error", error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
   if (!t) return <LoadingScreen />;
-
   return (
     <Timeline>
       <TimelineItem>
@@ -167,12 +175,16 @@ export default function WithdrawStep() {
           <div className="mt-12">
             <Button
               disabled={!withdrawAmount}
+              loading={isLoading}
               onClick={handleWithdraw}
               className="bg-blue1"
             >
               {t("withdraw")}
             </Button>
           </div>
+          <Typography variant="small" className="mt-8">
+            {t("withdrawNote")}
+          </Typography>
         </TimelineBody>
       </TimelineItem>
     </Timeline>

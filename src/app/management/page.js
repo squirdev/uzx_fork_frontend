@@ -15,12 +15,14 @@ import IDVerification from "./idVerification/main";
 import { getProfile } from "../api/profile";
 import { useAlert } from "../../../context/alertContext";
 import LoadingScreen from "../components/loading";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState(0);
   const [userProfile, setUserProfile] = useState(null);
   const { t } = useLanguage();
   const { showAlert } = useAlert();
+  const router = useRouter();
 
   const fetchProfile = async () => {
     let result = await getProfile();
