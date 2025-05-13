@@ -300,7 +300,7 @@
     "enterWithdrawAmount": "输入提现金额",
     "current": "当前",
     "withdrawSuccess": "提现成功",
-    "withdrawFailed": "提现失败，请重试",
+    "withdrawFailed": "您尝试的次数过多或存在问题",
     "withdrawAddress": "提现地址",
     "pageNotValid": "页面 URL 无效",
     "buy": "买入",
@@ -436,5 +436,6 @@
     "restTime": "剩余时间",
     "finished": "已完成",
     "waiting": "等待中...",
-    "more": "更多的"
+    "more": "更多的",
+    "withdrawNote": "每位用户每天最多只能提取 2 次。"
 }

@@ -300,7 +300,7 @@
     "enterWithdrawAmount": "コインの数量を入力してください",
     "current": "現在",
     "withdrawSuccess": "出金に成功しました",
-    "withdrawFailed": "出金に失敗しました。もう一度お試しください。",
+    "withdrawFailed": "何度も試したか、問題が発生しました",
     "withdrawAddress": "出金アドレス",
     "pageNotValid": "ページのURLが無効です",
     "buy": "購入",
@@ -436,5 +436,6 @@
     "restTime": "残り時間",
     "finished": "完了",
     "waiting": "待機中...",
-    "more": "もっと"
+    "more": "もっと",
+    "withdrawNote": "1日に2回までしか出金できません。"
 }

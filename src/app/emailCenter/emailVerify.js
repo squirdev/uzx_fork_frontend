@@ -8,6 +8,7 @@ import { useLanguage } from "../../../context/LanguageProvider";
 import { useRouter } from "next/navigation";
 import { getProfile } from "../api/profile";
 import LoadingScreen from "../components/loading";
+import VerifyButton from "../components/verifyButton";
 
 const EmailVerify = () => {
   const [email, setEmail] = useState("");
@@ -78,14 +79,10 @@ const EmailVerify = () => {
             className: "min-w-0",
           }}
         />
-        <Button
-          size="sm"
-          disabled={!email}
-          onClick={handleSendVerifyEmail}
-          className="!absolute right-1 top-1 rounded bg-inherit shadow-none text-blue1"
-        >
-          {t("send")}
-        </Button>
+        <VerifyButton
+          email={email}
+          handleSendVerifyEmail={handleSendVerifyEmail}
+        />
       </div>
       <div className="flex flex-col">
         <Typography className="text-sm">{t("accountPrivateKey")}</Typography>

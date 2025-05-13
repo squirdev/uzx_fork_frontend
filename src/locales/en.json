@@ -300,7 +300,7 @@
     "enterWithdrawAmount": "Enter the number of coins",
     "current": "Current",
     "withdrawSuccess": "Withdraw successfully",
-    "withdrawFailed": "Withdraw Failed, try again.",
+    "withdrawFailed": "You tried too many times or there was a problem",
     "withdrawAddress": "Withdraw Address",
     "pageNotValid": "Page URL is not valid",
     "buy": "Buy",
@@ -436,5 +436,6 @@
     "restTime": "Rest Time",
     "finished": "Finished",
     "waiting": "Waiting...",
-    "more": "More"
+    "more": "More",
+    "withdrawNote": "You can only withdraw up to 2 times per day."
 }

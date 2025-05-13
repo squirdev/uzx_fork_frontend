@@ -300,7 +300,7 @@
     "enterWithdrawAmount": "Ingrese el número de monedas",
     "current": "Actual",
     "withdrawSuccess": "Retiro exitoso",
-    "withdrawFailed": "Retiro fallido, inténtelo de nuevo.",
+    "withdrawFailed": "Lo intentaste demasiadas veces o hubo un problema.",
     "withdrawAddress": "Dirección de retiro",
     "pageNotValid": "La URL de la página no es válida",
     "buy": "Comprar",
