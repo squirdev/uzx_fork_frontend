@@ -84,7 +84,6 @@ export default function Home() {
                     }}
                   />
                   <VerifyButton
-                    t={t}
                     email={email}
                     handleSendVerifyEmail={handleSendVerifyCode}
                   />

@@ -10,17 +10,18 @@ import { getProfile, updatePassword } from "../api/profile";
 import { useRouter } from "next/navigation";
 import { isValidChangeLoginPassword } from "../helper";
 import LoadingScreen from "../components/loading";
+import VerifyButton from "../components/verifyButton";
 
 const LoginPassword = () => {
+  const { t } = useLanguage();
+  const router = useRouter();
+  const { showAlert } = useAlert();
   const [oldPassword, setOldPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setconfirmPassword] = useState("");
   const [verifyCode, setVerifyCode] = useState("");
   const [userProfile, setUserProfile] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const { showAlert } = useAlert();
-  const router = useRouter();
-  const { t } = useLanguage();
 
   const handleSendVerifyEmail = async () => {
     let result = await sendVerifyEmail(userProfile?.email);
@@ -98,14 +99,10 @@ const LoginPassword = () => {
               className: "min-w-0",
             }}
           />
-          <Button
-            size="sm"
-            disabled={!userProfile?.email}
-            onClick={handleSendVerifyEmail}
-            className="!absolute right-1 top-1 rounded bg-inherit shadow-none text-blue1"
-          >
-            {t("send")}
-          </Button>
+          <VerifyButton
+            email={userProfile?.email}
+            handleSendVerifyEmail={handleSendVerifyEmail}
+          />
         </div>
         <div className="text-[#D7A931] flex items-start gap-2">
           <AiFillInfoCircle />

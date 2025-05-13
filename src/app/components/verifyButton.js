@@ -1,8 +1,11 @@
 import { Button } from "@material-tailwind/react";
 import { useState, useEffect } from "react";
+import { useLanguage } from "../../../context/LanguageProvider";
+import LoadingScreen from "./loading";
 
-function VerifyButton({ email, handleSendVerifyEmail, t }) {
+function VerifyButton({ email, handleSendVerifyEmail }) {
   const [countdown, setCountdown] = useState(0);
+  const { t } = useLanguage();
 
   const handleClick = () => {
     if (!email || countdown > 0) return;
@@ -21,6 +24,7 @@ function VerifyButton({ email, handleSendVerifyEmail, t }) {
     return () => clearInterval(timer);
   }, [countdown]);
 
+  if (!t) return <LoadingScreen />;
   return (
     <Button
       size="sm"

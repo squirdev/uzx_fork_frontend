@@ -70,7 +70,6 @@ export default function EmailRegisterPanel() {
               }}
             />
             <VerifyButton
-              t={t}
               email={email}
               handleSendVerifyEmail={handleSendVerifyEmail}
             />
