@@ -30,6 +30,10 @@ function RootLayout({ children }) {
     <html lang="en">
       <head>
         <title>UZX</title>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        ></meta>
         <Script src="/charting_library.standalone.js" />
         <Script src="/bundle.js" />
       </head>
