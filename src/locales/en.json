@@ -395,6 +395,7 @@
     "documentPhotoRequirementsDesc4": "4. File size must not exceed 5MB.",
     "documentPhotos": "*Document photos",
     "uploadFrontSideDocument": "Upload Front Side of the Document Photo",
+    "uploadHandHolderDocument": "Upload Hand Hold of the Document Photo",
     "uploadBackSideDocument": "Upload Back Side of the Document Photo",
     "submitForReview": "Submit for Review",
     "estimatedReviewTime": "Estimated Review Time: 24 hours",

@@ -121,9 +121,15 @@ export function FixedEarnDialog({ token, open, setOpen }) {
               min={0}
               max={availableAmount}
               value={earnAmount}
-              onChange={(e) =>
-                setEarnAmount(Math.min(e.target.value, availableAmount))
-              }
+              onChange={(e) => {
+                const val = e.target.value;
+                if (val === "") {
+                  setEarnAmount("");
+                } else {
+                  const num = Math.min(Number(val), availableAmount);
+                  setEarnAmount(num);
+                }
+              }}
               className="pr-20"
               containerProps={{
                 className: "min-w-0",

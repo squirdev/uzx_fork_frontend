@@ -395,6 +395,7 @@
     "documentPhotoRequirementsDesc4": "4. ファイルサイズは5MB以下である必要があります。",
     "documentPhotos": "*書類の写真",
     "uploadFrontSideDocument": "書類の表面をアップロード",
+    "uploadHandHolderDocument": "書類を手に持った写真をアップロード",
     "uploadBackSideDocument": "書類の裏面をアップロード",
     "submitForReview": "審査のために提出",
     "estimatedReviewTime": "審査の目安時間: 24時間",

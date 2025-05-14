@@ -395,6 +395,7 @@
     "documentPhotoRequirementsDesc4": "4. 文件大小不得超過 5MB。",
     "documentPhotos": "*文件照片",
     "uploadFrontSideDocument": "上傳文件正面照片",
+    "uploadHandHolderDocument": "上傳手持文件照片",
     "uploadBackSideDocument": "上傳文件背面照片",
     "submitForReview": "提交審核",
     "estimatedReviewTime": "預計審核時間：24 小時",

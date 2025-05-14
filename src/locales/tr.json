@@ -395,6 +395,7 @@
     "documentPhotoRequirementsDesc4": "4. Dosya boyutu 5MB'ı aşmamalıdır.",
     "documentPhotos": "*Belge fotoğrafları",
     "uploadFrontSideDocument": "Belgenin Ön Yüzünü Yükleyin",
+    "uploadHandHolderDocument": "Belgeyi Elde Tutan Fotoğrafı Yükle",
     "uploadBackSideDocument": "Belgenin Arka Yüzünü Yükleyin",
     "submitForReview": "İnceleme için gönder",
     "estimatedReviewTime": "Tahmini inceleme süresi: 24 saat",

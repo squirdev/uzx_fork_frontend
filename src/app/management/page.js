@@ -16,6 +16,8 @@ import { getProfile } from "../api/profile";
 import { useAlert } from "../../../context/alertContext";
 import LoadingScreen from "../components/loading";
 import { useRouter } from "next/navigation";
+import { useDispatch } from "react-redux";
+import { logout } from "../../../redux/authSlice";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState(0);
@@ -23,6 +25,7 @@ export default function Home() {
   const { t } = useLanguage();
   const { showAlert } = useAlert();
   const router = useRouter();
+  const dispatch = useDispatch();
 
   const fetchProfile = async () => {
     let result = await getProfile();
@@ -30,6 +33,7 @@ export default function Home() {
       setUserProfile(result.user);
     } else {
       showAlert(t("alertErrorMsg"));
+      dispatch(logout());
       router.push("/login");
     }
   };

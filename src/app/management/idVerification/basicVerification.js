@@ -129,7 +129,7 @@ const BasicVerification = () => {
           )}
           <ImageFileUploader
             imageUrl={handHeldImageUrl}
-            description={t("uploadFrontSideDocument")}
+            description={t("uploadHandHolderDocument")}
             setImageUrl={setHandHeldImageUrl}
           />
         </div>

@@ -36,7 +36,7 @@ export default function DepositStep() {
     if (result && result.user) {
       setUserProfile(result.user);
     } else {
-      // showAlert(t("alertErrorMsg"));
+      showAlert(t("alertErrorMsg"));
       router.push("/login");
     }
   };
