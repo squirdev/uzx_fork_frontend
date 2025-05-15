@@ -70,7 +70,7 @@ export function isValidDocument(
 ) {
   if (!country || !frontImageUrl || !handHeldImageUrl || documentType == -1)
     return false;
-  else if (documentType == 1 && !backImageUrl) return false;
+  else if (!documentType == 1 && !backImageUrl) return false;
   else return true;
 }
 

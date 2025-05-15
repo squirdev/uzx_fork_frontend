@@ -7,7 +7,7 @@ import {
   Select,
   Typography,
 } from "@material-tailwind/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useCountries } from "use-react-countries";
 import ImageFileUploader from "./imageFileUploader";
 import { isValidDocument } from "@/app/helper";
@@ -17,7 +17,7 @@ import { useLanguage } from "../../../../context/LanguageProvider";
 import { createDocument } from "@/app/api/profile";
 import LoadingScreen from "@/app/components/loading";
 
-const BasicVerification = () => {
+const BasicVerification = ({ userProfile }) => {
   const { countries } = useCountries();
   const [country, setCountry] = useState(null);
   const [documentType, setDocumentType] = useState(-1);
@@ -25,6 +25,7 @@ const BasicVerification = () => {
   const [handHeldImageUrl, setHandHeldImageUrl] = useState(null);
   const [backImageUrl, setBackImageUrl] = useState(null);
   const [isUploading, setIsUploading] = useState(false);
+  const [isDisable, setIsDisable] = useState(false);
   const { showAlert } = useAlert();
   const router = useRouter();
   const { t } = useLanguage();
@@ -54,12 +55,18 @@ const BasicVerification = () => {
     let result = await createDocument(formData);
     if (result) {
       showAlert(t("submitDocumentSuccess"), "success");
-      router.push("/management");
+      setIsDisable(true);
     } else {
       showAlert(t("submitDocumentFailed"));
     }
     setIsUploading(false);
   };
+
+  useEffect(() => {
+    if (userProfile?.isVerified !== "notSent") {
+      setIsDisable(true);
+    }
+  }, [userProfile]);
 
   const DOCUMENT_TYPE_LIST = [t("idCard"), t("passport"), t("driverLicense")];
 
@@ -137,10 +144,11 @@ const BasicVerification = () => {
       <div className="mt-8">
         <Button
           loading={isUploading}
+          disabled={isDisable}
           onClick={handleSubmitDocument}
           className="rounded-full text-black bg-gradient-to-r from-blue1 to-blue2"
         >
-          {t("submitForReview")}
+          {isDisable ? t("alreadySet") : t("submitForReview")}
         </Button>
         <Typography variant="h6" className="text-sm mt-2">
           {t("estimatedReviewTime")}

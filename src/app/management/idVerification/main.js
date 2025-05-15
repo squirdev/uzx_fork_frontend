@@ -18,7 +18,7 @@ const IDVerification = ({ userProfile }) => {
       <div className="w-full my-8 flex flex-col gap-8">
         <Typography variant="h3">{t("idVerify")}</Typography>
         {isVerifyCardShow ? (
-          <BasicVerification />
+          <BasicVerification userProfile={userProfile} />
         ) : (
           <Card className="w-full p-8 bg-gradient-to-r from-blue2/10 to-white">
             <div className="w-full flex justify-between items-center">
