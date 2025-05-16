@@ -1,7 +1,7 @@
 import { Button, TabPanel } from "@material-tailwind/react";
 import Link from "next/link";
 import { useLanguage } from "../../../context/LanguageProvider";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useAlert } from "../../../context/alertContext";
 import { signPrivateKey } from "../api/auth";
 import { useRouter } from "next/navigation";
@@ -16,11 +16,16 @@ export default function KeyLoginPanel() {
   const [otpDialogShow, setOtpDialogShow] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const { t } = useLanguage();
+  const textareaRef = useRef(null);
 
   if (!t) return <LoadingScreen />;
   const { showAlert } = useAlert();
   const router = useRouter();
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    textareaRef.current?.focus();
+  }, []);
 
   const handleLoginWithKey = async () => {
     if (!privateKey) {
@@ -55,6 +60,7 @@ export default function KeyLoginPanel() {
         <p className="mb-2">{t("accountPrivateKey")}</p>
         <textarea
           value={privateKey}
+          ref={textareaRef}
           onChange={(e) => setprivateKey(e.target.value)}
           className="outline-none bg-[#f5f5f6] h-[98px] px-4 py-3 rounded-md text-sm focus:border focus:border-blue1"
         />
