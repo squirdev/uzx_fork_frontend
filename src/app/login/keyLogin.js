@@ -11,14 +11,18 @@ import { InputOneTimePassword } from "../components/login/inputOneTimePassword";
 import LoadingScreen from "../components/loading";
 
 export default function KeyLoginPanel() {
-  const [privateKey, setprivateKey] = useState("");
+  const [privateKey, setprivateKey] = useState("Enter Private Key");
   const [userID, setUserID] = useState(null);
   const [otpDialogShow, setOtpDialogShow] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const { t } = useLanguage();
 
   useEffect(() => {
-    setprivateKey(" ");
+    const timer = setTimeout(() => {
+      setprivateKey("");
+    }, 500);
+
+    return () => clearTimeout(timer);
   }, []);
 
   if (!t) return <LoadingScreen />;
