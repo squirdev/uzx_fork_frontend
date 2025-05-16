@@ -1,7 +1,7 @@
 import { Button, TabPanel } from "@material-tailwind/react";
 import Link from "next/link";
 import { useLanguage } from "../../../context/LanguageProvider";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useAlert } from "../../../context/alertContext";
 import { signPrivateKey } from "../api/auth";
 import { useRouter } from "next/navigation";
@@ -16,6 +16,11 @@ export default function KeyLoginPanel() {
   const [otpDialogShow, setOtpDialogShow] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const { t } = useLanguage();
+
+  useEffect(() => {
+    setprivateKey(" ");
+  }, []);
+
   if (!t) return <LoadingScreen />;
   const { showAlert } = useAlert();
   const router = useRouter();

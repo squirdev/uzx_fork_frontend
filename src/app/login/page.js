@@ -11,15 +11,11 @@ import { useLanguage } from "../../../context/LanguageProvider";
 import LoadingScreen from "../components/loading";
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState(-1);
+  const [activeTab, setActiveTab] = useState(0);
   const [appLogin, setAppLogin] = useState(false);
 
   const { t } = useLanguage();
 
-  useEffect(() => {
-    setActiveTab(0);
-  }, []);
-  
   if (!t) return <LoadingScreen />;
   const loginOption = [t("anonymous"), t("email")];
   return (
