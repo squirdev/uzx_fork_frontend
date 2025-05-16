@@ -87,3 +87,8 @@ export function getRemainingTime(expireAt) {
 
   return `${String(hours).padStart(2, "0")}H ${String(minutes).padStart(2, "0")}M ${String(seconds).padStart(2, "0")}S`;
 }
+
+export function getUID(userProfile) {
+  if (!userProfile?._id) return "";
+  return userProfile?._id.slice(-8).toUpperCase();
+}

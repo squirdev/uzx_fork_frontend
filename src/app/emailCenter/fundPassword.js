@@ -30,6 +30,7 @@ const FundPassword = () => {
       router.push("/management");
     }
   };
+  
   useEffect(() => {
     fetchProfile();
   }, []);

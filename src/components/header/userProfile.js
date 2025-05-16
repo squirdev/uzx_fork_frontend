@@ -5,6 +5,10 @@ import { useLanguage } from "../../../context/LanguageProvider";
 import { logout } from "../../../redux/authSlice";
 import Link from "next/link";
 import LoadingScreen from "@/app/components/loading";
+import { getProfile } from "@/app/api/profile";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { getUID } from "@/app/helper";
 
 const {
   Menu,
@@ -15,10 +19,25 @@ const {
 } = require("@material-tailwind/react");
 
 const UserProfileItem = () => {
-  const { username, email } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const { t } = useLanguage();
-  if (!t) return <LoadingScreen />;
+
+  const [userProfile, setUserProfile] = useState(null);
+
+  const fetchProfile = async () => {
+    let result = await getProfile();
+    if (result?.user) {
+      setUserProfile(result.user);
+      console.log("result.user", result.user);
+    } else {
+      dispatch(logout());
+    }
+  };
+
+  useEffect(() => {
+    fetchProfile();
+  }, []);
+
   const menuData = [
     {
       icon: "/general.svg",
@@ -36,17 +55,22 @@ const UserProfileItem = () => {
       href: "/withdraw",
     },
   ];
+
   const handleLogout = () => {
     dispatch(logout());
   };
+
+  if (!t) return <LoadingScreen />;
   return (
     <Menu allowHover className="border-none" placement="bottom-end">
       <MenuHandler>
         <BiUser className="text-white w-6 h-6" />
       </MenuHandler>
       <MenuList className="bg-mainblack border-none  py-4">
-        <p className="text-white font-bold outline-none">{username || email}</p>
-        <p>UID:8380656588</p>
+        <p className="text-white font-bold outline-none">
+          {userProfile?.email || userProfile?.username}
+        </p>
+        <p>UID: {getUID(userProfile)}</p>
         {menuData.map((menu, index) => (
           <MenuItem key={index} className="p-0 my-3">
             <Link
