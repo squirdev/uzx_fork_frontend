@@ -1,11 +1,7 @@
 import { Button, Input, TabPanel } from "@material-tailwind/react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import {
-  AiOutlineClose,
-  AiOutlineEye,
-  AiOutlineEyeInvisible,
-} from "react-icons/ai";
+import { useState } from "react";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { useLanguage } from "../../../context/LanguageProvider";
 import { useAlert } from "../../../context/alertContext";
 import { signInEmail } from "../api/auth";

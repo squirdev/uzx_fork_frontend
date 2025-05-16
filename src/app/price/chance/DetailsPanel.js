@@ -49,11 +49,11 @@ const cryptoData = [
     image: "/coin/SOL.png",
     coinId: "solana",
   },
-  {
-    coin: "DOGE",
-    image: "/coin/DOGE.png",
-    coinId: "doge",
-  },
+  // {
+  //   coin: "DOGE",
+  //   image: "/coin/DOGE.png",
+  //   coinId: "doge",
+  // },
 ];
 
 function getProfit(array, name) {
@@ -98,7 +98,7 @@ export default function DetailsPanel() {
 
       <div className="w-full flex flex-col items-center mt-12">
         {/* Header */}
-        <div className="w-full grid md:grid-cols-9 grid-cols-3 gap-2 px-3 text-sm">
+        <div className="w-full grid md:grid-cols-8 grid-cols-3 gap-2 px-3 text-sm">
           <p># {t("crypto")}</p>
           <p>{t("price")}</p>
           <p>{t("change24H")}</p>
@@ -106,7 +106,7 @@ export default function DetailsPanel() {
           <p className="hidden md:block">{t("low24H")}</p>
           <p className="hidden md:block">{t("volume24H")}</p>
           <p className="hidden md:block">{t("turnover24H")}</p>
-          <p className="hidden md:block">{t("priceTrend")}</p>
+          {/* <p className="hidden md:block">{t("priceTrend")}</p> */}
           <p className="hidden md:block">{t("operation")}</p>
         </div>
         {/* Body */}

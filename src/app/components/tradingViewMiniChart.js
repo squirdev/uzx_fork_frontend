@@ -4,55 +4,56 @@ import { useState, useEffect } from "react";
 import { LineChart, Line, ResponsiveContainer, Tooltip } from "recharts";
 import { AiOutlineRise, AiOutlineFall } from "react-icons/ai";
 import Image from "next/image";
+import Link from "next/link";
 
-export const TradingViewMiniChart = ({ coinId }) => {
-  const [data, setData] = useState([]);
+// export const TradingViewMiniChart = ({ coinId }) => {
+//   const [data, setData] = useState([]);
 
-  useEffect(() => {
-    const fetchPriceHistory = async () => {
-      try {
-        const res = await fetch(
-          `https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=usd&days=30`
-        );
-        const json = await res.json();
+//   useEffect(() => {
+//     const fetchPriceHistory = async () => {
+//       try {
+//         const res = await fetch(
+//           `https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=usd&days=30`
+//         );
+//         const json = await res.json();
 
-        // Convert API response into a usable format
-        const prices = json.prices.map((price, index, arr) => ({
-          time: new Date(price[0]).toLocaleDateString(), // Format time
-          price: price[1],
-          rising: index > 0 ? price[1] > arr[index - 1][1] : true, // Check if rising
-        }));
+//         // Convert API response into a usable format
+//         const prices = json.prices.map((price, index, arr) => ({
+//           time: new Date(price[0]).toLocaleDateString(), // Format time
+//           price: price[1],
+//           rising: index > 0 ? price[1] > arr[index - 1][1] : true, // Check if rising
+//         }));
 
-        setData(prices);
-      } catch (error) {
-        console.log("Error fetching Token price history:", error);
-      }
-    };
+//         setData(prices);
+//       } catch (error) {
+//         console.log("Error fetching Token price history:", error);
+//       }
+//     };
 
-    fetchPriceHistory();
-  }, []);
+//     fetchPriceHistory();
+//   }, []);
 
-  return (
-    <div className="w-full min-h-[50px] hidden md:block">
-      <ResponsiveContainer width="100%" height="100%">
-        <LineChart data={data}>
-          <Line
-            type="monotone"
-            dataKey="price"
-            fill="url(#FF0000)"
-            stroke={
-              data.length > 1 ? (data[0].rising ? "green" : "red") : "gray"
-            }
-            strokeWidth={2}
-            dot={false}
-          />
-        </LineChart>
-      </ResponsiveContainer>
-    </div>
-  );
-};
+//   return (
+//     <div className="w-full min-h-[50px] hidden md:block">
+//       <ResponsiveContainer width="100%" height="100%">
+//         <LineChart data={data}>
+//           <Line
+//             type="monotone"
+//             dataKey="price"
+//             fill="url(#FF0000)"
+//             stroke={
+//               data.length > 1 ? (data[0].rising ? "green" : "red") : "gray"
+//             }
+//             strokeWidth={2}
+//             dot={false}
+//           />
+//         </LineChart>
+//       </ResponsiveContainer>
+//     </div>
+//   );
+// };
 
-export const CoinGeckoBTCData = ({ image, coin, coinId, profit }) => {
+export const CoinGeckoBTCData = ({ image, coin, coinId, profit = 0 }) => {
   const [btcData, setBtcData] = useState(null);
 
   console.log("PROFIT:", coinId, profit);
@@ -85,7 +86,7 @@ export const CoinGeckoBTCData = ({ image, coin, coinId, profit }) => {
   }, []);
 
   return btcData ? (
-    <div className="w-full grid md:grid-cols-9 grid-cols-3 p-3 text-sm items-center rounded-sm border-b hover:bg-black/10">
+    <div className="w-full grid md:grid-cols-8 grid-cols-3 p-3 text-sm items-center rounded-sm border-b hover:bg-black/10">
       <div className="flex items-center gap-2">
         <Image src={image} width={16} height={16} alt="logo" />
         <p>{coin}</p>
@@ -105,8 +106,13 @@ export const CoinGeckoBTCData = ({ image, coin, coinId, profit }) => {
       <p className="hidden md:block">${btcData.low24h.toLocaleString()}</p>
       <p className="hidden md:block">${btcData.volume24h.toLocaleString()}</p>
       <p className="hidden md:block">{btcData.turnover24h.toFixed(2)}%</p>
-      <TradingViewMiniChart coinId={coinId} />
-      <button className="text-sm text-blue1 hidden md:block">Trade</button>
+      {/* <TradingViewMiniChart coinId={coinId} /> */}
+      <Link
+        href={`/exchange/${coin?.toLowerCase()}`}
+        className="text-sm text-blue1 hidden md:block"
+      >
+        Trade
+      </Link>
     </div>
   ) : (
     <p className="p-6">Loading...</p>

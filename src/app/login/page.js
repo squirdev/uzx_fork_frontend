@@ -2,23 +2,26 @@
 
 import { Tab, Tabs, TabsBody, TabsHeader } from "@material-tailwind/react";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import KeyLoginPanel from "./keyLogin";
 import EmailLoginPanel from "./emailLogin";
 import AppLoginPanel from "./appLogin";
 import LoginLeftPanel from "../components/login/leftPanel";
 import { useLanguage } from "../../../context/LanguageProvider";
-import { InputOneTimePassword } from "../components/login/inputOneTimePassword";
 import LoadingScreen from "../components/loading";
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeTab, setActiveTab] = useState(-1);
   const [appLogin, setAppLogin] = useState(false);
 
   const { t } = useLanguage();
+
+  useEffect(() => {
+    setActiveTab(0);
+  }, []);
+  
   if (!t) return <LoadingScreen />;
   const loginOption = [t("anonymous"), t("email")];
-
   return (
     <div className="content">
       <div className="w-full flex items-center bg-white">
