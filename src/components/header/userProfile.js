@@ -8,7 +8,7 @@ import LoadingScreen from "@/app/components/loading";
 import { getProfile } from "@/app/api/profile";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { getUID } from "@/app/helper";
+import { getUID, hexToFixedLengthNumberString } from "@/app/helper";
 
 const {
   Menu,
@@ -70,7 +70,7 @@ const UserProfileItem = () => {
         <p className="text-white font-bold outline-none">
           {userProfile?.email || userProfile?.username}
         </p>
-        <p>UID: {getUID(userProfile)}</p>
+        <p>UID: {hexToFixedLengthNumberString(userProfile?._id)}</p>
         {menuData.map((menu, index) => (
           <MenuItem key={index} className="p-0 my-3">
             <Link

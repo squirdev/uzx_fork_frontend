@@ -92,3 +92,13 @@ export function getUID(userProfile) {
   if (!userProfile?._id) return "";
   return userProfile?._id.slice(-8).toUpperCase();
 }
+
+export function hexToFixedLengthNumberString(hexStr, length = 12) {
+  if (!hexStr) return "";
+  const bigIntValue = BigInt("0x" + hexStr);
+
+  const base = BigInt("1" + "0".repeat(length));
+  const numStr = (bigIntValue % base).toString();
+
+  return numStr.padStart(length, "0");
+}
