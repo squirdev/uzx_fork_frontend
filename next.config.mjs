@@ -4,8 +4,8 @@ const nextConfig = {
     images: {
         // domains: ["23.227.193.122"],
         remotePatterns: [{
-                protocol: "http",
-                hostname: "23.227.193.122",
+                protocol: "https",
+                hostname: "coin-images.coingecko.com",
             },
             {
                 protocol: "https",

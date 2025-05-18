@@ -1,9 +1,11 @@
 "use client";
 
+import { Tab, Tabs, TabsBody, TabsHeader } from "@material-tailwind/react";
 import { useState } from "react";
 import CoinItemButton from "@/app/components/coinItemButtom";
 import { BiRefresh } from "react-icons/bi";
 import { CoinGeckoBTCData } from "@/app/components/tradingViewMiniChart";
+import DetailsPanel from "./DetailsPanel";
 import { useLanguage } from "../../../../context/LanguageProvider";
 import LoadingScreen from "@/app/components/loading";
 
@@ -27,92 +29,35 @@ const coinListData = [
   "DAO",
   "Payment",
 ];
-const cryptoData = [
-  {
-    coin: "BTC",
-    image: "/coin/BTC.png",
-    coinId: "bitcoin",
-  },
-  {
-    coin: "ETH",
-    image: "/coin/ETH.png",
-    coinId: "ethereum",
-  },
-  {
-    coin: "BNB",
-    image: "/coin/BNB.png",
-    coinId: "binancecoin",
-  },
-  {
-    coin: "TRX",
-    image: "/coin/TRX.png",
-    coinId: "tron",
-  },
-  {
-    coin: "SOL",
-    image: "/coin/SOL.png",
-    coinId: "solana",
-  },
-  {
-    coin: "DOGE",
-    image: "/coin/DOGE.png",
-    coinId: "doge",
-  },
-];
 
 export default function Home() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [isOverView, setIsOverView] = useState(false);
+
   const { t } = useLanguage();
   if (!t) return <LoadingScreen />;
-
   return (
-    <div className="content bg-white px-2 md:px-0">
+    <div className="content bg-white  md:px-0 px-2">
       <div className="brands container mx-auto my-2 overflow-hidden">
         <div className="w-full my-12">
-          <div className="w-full flex flex-col mt-24">
-            <div className="w-full flex justify-between gap-12 items-start">
-              <div className="flex flex-wrap gap-4">
-                {coinListData.map((data, index) => (
-                  <CoinItemButton
-                    key={index}
-                    index={index}
-                    text={data}
-                    activeIndex={activeIndex}
-                    setActive={setActiveIndex}
-                  />
-                ))}
-              </div>
-              <button>
-                <BiRefresh className="w-7 h-7 text-black" />
+          <div className="flex items-center gap-6">
+            <p className="text-3xl font-bold">{t("uZXRanking")}</p>
+            <div className="rounded-md text-sm p-1">
+              <button
+                onClick={() => setIsOverView(true)}
+                className={`p-2 rounded-md ${isOverView ? "text-white bg-black" : "text-black bg-inherit"}`}
+              >
+                {t("overview")}
+              </button>
+              <button
+                onClick={() => setIsOverView(false)}
+                className={`p-2 rounded-md ${isOverView ? "text-black bg-inherit" : "text-white bg-black"}`}
+              >
+                {t("details")}
               </button>
             </div>
-
-            <div className="w-full flex flex-col items-center mt-12">
-              {/* Header */}
-              <div className="w-full grid md:grid-cols-9 grid-cols-3 gap-2 px-3 text-sm">
-                <p># {t("crypto")}</p>
-                <p>{t("price")}</p>
-                <p>{t("change24H")}</p>
-                <p className="hidden md:block">{t("high24H")}</p>
-                <p className="hidden md:block">{t("low24H")}</p>
-                <p className="hidden md:block">{t("volume24H")}</p>
-                <p className="hidden md:block">{t("turnover24H")}</p>
-                <p className="hidden md:block">{t("priceTrend")}</p>
-                <p className="hidden md:block">{t("operation")}</p>
-              </div>
-              {/* Body */}
-              <div className="w-full flex flex-col mt-4">
-                {cryptoData.map((data, index) => (
-                  <CoinGeckoBTCData
-                    key={index}
-                    image={data.image}
-                    coin={data.coin}
-                    coinId={data.coinId}
-                  />
-                ))}
-              </div>
-            </div>
           </div>
+
+          <DetailsPanel />
         </div>
       </div>
     </div>
