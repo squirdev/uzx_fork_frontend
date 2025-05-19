@@ -70,7 +70,7 @@ const UserProfileItem = () => {
         <p className="text-white font-bold outline-none">
           {userProfile?.email || userProfile?.username}
         </p>
-        <p>UID: {hexToFixedLengthNumberString(userProfile?._id)}</p>
+        <p>UID: {userProfile?.userId}</p>
         {menuData.map((menu, index) => (
           <MenuItem key={index} className="p-0 my-3">
             <Link
