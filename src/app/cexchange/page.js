@@ -22,6 +22,7 @@ import { useSelector } from "react-redux";
 import LoadingScreen from "../components/loading";
 
 export default function Home() {
+  const { t } = useLanguage();
   const { isAuth } = useSelector((state) => state.auth);
   const [fromIndex, setFromIndex] = useState(0);
   const [toIndex, settoIndex] = useState(0);
@@ -34,7 +35,6 @@ export default function Home() {
     "FIL",
     "ADA",
     "EOS",
-    "SHIB",
     "BNB",
     "DOT",
     "CRV",
@@ -65,12 +65,12 @@ export default function Home() {
     if (sourceCoin[fromIndex] == "USDT" || sourceCoin[fromIndex] == "USDC") {
       let result = await getTokenProfit(targetCoin[toIndex]);
       if (result && result.data) {
-        setCurCurrencyProfit(1 - result.data.profit / 100);
+        setCurCurrencyProfit(1 - (result.data.at(-1)?.profit ?? 0) / 100);
       }
     } else {
       let result = await getTokenProfit(sourceCoin[fromIndex]);
       if (result && result.data) {
-        setCurCurrencyProfit(1 + result.data.profit / 100);
+        setCurCurrencyProfit(1 + (result.data.at(-1)?.profit ?? 0) / 100);
       }
     }
   };
@@ -81,7 +81,6 @@ export default function Home() {
       targetCoin[toIndex]
     );
     if (rateRes && rateRes.rate) {
-      console.log("current Real Rate:", rateRes.rate);
       setExchangeRate(rateRes.rate);
     } else {
       showAlert(t("alertErrorMsg"), "error");
@@ -122,9 +121,11 @@ export default function Home() {
 
   const handleFromChange = (e) => {
     const inputValue = e.target.value;
-    if (inputValue === "" || (Number(inputValue) > 0 && !isNaN(inputValue))) {
-      if (inputValue <= currentCoinBalance) {
+    if (inputValue === "" || (!isNaN(inputValue) && Number(inputValue) >= 0)) {
+      if (Number(inputValue) <= currentCoinBalance) {
         setfromValue(inputValue);
+        console.log("Exchange Rate", exchangeRate);
+        console.log("curCurrencyProfit", curCurrencyProfit);
         setToValue(inputValue * exchangeRate * curCurrencyProfit);
       }
     }
@@ -159,7 +160,6 @@ export default function Home() {
     }
   };
 
-  const { t } = useLanguage();
   if (!t) return <LoadingScreen />;
   return (
     <div className="content">

@@ -60,12 +60,10 @@ export default function Home({ params }) {
       );
       const data = await response.json();
 
-      console.log(data);
-
       setBtcData({
-        change24h: data.priceChangePercent, // 24h Change %
-        high24h: data.highPrice, // 24h High
-        low24h: data.lastPrice, // 24h Low
+        change24h: data.priceChangePercent,
+        high24h: data.highPrice,
+        low24h: data.lastPrice,
         volume24h: data.volume,
       });
     } catch (error) {
@@ -86,7 +84,6 @@ export default function Home({ params }) {
       const ts = new Date(candle[0]);
 
       if (!tokenInfo || tokenInfo.length === 0) {
-        // No token info, return plain formatted data
         return {
           time: new Date(candle[0]),
           max: parseFloat(candle[2]),
@@ -210,21 +207,18 @@ export default function Home({ params }) {
                   <p
                     className={`text-[#999] ${change24H >= 0 ? "text-green-400" : "text-warnred"} `}
                   >
-                    {/* {btcData?.change24h}% */}
                     {Number(change24H).toFixed(2)}%
                   </p>
                 </div>
                 <div className="md:flex hidden flex-col text-[12px] items-end">
                   <p className="text-[#999]">{t("high24H")}</p>
                   <p className="text-[#999] text-white">
-                    {/* {Number(btcData?.high24h).toFixed(2)} */}
                     {Number(high24H).toFixed(2)}
                   </p>
                 </div>
                 <div className="md:flex hidden flex-col text-[12px] items-end">
                   <p className="text-[#999]">{t("low24H")}</p>
                   <p className="text-[#999] text-white">
-                    {/* {Number(btcData?.low24h).toFixed(2)} */}
                     {Number(low24H).toFixed(2)}
                   </p>
                 </div>

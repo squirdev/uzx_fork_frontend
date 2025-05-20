@@ -56,7 +56,6 @@ export default function DepositStep() {
     formData.append("token", token);
     let result = await createWallet(formData);
     if (result) {
-      console.log("API Request Result", result);
       setUserWalletAddress(result.address);
     } else {
       showAlert(t("alertErrorMsg"), "error");

@@ -15,7 +15,6 @@ export const getTokenProfit = async (curCurrency) => {
 export const getTokenList = async () => {
   try {
     const response = await axiosApi.post("/tokens");
-    console.log(response.data);
     return response.data;
   } catch (error) {
     return null;

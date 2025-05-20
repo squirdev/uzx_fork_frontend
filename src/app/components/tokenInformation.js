@@ -34,7 +34,7 @@ export const getTokenDataById = async (tokenId) => {
 export const getTokenData = async () => {
   try {
     const response = await fetch(
-      `https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,dogecoin,ripple,litecoin,filecoin,cardano,eos,shiba-inu,binancecoin,polkadot,curve-dao-token,official-trump,sui,cronos,solana&vs_currencies=usd&include_24hr_change=true`
+      `https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,dogecoin,ripple,litecoin,filecoin,cardano,eos,binancecoin,polkadot,curve-dao-token,official-trump,sui,cronos,solana&vs_currencies=usd&include_24hr_change=true`
     );
     const data = await response.json();
 
@@ -47,7 +47,6 @@ export const getTokenData = async () => {
       fil: data["filecoin"],
       ada: data["cardano"],
       eos: data["eos"],
-      shib: data["shiba-inu"],
       bnb: data["binancecoin"],
       dot: data["polkadot"],
       crv: data["curve-dao-token"],
