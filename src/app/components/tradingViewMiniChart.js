@@ -16,7 +16,6 @@ export const CoinGeckoBTCData = ({ tokenProfit }) => {
     "filecoin",
     "cardano",
     "eos",
-    "shiba-inu",
     "binancecoin",
     "polkadot",
     "curve-dao-token",

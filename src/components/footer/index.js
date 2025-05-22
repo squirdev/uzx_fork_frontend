@@ -155,10 +155,6 @@ const Footer = () => {
             url: "/exchange/eos",
           },
           {
-            title: "SHIB/USDT",
-            url: "/exchange/shib",
-          },
-          {
             title: "BNB/USDT",
             url: "/exchange/bnb",
           },
