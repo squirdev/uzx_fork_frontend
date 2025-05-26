@@ -28,7 +28,6 @@ const UserProfileItem = () => {
     let result = await getProfile();
     if (result?.user) {
       setUserProfile(result.user);
-      console.log("result.user", result.user);
     } else {
       dispatch(logout());
     }

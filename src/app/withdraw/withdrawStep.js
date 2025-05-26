@@ -44,7 +44,6 @@ export default function WithdrawStep() {
 
   const fetchTokenInfo = async () => {
     let result = await getTokenList();
-    console.log("TOKEN LIST", result);
     if (result && result.data) {
       setTokenInfo(result.data);
     } else {
@@ -60,7 +59,6 @@ export default function WithdrawStep() {
   useEffect(() => {
     if (!tokenInfo || !balanceInfo) return;
     let tokenName = tokenInfo[activeIndex]?.name;
-    console.log("TOKEN NAME", tokenName);
     setCurrentCoinBalance(balanceInfo[tokenName] ?? 0);
   }, [balanceInfo, activeIndex]);
 

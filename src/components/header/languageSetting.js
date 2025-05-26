@@ -60,7 +60,6 @@ const LanguageSetting = () => {
   const handleSelectLanguage = () => {
     localStorage.setItem("language", selected);
     setOpen(!open);
-    console.log(selected);
     setLocale(selected);
   };
 

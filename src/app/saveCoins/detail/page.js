@@ -27,7 +27,6 @@ const Home = () => {
   const fetchEarnTaskList = async () => {
     const result = await getEarnTaskList();
     if (result && result.data) setEarnTaskList(result.data);
-    console.log("DATA", result.data);
   };
 
   useEffect(() => {
@@ -37,7 +36,6 @@ const Home = () => {
   const handleCancelEarnTask = async (earnTaskId) => {
     try {
       setIsLoading(true);
-      console.log("earnTaskId", earnTaskId);
       const result = await cancelEarnTask({ earnTaskId });
       if (result) showAlert(t("cancelEarnTaskSuccess"), "success");
       else showAlert(t("cancelEarnTaskError"));

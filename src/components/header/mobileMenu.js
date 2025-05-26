@@ -60,7 +60,6 @@ const MobileMenu = ({ open, setOpen }) => {
   const handleSelectLanguage = (code) => {
     localStorage.setItem("language", code);
     setOpen(!open);
-    console.log(code);
     setLocale(code);
   };
 

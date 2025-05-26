@@ -11,8 +11,6 @@ class CustomDatafeed {
     this.symbol = symbol;
     this.tokenInfo = tokenInfo;
     this.interval = "15m";
-
-    console.log(symbol, tokenInfo);
   }
 
   /**
@@ -99,11 +97,6 @@ class CustomDatafeed {
         const end = new Date(this.tokenInfo[i + 1].createdAt);
 
         if (ts >= start && ts < end) {
-          console.log("i:::", i);
-          console.log("start::", start);
-          console.log("end::", end);
-          console.log("ts::", ts);
-
           if (flagStep == i) {
             return {
               timestamp: Math.floor(item[0]),
@@ -174,9 +167,6 @@ class CustomDatafeed {
   getHistoryKLineData(symbol, period, from, to) {
     const interval = this.getTimeDifference(from, to);
 
-    console.log(from, to);
-
-    console.log(interval);
     // Complete data request
     const data = this.fetchData(interval);
     return data;

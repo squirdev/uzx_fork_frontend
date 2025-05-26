@@ -18,7 +18,7 @@ const OrderAssets = ({ swap }) => {
   const [isBuying, setIsBuying] = useState(false);
   const [availableBalance, setAvailableBalance] = useState(0);
   const [userBalance, setUserBalance] = useState(null);
-  const [swapAmount, setSwapAmount] = useState(0);
+  const [swapAmount, setSwapAmount] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
   const { showAlert } = useAlert();
@@ -47,14 +47,14 @@ const OrderAssets = ({ swap }) => {
   useEffect(() => {
     if (!userBalance) return;
     if (isBuying) {
-      setAvailableBalance(userBalance.usdt);
-    } else setAvailableBalance(userBalance[swap]);
+      setAvailableBalance(userBalance.usdt || 0);
+    } else setAvailableBalance(userBalance[swap] || 0);
   }, [isBuying, userBalance]);
 
   const handleInputSwapAmount = (e) => {
     const inputValue = e.target.value;
-    if (inputValue === "" || (Number(inputValue) >= 0 && !isNaN(inputValue))) {
-      if (inputValue <= availableBalance) {
+    if (inputValue === "" || (!isNaN(inputValue) && Number(inputValue) >= 0)) {
+      if (Number(inputValue) <= availableBalance) {
         setSwapAmount(inputValue);
       }
     }
@@ -129,12 +129,13 @@ const OrderAssets = ({ swap }) => {
       <p className="text-sm mt-6 text-[#939393]">
         {t("available")}{" "}
         <span className="text-white font-bold">
-          {availableBalance?.toFixed(4)}{" "}
+          {availableBalance?.toFixed(4) || 0}{" "}
           {isBuying ? "USDT" : swap?.toUpperCase()}
         </span>
       </p>
       <div className="relative w-full flex mt-4 flex-row items-end">
         <input
+          type="number"
           placeholder={t("amount")}
           value={swapAmount}
           onChange={handleInputSwapAmount}

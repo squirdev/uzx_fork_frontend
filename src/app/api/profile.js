@@ -4,7 +4,6 @@ import axios from "axios";
 export const getProfile = async () => {
   try {
     const response = await axiosApi.get("/user/profile");
-    console.log(response.data);
     return response.data;
   } catch (error) {
     return null;
@@ -14,7 +13,6 @@ export const getProfile = async () => {
 export const getBalanceDetail = async () => {
   try {
     const response = await axiosApi.get("/user/balance");
-    console.log(response.data);
     return response.data;
   } catch (error) {
     return null;
@@ -24,7 +22,6 @@ export const getBalanceDetail = async () => {
 export const getOTP = async () => {
   try {
     const response = await axiosApi.get("/user/get-otp");
-    console.log(response.data);
     return response.data;
   } catch (error) {
     return null;
@@ -37,7 +34,6 @@ export const verifyOTP = async (otp, secret) => {
       otp: otp,
       secret: secret,
     });
-    console.log(response.data);
     return response.data;
   } catch (error) {
     return null;
@@ -125,10 +121,9 @@ export const getExchangeRate = async (base, quote) => {
     };
 
     const response = await axios.request(config);
-    console.log(response.data);
-    return response.data; // 确保返回数据
+    return response.data;
   } catch (error) {
     console.error("Error fetching exchange rate:", error);
-    return null; // 出错时返回 null
+    return null;
   }
 };

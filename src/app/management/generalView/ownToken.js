@@ -12,7 +12,6 @@ export default function OwnToken() {
 
   const fetchUserProfile = async () => {
     let result = await getBalanceDetail();
-    console.log("DETAIL_BALANCE:", result);
     if (result) setBalanceInfo(result.data);
   };
 

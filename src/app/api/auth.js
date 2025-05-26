@@ -26,7 +26,6 @@ export const sendVerifyEmail = async (email) => {
     const response = await axiosApi.post("/auth/send-verify-email", {
       email: email,
     });
-    console.log("RESPONSE:", response);
     return true;
   } catch (error) {
     console.log("ERROR:", error);
@@ -42,7 +41,6 @@ export const signUpEmail = async (email, verifyCode, password) => {
       code: verifyCode,
       password: password,
     });
-    console.log("RESPONSE:", response);
     return true;
   } catch (error) {
     console.log("ERROR:", error);
@@ -58,7 +56,6 @@ export const bindEmail = async (email, verifyCode, privateKey) => {
       code: verifyCode,
       private: privateKey,
     });
-    console.log("RESPONSE:", response);
     return true;
   } catch (error) {
     console.log("ERROR:", error);
@@ -74,7 +71,6 @@ export const signInEmail = async (email, password) => {
       password: password,
     });
     let responseData = response.data;
-    console.log("RESPONSE:", responseData);
     if (responseData.isOtp) {
       return responseData;
     } else
@@ -97,7 +93,6 @@ export const signInEmailOtp = async (otp, id) => {
       id: id,
     });
     let responseData = response.data;
-    console.log("RESPONSE:", responseData);
     if (responseData.isOtp) {
       return responseData;
     } else
@@ -119,7 +114,6 @@ export const signPrivateKey = async (privateKey) => {
       private: privateKey,
     });
     let responseData = response.data;
-    console.log("RESPONSE:", responseData);
     if (responseData.isOtp) {
       return responseData;
     } else {
@@ -144,7 +138,6 @@ export const resetPrivateKey = async (email, code) => {
       email: email,
       code: code,
     });
-    console.log("RESPONSE:", response);
     return true;
   } catch (error) {
     console.log("ERROR:", error);
@@ -161,7 +154,6 @@ export const resetPassword = async (email, code, password) => {
       password,
       password,
     });
-    console.log("RESPONSE:", response);
     return true;
   } catch (error) {
     console.log("ERROR:", error);

@@ -14,7 +14,6 @@ const SwapHistory = () => {
   const fetchHistory = async () => {
     let result = await getSwapHistory();
     if (result && result.data) {
-      console.log("SWAP HISTORY::", result.data);
       setSwapHistory(result.data);
     }
   };
@@ -68,8 +67,12 @@ const SwapHistory = () => {
                   )}
                   <p className="text-green-500">
                     {data.fromToken == "usdt"
-                      ? t("buy").toUpperCase() + "_" + t("success").toUpperCase()
-                      : t("sell").toUpperCase() + "_" + t("success").toUpperCase()}
+                      ? t("buy").toUpperCase() +
+                        "_" +
+                        t("success").toUpperCase()
+                      : t("sell").toUpperCase() +
+                        "_" +
+                        t("success").toUpperCase()}
                   </p>
                 </div>
               ))}

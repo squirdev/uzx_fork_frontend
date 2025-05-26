@@ -124,8 +124,6 @@ export default function Home() {
     if (inputValue === "" || (!isNaN(inputValue) && Number(inputValue) >= 0)) {
       if (Number(inputValue) <= currentCoinBalance) {
         setfromValue(inputValue);
-        console.log("Exchange Rate", exchangeRate);
-        console.log("curCurrencyProfit", curCurrencyProfit);
         setToValue(inputValue * exchangeRate * curCurrencyProfit);
       }
     }
