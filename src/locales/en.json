@@ -300,7 +300,7 @@
     "enterWithdrawAmount": "Enter the number of coins",
     "current": "Current",
     "withdrawSuccess": "Withdraw successfully",
-    "withdrawFailed": "You tried too many times or there was a problem",
+    "withdrawFailed": "Your withdrawal times have exceeded the daily limit. Please wait 24 hours before making the next withdrawal. Thank you for your understanding and cooperation.",
     "withdrawAddress": "Withdraw Address",
     "pageNotValid": "Page URL is not valid",
     "buy": "Buy",
@@ -438,5 +438,5 @@
     "finished": "Finished",
     "waiting": "Waiting...",
     "more": "More",
-    "withdrawNote": "You can only withdraw up to 2 times per day."
+    "withdrawNote": "Withdrawal reminder: \n Before withdrawing money, please be sure to check the following points: \n Currency selection: Make sure to select the correct currency. \n Network selection: Confirm that the correct blockchain network is selected. \n Address confirmation: Check that the withdrawal address is correct. \n Make sure the information is correct to avoid asset loss."
 }

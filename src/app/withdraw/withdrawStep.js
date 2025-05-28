@@ -180,7 +180,7 @@ export default function WithdrawStep() {
               {t("withdraw")}
             </Button>
           </div>
-          <Typography variant="small" className="mt-8">
+          <Typography variant="small" className="mt-8 whitespace-pre-line">
             {t("withdrawNote")}
           </Typography>
         </TimelineBody>

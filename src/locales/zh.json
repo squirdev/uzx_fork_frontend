@@ -300,7 +300,7 @@
     "enterWithdrawAmount": "輸入提現金額",
     "current": "當前",
     "withdrawSuccess": "提現成功",
-    "withdrawFailed": "您嘗試的次數過多或有問題",
+    "withdrawFailed": "您的提款次數已超過每日限制。請等待24小時後再進行下一次提款操作。感謝您的理解與配合。",
     "withdrawAddress": "提現地址",
     "pageNotValid": "頁面 URL 無效",
     "buy": "買入",
@@ -438,5 +438,5 @@
     "finished": "已完成",
     "waiting": "等待中...",
     "more": "更多的",
-    "withdrawNote": "每位使用者每天最多只能提領 2 次。"
+    "withdrawNote": "提幣提醒： \n 在進行提幣操作前，請務必檢查以下幾點： \n 幣種選擇：確保選擇正確的幣種。 \n 網路選擇：確認選擇正確的區塊鏈網路。 \n 地址確認：核對提幣地址無誤。 \n 確保資訊正確，以避免資產遺失。"
 }

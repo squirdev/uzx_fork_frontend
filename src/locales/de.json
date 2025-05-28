@@ -300,7 +300,7 @@
     "enterWithdrawAmount": "Anzahl der Münzen eingeben",
     "current": "Aktuell",
     "withdrawSuccess": "Erfolgreich abgehoben",
-    "withdrawFailed": "Auszahlung fehlgeschlagen, bitte versuchen Sie es erneut",
+    "withdrawFailed": "Ihre Auszahlungszeiten haben das Tageslimit überschritten. Bitte warten Sie 24 Stunden, bevor Sie die nächste Auszahlung vornehmen. Vielen Dank für Ihr Verständnis und Ihre Mitarbeit.",
     "withdrawAddress": "Auszahlungsadresse",
     "pageNotValid": "Seiten-URL ist nicht gültig",
     "buy": "Kaufen",
@@ -438,5 +438,5 @@
     "finished": "Abgeschlossen",
     "waiting": "Warten...",
     "more": "Meer",
-    "withdrawNote": "Sie können nur zweimal pro Tag eine Auszahlung vornehmen."
+    "withdrawNote": "Hinweis zur Auszahlung: \n Bitte überprüfen Sie vor einer Auszahlung folgende Punkte: \n Währungsauswahl: Achten Sie auf die richtige Währung. \n Netzwerkauswahl: Stellen Sie sicher, dass das richtige Blockchain-Netzwerk ausgewählt ist. \n Adressbestätigung: Überprüfen Sie die Richtigkeit der Auszahlungsadresse. \n Stellen Sie sicher, dass alle Angaben korrekt sind, um Vermögensverluste zu vermeiden."
 }

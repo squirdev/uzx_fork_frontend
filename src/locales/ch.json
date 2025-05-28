@@ -300,7 +300,7 @@
     "enterWithdrawAmount": "输入提现金额",
     "current": "当前",
     "withdrawSuccess": "提现成功",
-    "withdrawFailed": "您尝试的次数过多或存在问题",
+    "withdrawFailed": "您的提款次数已超过每日限制。请等待24小时后再进行下一次提款操作。感谢您的理解与配合。",
     "withdrawAddress": "提现地址",
     "pageNotValid": "页面 URL 无效",
     "buy": "买入",
@@ -438,5 +438,5 @@
     "finished": "已完成",
     "waiting": "等待中...",
     "more": "更多的",
-    "withdrawNote": "每位用户每天最多只能提取 2 次。"
+    "withdrawNote": "提币提醒：\n 在进行提币操作前，请务必检查以下几点： \n 币种选择：确保选择正确的币种。\n 网络选择：确认选择正确的区块链网络。\n 地址确认：核对提币地址无误。\n 确保信息正确，以避免资产丢失。"
 }

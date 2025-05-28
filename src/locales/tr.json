@@ -300,7 +300,7 @@
     "enterWithdrawAmount": "Madeni para miktarını girin",
     "current": "Mevcut",
     "withdrawSuccess": "Çekim başarılı",
-    "withdrawFailed": "Çekim başarısız, tekrar deneyin.",
+    "withdrawFailed": "Para çekme süreleriniz günlük limiti aştı. Lütfen bir sonraki para çekme işlemini yapmadan önce 24 saat bekleyin. Anlayışınız ve iş birliğiniz için teşekkür ederiz.",
     "withdrawAddress": "Çekim Adresi",
     "pageNotValid": "Sayfa URL'si geçerli değil",
     "buy": "Al",
@@ -438,5 +438,5 @@
     "finished": "Tamamlandı",
     "waiting": "Bekleniyor...",
     "more": "Daha",
-    "withdrawNote": "Günde en fazla 2 kez para çekebilirsiniz."
+    "withdrawNote": "Para çekme hatırlatıcısı: \n Para çekmeden önce lütfen aşağıdaki noktaları kontrol ettiğinizden emin olun: \n Para birimi seçimi: Doğru para birimini seçtiğinizden emin olun. \n Ağ seçimi: Doğru blockchain ağının seçildiğini onaylayın. \n Adres onayı: Para çekme adresinin doğru olduğunu kontrol edin. \n Varlık kaybını önlemek için bilgilerin doğru olduğundan emin olun."
 }
