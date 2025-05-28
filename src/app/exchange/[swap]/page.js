@@ -145,7 +145,8 @@ export default function Home({ params }) {
     getBTCPrices();
   }, [tokenInfo]);
 
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
+  console.log("LOG", locale);
   if (!t) return <LoadingScreen />;
   return (
     <>
@@ -175,7 +176,11 @@ export default function Home({ params }) {
           </div>
 
           <div>
-            <BTCChart symbol={tradingSymbol} tokenInfo={tokenInfo} />
+            <BTCChart
+              symbol={tradingSymbol}
+              tokenInfo={tokenInfo}
+              locale={locale}
+            />
           </div>
         </div>
       ) : (
@@ -261,8 +266,11 @@ export default function Home({ params }) {
               <div className="col-span-4 h-full flex flex-col items-stretch">
                 <div className="w-full mt-2 h-full bg-black gap-2 grid grid-cols-1 md:grid-cols-4">
                   <div className="col-span-3 h-full hidden md:block bg-black">
-                    {/* <BTCChart symbol={tradingSymbol} profit={tokenInfo?.profit} date={tokenInfo?.updatedAt} /> */}
-                    <BTCChart symbol={tradingSymbol} tokenInfo={tokenInfo} />
+                    <BTCChart
+                      symbol={tradingSymbol}
+                      tokenInfo={tokenInfo}
+                      locale={locale}
+                    />
                   </div>
                   <div className="max-h-[600px] overflow-auto">
                     <OrderTable swap={swap} />

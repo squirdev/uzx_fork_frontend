@@ -5,7 +5,6 @@ export const getTokenProfit = async (curCurrency) => {
     const response = await axiosApi.post("/token-by-name", {
       name: curCurrency,
     });
-    console.log(response.data);
     return response.data;
   } catch (error) {
     return null;
@@ -24,7 +23,6 @@ export const getTokenList = async () => {
 export const getDepositHistory = async () => {
   try {
     const response = await axiosApi.post("/deposits");
-    console.log(response.data);
     return response.data;
   } catch (error) {
     return null;
@@ -34,7 +32,6 @@ export const getDepositHistory = async () => {
 export const getWithdrawHistory = async () => {
   try {
     const response = await axiosApi.post("/withdraws");
-    console.log(response.data);
     return response.data;
   } catch (error) {
     return null;
@@ -44,7 +41,6 @@ export const getWithdrawHistory = async () => {
 export const getSwapHistory = async () => {
   try {
     const response = await axiosApi.post("/swap-history");
-    console.log(response.data);
     return response.data;
   } catch (error) {
     return null;
@@ -70,7 +66,6 @@ export const withdraw = async (token, amount, network, address) => {
       network: network,
       address: address,
     });
-    console.log(response.data);
     return response.data;
   } catch (error) {
     return null;

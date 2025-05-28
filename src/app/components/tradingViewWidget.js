@@ -13,21 +13,9 @@ class CustomDatafeed {
     this.interval = "15m";
   }
 
-  /**
-   * Fuzzy search symbols
-   * Triggered when the search box is entered
-   * Returns an array of symbol information
-   */
   searchSymbols(search = "") {
     // Remote pull of symbol data based on fuzzy fields
   }
-
-  /**
-   * Pull historical k-line data
-   * Triggered when the symbol and period change
-   *
-   * Returns the symbol k-line data array
-   */
 
   async fetchData(interval) {
     const response = await fetch(
@@ -136,17 +124,10 @@ class CustomDatafeed {
   getHistoryKLineData(symbol, period, from, to) {
     const interval = this.getTimeDifference(from, to);
 
-    // Complete data request
     const data = this.fetchData(interval);
     return data;
   }
 
-  /**
-   * Subscribe to real-time data of the symbol in a certain period
-   * Triggered when the symbol and period change
-   *
-   * Notify chart to receive data through callback
-   */
   subscribe(symbol, period, callback) {
     // Complete ws subscription or http polling
     const interval = this.interval || "15m";
@@ -203,37 +184,31 @@ class CustomDatafeed {
     };
   }
 
-  /**
-   * Unsubscribe to real-time data of the symbol in a certain period
-   * Triggered when the symbol and period change
-   *
-   */
-  unsubscribe(symbol, period) {
-    // Complete ws subscription cancellation or http polling cancellation
-  }
+  unsubscribe(symbol, period) {}
 
   length = 9;
 }
 
-const BTCChart = ({ symbol, tokenInfo }) => {
+const BTCChart = ({ symbol, tokenInfo, locale }) => {
   const chartRef = useRef(null);
 
   useEffect(() => {
     const container = document.getElementById("btc-kline-chart");
 
-    // **Clear existing chart container before rendering**
     if (container) {
-      container.innerHTML = ""; // This removes previous chart elements
+      container.innerHTML = "";
     }
 
-    // **Destroy previous chart instance before creating a new one**
     if (chartRef.current) {
       console.log("Destroying previous chart instance...");
       chartRef.current.destroy();
       chartRef.current = null;
     }
 
-    // **Create a new chart instance**
+    let chartLocale;
+    if (locale == "ch" || locale == "zh") chartLocale = "zh-CN";
+    else chartLocale = "en";
+
     const chart = new KLineChartPro({
       container,
       symbol: {
@@ -246,6 +221,7 @@ const BTCChart = ({ symbol, tokenInfo }) => {
         type: "ADRC",
       },
       period: { multiplier: 15, timespan: "minute", text: "15m" },
+      locale: chartLocale,
       datafeed: new CustomDatafeed(symbol, tokenInfo),
     });
 
@@ -265,7 +241,7 @@ const BTCChart = ({ symbol, tokenInfo }) => {
         chartRef.current = null;
       }
     };
-  }, [symbol, tokenInfo]);
+  }, [symbol, tokenInfo, locale]);
 
   return (
     <div className="">
