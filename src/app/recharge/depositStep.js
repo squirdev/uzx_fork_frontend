@@ -1,3 +1,6 @@
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+
 import {
   Option,
   Popover,
@@ -12,12 +15,11 @@ import {
   TimelineItem,
   Typography,
 } from "@material-tailwind/react";
-import { useEffect, useState } from "react";
+
 import { useLanguage } from "../../../context/LanguageProvider";
 import { getTokenList } from "../api/token";
 import { useAlert } from "../../../context/alertContext";
 import { createWallet, getProfile } from "../api/profile";
-import { useRouter } from "next/navigation";
 import LoadingScreen from "../components/loading";
 
 export default function DepositStep() {
@@ -55,10 +57,12 @@ export default function DepositStep() {
     const formData = new FormData();
     formData.append("token", token);
     let result = await createWallet(formData);
-    if (result) {
+    if (result && result.address) {
       setUserWalletAddress(result.address);
     } else {
-      showAlert(t("alertErrorMsg"), "error");
+      setUserWalletAddress(
+        tokenInfo[activeIndex]?.network[activeNewworkIndex]?.address
+      );
     }
     setIsLoaindingAddress(false);
   };

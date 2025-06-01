@@ -4,8 +4,11 @@ import { useState, useEffect } from "react";
 import { AiOutlineRise, AiOutlineFall } from "react-icons/ai";
 import Image from "next/image";
 import Link from "next/link";
+import { useLanguage } from "../../../context/LanguageProvider";
+import LoadingScreen from "./loading";
 
 export const CoinGeckoBTCData = ({ tokenProfit }) => {
+  const { t } = useLanguage();
   const [coinInfo, setCoinInfo] = useState(null);
   const coinIds = [
     "bitcoin",
@@ -42,6 +45,7 @@ export const CoinGeckoBTCData = ({ tokenProfit }) => {
     fetchBTCData();
   }, []);
 
+  if (!t) return <LoadingScreen />;
   return (
     coinInfo &&
     coinInfo.map((coin, index) => (
@@ -80,7 +84,7 @@ export const CoinGeckoBTCData = ({ tokenProfit }) => {
           href={`/exchange/${coin.symbol}`}
           className="text-sm text-blue1 hidden md:block"
         >
-          Trade
+          {t("trade")}
         </Link>
       </div>
     ))

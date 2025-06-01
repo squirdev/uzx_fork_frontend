@@ -146,7 +146,6 @@ export default function Home({ params }) {
   }, [tokenInfo]);
 
   const { t, locale } = useLanguage();
-  console.log("LOG", locale);
   if (!t) return <LoadingScreen />;
   return (
     <>

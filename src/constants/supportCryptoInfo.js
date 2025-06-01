@@ -12,6 +12,6 @@ export const SwapTokenList = [
   "CRV",
   "TRUMP",
   "SUI",
-  "CRO",
+  // "CRO",
   "SOL",
 ];
