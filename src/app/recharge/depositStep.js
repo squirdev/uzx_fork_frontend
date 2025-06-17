@@ -258,7 +258,7 @@ export default function DepositStep() {
                   {t("depositDescMsg")}
                 </span>
                 <Button color="blue" onClick={handleConfirmDeposit}>
-                  确认存款
+                  {t("confirm")}
                 </Button>
               </div>
             )}
