@@ -87,8 +87,10 @@ export default function WithdrawStep() {
       }
     } catch (error) {
       console.log("error", error);
+      showAlert(t("withdrawFailed"), "error");
     } finally {
       setIsLoading(false);
+      window.location.reload();
     }
   };
 

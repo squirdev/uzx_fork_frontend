@@ -31,6 +31,7 @@ export default function DepositStep() {
   const [userProfile, setUserProfile] = useState(null);
   const [userWalletAddress, setUserWalletAddress] = useState(null);
   const [isLoadingAddress, setIsLoaindingAddress] = useState(false);
+  const [isLoadingResult, setIsLoadingResult] = useState(false);
   const [txID, setTxID] = useState("");
   const [amount, setAmount] = useState(0);
 
@@ -109,22 +110,30 @@ export default function DepositStep() {
       showAlert("Please input your correct deposit amount");
       return;
     }
-
-    const tokenName = tokenInfo[activeIndex].name;
-    const networkName = tokenInfo[activeIndex].network[activeNetworkIndex].name;
-    const networkAddress =
-      tokenInfo[activeIndex].network[activeNetworkIndex].address;
-    const result = await createTokenDeposit({
-      tokenName,
-      networkName,
-      networkAddress,
-      amount,
-      txID,
-    });
-    if (result && result.data) {
-      showAlert(t("depositSuccessMsg"), "success");
-    } else {
+    try {
+      setIsLoadingResult(true);
+      const tokenName = tokenInfo[activeIndex].name;
+      const networkName =
+        tokenInfo[activeIndex].network[activeNetworkIndex].name;
+      const networkAddress =
+        tokenInfo[activeIndex].network[activeNetworkIndex].address;
+      const result = await createTokenDeposit({
+        tokenName,
+        networkName,
+        networkAddress,
+        amount,
+        txID,
+      });
+      if (result && result.data) {
+        showAlert(t("depositSuccessMsg"), "success");
+      } else {
+        showAlert(t("alertErrorMsg"), "error");
+      }
+    } catch (error) {
       showAlert(t("alertErrorMsg"), "error");
+    } finally {
+      setIsLoadingResult(false);
+      window.location.reload();
     }
   };
 
@@ -257,7 +266,12 @@ export default function DepositStep() {
                 <span className="md:w-96 w-64 text-[12px]">
                   {t("depositDescMsg")}
                 </span>
-                <Button color="blue" onClick={handleConfirmDeposit}>
+                <Button
+                  color="blue"
+                  className="flex justify-center items-center"
+                  loading={isLoadingResult}
+                  onClick={handleConfirmDeposit}
+                >
                   {t("confirm")}
                 </Button>
               </div>
