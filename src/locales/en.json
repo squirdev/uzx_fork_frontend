@@ -438,5 +438,12 @@
     "finished": "Finished",
     "waiting": "Waiting...",
     "more": "More",
-    "withdrawNote": "Withdrawal reminder: \n Before withdrawing money, please be sure to check the following points: \n Currency selection: Make sure to select the correct currency. \n Network selection: Confirm that the correct blockchain network is selected. \n Address confirmation: Check that the withdrawal address is correct. \n Make sure the information is correct to avoid asset loss."
+    "withdrawNote": "Withdrawal reminder: \n Before withdrawing money, please be sure to check the following points: \n Currency selection: Make sure to select the correct currency. \n Network selection: Confirm that the correct blockchain network is selected. \n Address confirmation: Check that the withdrawal address is correct. \n Make sure the information is correct to avoid asset loss.",
+    "24hMCChangeP": "24h MC Change (%)",
+    "marketCap": "Market Cap",
+    "24hMCChange": "24h MC Change",
+    "totalSupply": "Total Supply",
+    "totalVolume": "Total Volume",
+    "depositSuccessMsg": "Your deposit request was submitted successfully!",
+    "depositDescMsg": "After you've sent your deposit to the correct address, please submit your transaction ID and the amount. Our support team will review it and update your balance shortly."
 }

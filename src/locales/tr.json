@@ -438,5 +438,12 @@
     "finished": "Tamamlandı",
     "waiting": "Bekleniyor...",
     "more": "Daha",
-    "withdrawNote": "Para çekme hatırlatıcısı: \n Para çekmeden önce lütfen aşağıdaki noktaları kontrol ettiğinizden emin olun: \n Para birimi seçimi: Doğru para birimini seçtiğinizden emin olun. \n Ağ seçimi: Doğru blockchain ağının seçildiğini onaylayın. \n Adres onayı: Para çekme adresinin doğru olduğunu kontrol edin. \n Varlık kaybını önlemek için bilgilerin doğru olduğundan emin olun."
+    "withdrawNote": "Para çekme hatırlatıcısı: \n Para çekmeden önce lütfen aşağıdaki noktaları kontrol ettiğinizden emin olun: \n Para birimi seçimi: Doğru para birimini seçtiğinizden emin olun. \n Ağ seçimi: Doğru blockchain ağının seçildiğini onaylayın. \n Adres onayı: Para çekme adresinin doğru olduğunu kontrol edin. \n Varlık kaybını önlemek için bilgilerin doğru olduğundan emin olun.",
+    "24hMCChangeP": "24s MK Değişimi (%)",
+    "marketCap": "Piyasa Değeri",
+    "24hMCChange": "24s MK Değişimi",
+    "totalSupply": "Toplam Arz",
+    "totalVolume": "Toplam Hacim",
+    "depositSuccessMsg": "Yatırma talebiniz başarıyla gönderildi!",
+    "depositDescMsg": "Doğru adrese yatırma işleminizi gerçekleştirdikten sonra, lütfen işlem kimliğinizi ve tutarı gönderin. Destek ekibimiz inceleyip bakiyenizi kısa sürede güncelleyecektir."
 }

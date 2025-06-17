@@ -438,5 +438,12 @@
     "finished": "Abgeschlossen",
     "waiting": "Warten...",
     "more": "Meer",
-    "withdrawNote": "Hinweis zur Auszahlung: \n Bitte überprüfen Sie vor einer Auszahlung folgende Punkte: \n Währungsauswahl: Achten Sie auf die richtige Währung. \n Netzwerkauswahl: Stellen Sie sicher, dass das richtige Blockchain-Netzwerk ausgewählt ist. \n Adressbestätigung: Überprüfen Sie die Richtigkeit der Auszahlungsadresse. \n Stellen Sie sicher, dass alle Angaben korrekt sind, um Vermögensverluste zu vermeiden."
+    "withdrawNote": "Hinweis zur Auszahlung: \n Bitte überprüfen Sie vor einer Auszahlung folgende Punkte: \n Währungsauswahl: Achten Sie auf die richtige Währung. \n Netzwerkauswahl: Stellen Sie sicher, dass das richtige Blockchain-Netzwerk ausgewählt ist. \n Adressbestätigung: Überprüfen Sie die Richtigkeit der Auszahlungsadresse. \n Stellen Sie sicher, dass alle Angaben korrekt sind, um Vermögensverluste zu vermeiden.",
+    "24hMCChangeP": "24h MK-Änderung (%)",
+    "marketCap": "Marktkapitalisierung",
+    "24hMCChange": "24h MK-Änderung",
+    "totalSupply": "Gesamtangebot",
+    "totalVolume": "Gesamtvolumen",
+    "depositSuccessMsg": "Ihre Einzahlung wurde erfolgreich eingereicht!",
+    "depositDescMsg": "Nachdem Sie Ihre Einzahlung an die korrekte Adresse gesendet haben, geben Sie bitte Ihre Transaktions-ID und den Betrag an. Unser Support-Team wird dies überprüfen und Ihr Guthaben in Kürze aktualisieren."
 }

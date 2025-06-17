@@ -38,9 +38,9 @@ const HotAssertsPanel = () => {
       for (let i = 0; i < tokenInfo.length; i++) {
         const tokenName = tokenInfo[i].name;
         const tokenProfit = tokenInfo[i].profit;
-        const currentUSD = coinDetail[tokenName]?.usd;
+        const currentUSD = coinDetail[tokenName]?.current_price;
         if (currentUSD != null) {
-          updatedCoinDetail[tokenName].usd =
+          updatedCoinDetail[tokenName].current_price =
             (currentUSD * (100 + tokenProfit)) / 100;
         }
       }

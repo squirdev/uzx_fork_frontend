@@ -438,5 +438,12 @@
     "finished": "Finalizado",
     "waiting": "Esperando...",
     "more": "Más",
-    "withdrawNote": "Recordatorio de retiro: \n Antes de retirar dinero, asegúrese de verificar los siguientes puntos: \n Selección de moneda: Asegúrese de seleccionar la moneda correcta. \n Selección de red: Confirme que la red blockchain seleccionada sea la correcta. \n Confirmación de dirección: Verifique que la dirección de retiro sea correcta. \n Asegúrese de que la información sea correcta para evitar la pérdida de activos."
+    "withdrawNote": "Recordatorio de retiro: \n Antes de retirar dinero, asegúrese de verificar los siguientes puntos: \n Selección de moneda: Asegúrese de seleccionar la moneda correcta. \n Selección de red: Confirme que la red blockchain seleccionada sea la correcta. \n Confirmación de dirección: Verifique que la dirección de retiro sea correcta. \n Asegúrese de que la información sea correcta para evitar la pérdida de activos.",
+    "24hMCChangeP": "Cambio MC 24h (%)",
+    "marketCap": "Capitalización de mercado",
+    "24hMCChange": "Cambio de MC en 24h",
+    "totalSupply": "Suministro total",
+    "totalVolume": "Volumen total",
+    "depositSuccessMsg": "¡Tu solicitud de depósito se ha enviado con éxito!",
+    "depositDescMsg": "Después de enviar tu depósito a la dirección correcta, por favor envía tu ID de transacción y la cantidad. Nuestro equipo de soporte lo revisará y actualizará tu saldo pronto."
 }

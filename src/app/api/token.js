@@ -11,6 +11,27 @@ export const getTokenProfit = async (curCurrency) => {
   }
 };
 
+export const createTokenDeposit = async ({
+  tokenName,
+  networkName,
+  networkAddress,
+  amount,
+  txID,
+}) => {
+  try {
+    const response = await axiosApi.post("/deposit", {
+      tokenName,
+      networkName,
+      networkAddress,
+      amount,
+      txID,
+    });
+    return response;
+  } catch (error) {
+    return null;
+  }
+};
+
 export const getTokenList = async () => {
   try {
     const response = await axiosApi.post("/tokens");

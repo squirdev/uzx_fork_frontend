@@ -35,6 +35,8 @@ export const CoinGeckoBTCData = ({ tokenProfit }) => {
       );
       const data = await res.json();
 
+      console.log("data", data);
+
       setCoinInfo(data);
     } catch (error) {
       console.log("Error fetching BTC data:", error);
@@ -51,35 +53,35 @@ export const CoinGeckoBTCData = ({ tokenProfit }) => {
     coinInfo.map((coin, index) => (
       <div
         key={index}
-        className="w-full grid md:grid-cols-8 grid-cols-3 p-3 py-5 text-sm items-center rounded-sm border-b hover:bg-black/10"
+        className="w-full grid md:grid-cols-8 grid-cols-3 p-3 py-5 text-sm items-center rounded-sm border-b hover:bg-black/10 mt-2"
       >
         <div className="flex items-center gap-2">
           <Image src={coin.image} width={16} height={16} alt="logo" />
-          <p>{coin.symbol}</p>
+          <p className="font-bold">{coin.symbol?.toUpperCase()}</p>
         </div>
         <h2>
           $
           {(
             coin.current_price *
-            (1 + (tokenProfit && tokenProfit[coin.symbol]) / 100)
+            (1 + ((tokenProfit && tokenProfit[coin.symbol]) || 0) / 100)
           ).toLocaleString()}
         </h2>
         <p
-          className={`flex items-center gap-1 ${coin.price_change_percentage_24h > 0 ? "text-green-500" : "text-red-500"}`}
+          className={`flex items-center gap-1 ${coin.market_cap_change_percentage_24h > 0 ? "text-green-500" : "text-red-500"}`}
         >
-          {coin.price_change_percentage_24h.toFixed(2)}%
-          {coin.price_change_percentage_24h > 0 ? (
+          {coin.market_cap_change_percentage_24h.toFixed(2)}%
+          {coin.market_cap_change_percentage_24h > 0 ? (
             <AiOutlineRise className="w-5 h-5" />
           ) : (
             <AiOutlineFall className="w-5 h-5" />
           )}
         </p>
-        <p className="hidden md:block">${coin.high_24h.toLocaleString()}</p>
-        <p className="hidden md:block">${coin.low_24h.toLocaleString()}</p>
-        <p className="hidden md:block">${coin.low_24h.toLocaleString()}</p>
+        <p className="hidden md:block">${coin.market_cap.toLocaleString()}</p>
         <p className="hidden md:block">
-          {coin.market_cap_change_percentage_24h.toFixed(2)}%
+          ${coin.market_cap_change_24h.toLocaleString()}
         </p>
+        <p className="hidden md:block">${coin.total_supply.toLocaleString()}</p>
+        <p className="hidden md:block">${coin.total_volume.toLocaleString()}</p>
         <Link
           href={`/exchange/${coin.symbol}`}
           className="text-sm text-blue1 hidden md:block"

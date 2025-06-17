@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 import {
+  Button,
+  Input,
   Option,
   Popover,
   PopoverContent,
@@ -17,18 +19,21 @@ import {
 } from "@material-tailwind/react";
 
 import { useLanguage } from "../../../context/LanguageProvider";
-import { getTokenList } from "../api/token";
+import { createTokenDeposit, getTokenList } from "../api/token";
 import { useAlert } from "../../../context/alertContext";
 import { createWallet, getProfile } from "../api/profile";
 import LoadingScreen from "../components/loading";
 
 export default function DepositStep() {
   const [activeIndex, setActiveIndex] = useState(-1);
-  const [activeNewworkIndex, setActiveNewworkIndex] = useState(-1);
+  const [activeNetworkIndex, setActiveNetworkIndex] = useState(-1);
   const [tokenInfo, setTokenInfo] = useState(null);
   const [userProfile, setUserProfile] = useState(null);
   const [userWalletAddress, setUserWalletAddress] = useState(null);
   const [isLoadingAddress, setIsLoaindingAddress] = useState(false);
+  const [txID, setTxID] = useState("");
+  const [amount, setAmount] = useState(0);
+
   const router = useRouter();
   const { showAlert } = useAlert();
   const { t } = useLanguage();
@@ -61,26 +66,27 @@ export default function DepositStep() {
       setUserWalletAddress(result.address);
     } else {
       setUserWalletAddress(
-        tokenInfo[activeIndex]?.network[activeNewworkIndex]?.address
+        tokenInfo[activeIndex]?.network[activeNetworkIndex]?.address
       );
     }
     setIsLoaindingAddress(false);
   };
 
   useEffect(() => {
+    if (!t) return;
     fetchProfile();
     fetchTokenInfo();
-  }, []);
+  }, [t]);
 
   useEffect(() => {
     if (activeIndex != -1) {
       setUserWalletAddress(null);
-      setActiveNewworkIndex(-1);
+      setActiveNetworkIndex(-1);
     }
   }, [activeIndex]);
 
   useEffect(() => {
-    if (activeNewworkIndex != -1) {
+    if (activeNetworkIndex != -1) {
       if (tokenInfo && tokenInfo[activeIndex]) {
         const token = tokenInfo[activeIndex]?.name;
         const addressName = token + "Address";
@@ -93,14 +99,37 @@ export default function DepositStep() {
         }
       }
     }
-  }, [activeNewworkIndex]);
+  }, [activeNetworkIndex]);
+
+  const handleConfirmDeposit = async () => {
+    if (!txID) {
+      showAlert("Please input correct transaction ID");
+      return;
+    } else if (!(Number(amount) > 0)) {
+      showAlert("Please input your correct deposit amount");
+      return;
+    }
+
+    const tokenName = tokenInfo[activeIndex].name;
+    const networkName = tokenInfo[activeIndex].network[activeNetworkIndex].name;
+    const networkAddress =
+      tokenInfo[activeIndex].network[activeNetworkIndex].address;
+    const result = await createTokenDeposit({
+      tokenName,
+      networkName,
+      networkAddress,
+      amount,
+      txID,
+    });
+    if (result && result.data) {
+      showAlert(t("depositSuccessMsg"), "success");
+    } else {
+      showAlert(t("alertErrorMsg"), "error");
+    }
+  };
 
   if (!t) return <LoadingScreen />;
-  const handleCopyAddress = () => {
-    navigator.clipboard.writeText(
-      tokenInfo[activeIndex]?.network[activeNewworkIndex]?.address
-    );
-  };
+
   return (
     <Timeline>
       <TimelineItem>
@@ -124,7 +153,7 @@ export default function DepositStep() {
                 setActiveIndex(e);
               }}
             >
-              {tokenInfo.map((data, index) => (
+              {tokenInfo?.map((data, index) => (
                 <Option key={index} value={index}>
                   {data.name?.toUpperCase()}
                 </Option>
@@ -148,10 +177,10 @@ export default function DepositStep() {
             <Select
               variant="static"
               size="lg"
-              value={activeNewworkIndex ?? ""}
+              value={activeNetworkIndex ?? ""}
               label="Network"
               className="md:w-96 w-64"
-              onChange={(e) => setActiveNewworkIndex(e)}
+              onChange={(e) => setActiveNetworkIndex(e)}
             >
               {tokenInfo[activeIndex]?.network.map((data, subIndex) => (
                 <Option key={subIndex} value={subIndex}>
@@ -173,34 +202,6 @@ export default function DepositStep() {
         </TimelineHeader>
         <TimelineBody className="py-8">
           <div className="flex flex-col gap-3">
-            {/* {tokenInfo &&
-              tokenInfo[activeIndex] &&
-              tokenInfo[activeIndex].network &&
-              tokenInfo[activeIndex].network[activeNewworkIndex] &&
-              tokenInfo[activeIndex].network[activeNewworkIndex].address && (
-                <div>
-                  <p className="text-sm text-mainblack py-1">
-                    {t("depositAddress")}1
-                  </p>
-                  <div className="flex items-center justify-between gap-8 w-96">
-                    <p className="text-sm text-mainblack">
-                      {tokenInfo &&
-                        tokenInfo[activeIndex]?.network[activeNewworkIndex]
-                          ?.address}
-                    </p>
-                    <div onClick={handleCopyAddress}>
-                      <Popover>
-                        <PopoverHandler>
-                          <button className="text-blue1">{t("copy")}</button>
-                        </PopoverHandler>
-                        <PopoverContent className="p-2">
-                          {t("copied")}
-                        </PopoverContent>
-                      </Popover>
-                    </div>
-                  </div>
-                </div>
-              )} */}
             {isLoadingAddress && (
               <div className="max-w-full animate-pulse">
                 <Typography
@@ -214,28 +215,52 @@ export default function DepositStep() {
             )}
 
             {userWalletAddress && (
-              <>
-                <p className="text-sm text-mainblack py-1">
-                  {t("depositAddress")}
-                </p>
-                <div className="flex items-center justify-between gap-8 w-96">
-                  <p className="text-sm text-mainblack">{userWalletAddress}</p>
-                  <div
-                    onClick={() => {
-                      navigator.clipboard.writeText(userWalletAddress);
-                    }}
-                  >
-                    <Popover>
-                      <PopoverHandler>
-                        <button className="text-blue1">{t("copy")}</button>
-                      </PopoverHandler>
-                      <PopoverContent className="p-2">
-                        {t("copied")}
-                      </PopoverContent>
-                    </Popover>
+              <div className="flex flex-col gap-8">
+                <div>
+                  <p className="text-sm text-mainblack py-1">
+                    {t("depositAddress")}
+                  </p>
+                  <div className="flex  items-center justify-between gap-8 w-96">
+                    <p className="text-sm text-mainblack">
+                      {userWalletAddress}
+                    </p>
+                    <div
+                      onClick={() => {
+                        navigator.clipboard.writeText(userWalletAddress);
+                      }}
+                    >
+                      <Popover>
+                        <PopoverHandler>
+                          <button className="text-blue1">{t("copy")}</button>
+                        </PopoverHandler>
+                        <PopoverContent className="p-2">
+                          {t("copied")}
+                        </PopoverContent>
+                      </Popover>
+                    </div>
                   </div>
                 </div>
-              </>
+                <Input
+                  variant="static"
+                  value={txID}
+                  onChange={(e) => setTxID(e.target.value)}
+                  label="Transaction ID"
+                  placeholder="充值后请输入交易ID"
+                />
+                <Input
+                  variant="static"
+                  label="Amount"
+                  value={amount}
+                  onChange={(e) => setAmount(e.target.value)}
+                  placeholder="存款后请存入金额"
+                />
+                <span className="md:w-96 w-64 text-[12px]">
+                  {t("depositDescMsg")}
+                </span>
+                <Button color="blue" onClick={handleConfirmDeposit}>
+                  确认存款
+                </Button>
+              </div>
             )}
           </div>
         </TimelineBody>

@@ -6,10 +6,10 @@ const HotAssertItem = ({ itemData, subIndex }) => {
     <div className="w-full rounded-xl bg-gradient-to-b from-hoverblack to-mainblack py-6">
       <div className="flex flex-col pb-6">
         {itemData.map((coinData, index) => {
-          const fileUrl = "/coin/" + coinData.name.toUpperCase() + ".png";
+          const fileUrl = "/coin/" + coinData.symbol.toUpperCase() + ".png";
           return (
             <Link
-              href={`/exchange/${coinData.name}`}
+              href={`/exchange/${coinData.symbol}`}
               key={index}
               className="w-full flex items-center hover:bg-hoverblack justify-between px-6 py-4"
             >
@@ -23,11 +23,11 @@ const HotAssertItem = ({ itemData, subIndex }) => {
                 </span>
               </div>
               <div className="flex flex-col items-end">
-                <span className="text-white">${coinData.usd?.toFixed(3)}</span>
+                <span className="text-white">${coinData.current_price?.toFixed(3)}</span>
                 <span
-                  className={`${coinData.usd_24h_change > 0 ? "text-[#01BD8D]" : "text-red-500"} `}
+                  className={`${coinData.market_cap_change_percentage_24h > 0 ? "text-[#01BD8D]" : "text-red-500"} `}
                 >
-                  {coinData.usd_24h_change?.toFixed(3)}%
+                  {coinData.market_cap_change_percentage_24h?.toFixed(3)}%
                 </span>
               </div>
             </Link>

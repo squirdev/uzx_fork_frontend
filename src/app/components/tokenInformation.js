@@ -32,26 +32,27 @@ export const getTokenDataById = async (tokenId) => {
 export const getTokenData = async () => {
   try {
     const response = await fetch(
-      `https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,dogecoin,ripple,litecoin,filecoin,cardano,eos,binancecoin,polkadot,curve-dao-token,official-trump,sui,cronos,solana&vs_currencies=usd&include_24hr_change=true`
+      `https://api.coingecko.com/api/v3/coins/markets?ids=bitcoin,ethereum,dogecoin,ripple,litecoin,filecoin,cardano,eos,binancecoin,polkadot,curve-dao-token,official-trump,sui,cronos,solana&vs_currency=usd&include_24hr_change=true`
     );
     const data = await response.json();
 
+    console.log(data);
+
     return {
-      btc: data["bitcoin"],
-      eth: data["ethereum"],
-      doge: data["dogecoin"],
-      xrp: data["ripple"],
-      ltc: data["litecoin"],
-      fil: data["filecoin"],
-      ada: data["cardano"],
-      eos: data["eos"],
-      bnb: data["binancecoin"],
-      dot: data["polkadot"],
-      crv: data["curve-dao-token"],
-      trump: data["official-trump"],
-      sui: data["sui"],
-      cro: data["cronos"],
-      sol: data["solana"],
+      btc: data[0],
+      eth: data[1],
+      xrp: data[2],
+      bnb: data[3],
+      sol: data[4],
+      doge: data[5],
+      ada: data[6],
+      sui: data[7],
+      ltc: data[8],
+      dot: data[9],
+      trump: data[10],
+      fil: data[11],
+      crv: data[12],
+      eos: data[13],
     };
   } catch (error) {
     console.error("Error fetching token data:", error);

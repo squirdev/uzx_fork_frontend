@@ -73,11 +73,11 @@ export default function DetailsPanel() {
         <div className="w-full grid md:grid-cols-8 grid-cols-3 gap-2 px-3 text-sm">
           <p># {t("crypto")}</p>
           <p>{t("price")}</p>
-          <p>{t("change24H")}</p>
-          <p className="hidden md:block">{t("high24H")}</p>
-          <p className="hidden md:block">{t("low24H")}</p>
-          <p className="hidden md:block">{t("volume24H")}</p>
-          <p className="hidden md:block">{t("turnover24H")}</p>
+          <p className="hidden md:block w-[200%]">{t("24hMCChangeP")}</p>
+          <p className="hidden md:block">{t("marketCap")}</p>
+          <p className="hidden md:block">{t("24hMCChange")}</p>
+          <p className="hidden md:block">{t("totalSupply")}</p>
+          <p className="hidden md:block">{t("totalVolume")}</p>
           <p className="hidden md:block">{t("operation")}</p>
         </div>
         <CoinGeckoBTCData tokenProfit={tokenProfit} />

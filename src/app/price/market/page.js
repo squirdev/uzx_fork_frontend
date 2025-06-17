@@ -1,34 +1,9 @@
 "use client";
 
-import { Tab, Tabs, TabsBody, TabsHeader } from "@material-tailwind/react";
 import { useState } from "react";
-import CoinItemButton from "@/app/components/coinItemButtom";
-import { BiRefresh } from "react-icons/bi";
-import { CoinGeckoBTCData } from "@/app/components/tradingViewMiniChart";
 import DetailsPanel from "./DetailsPanel";
 import { useLanguage } from "../../../../context/LanguageProvider";
 import LoadingScreen from "@/app/components/loading";
-
-const coinListData = [
-  "All",
-  "Top",
-  "Meme",
-  "PoW",
-  "HK",
-  "GameFi",
-  "Layer1",
-  "Layer2 ",
-  "Storage",
-  "DeFi",
-  "Fan Tokens",
-  "NFT",
-  "SocialFi",
-  "AI",
-  "Metaverse",
-  "Web3",
-  "DAO",
-  "Payment",
-];
 
 export default function Home() {
   const [isOverView, setIsOverView] = useState(false);

@@ -51,7 +51,9 @@ export default function DepositPanel() {
                     {getSimplifiedAddress(item.address)}
                   </p>
                   <p className="text-sm text-hoverblack">{item.amount}</p>
-                  <p className="text-sm text-hoverblack">{item.status}</p>
+                  <p className="text-sm text-hoverblack font-bold">
+                    {item.status.toUpperCase()}
+                  </p>
                 </div>
               ))}
             </div>
