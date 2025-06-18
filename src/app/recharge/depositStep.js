@@ -34,6 +34,7 @@ export default function DepositStep() {
   const [isLoadingResult, setIsLoadingResult] = useState(false);
   const [txID, setTxID] = useState("");
   const [amount, setAmount] = useState(0);
+  const [isManualDeposit, setIsManualDeposit] = useState(false);
 
   const router = useRouter();
   const { showAlert } = useAlert();
@@ -65,10 +66,12 @@ export default function DepositStep() {
     let result = await createWallet(formData);
     if (result && result.address) {
       setUserWalletAddress(result.address);
+      setIsManualDeposit(false);
     } else {
       setUserWalletAddress(
         tokenInfo[activeIndex]?.network[activeNetworkIndex]?.address
       );
+      setIsManualDeposit(true);
     }
     setIsLoaindingAddress(false);
   };
@@ -249,31 +252,35 @@ export default function DepositStep() {
                     </div>
                   </div>
                 </div>
-                <Input
-                  variant="static"
-                  value={txID}
-                  onChange={(e) => setTxID(e.target.value)}
-                  label="Transaction ID"
-                  placeholder="充值后请输入交易ID"
-                />
-                <Input
-                  variant="static"
-                  label="Amount"
-                  value={amount}
-                  onChange={(e) => setAmount(e.target.value)}
-                  placeholder="存款后请存入金额"
-                />
-                <span className="md:w-96 w-64 text-[12px]">
-                  {t("depositDescMsg")}
-                </span>
-                <Button
-                  color="blue"
-                  className="flex justify-center items-center"
-                  loading={isLoadingResult}
-                  onClick={handleConfirmDeposit}
-                >
-                  {t("confirm")}
-                </Button>
+                {isManualDeposit && (
+                  <div className="w-full flex flex-col gap-8">
+                    <Input
+                      variant="static"
+                      value={txID}
+                      onChange={(e) => setTxID(e.target.value)}
+                      label="Transaction ID"
+                      placeholder="充值后请输入交易ID"
+                    />
+                    <Input
+                      variant="static"
+                      label="Amount"
+                      value={amount}
+                      onChange={(e) => setAmount(e.target.value)}
+                      placeholder="存款后请存入金额"
+                    />
+                    <span className="md:w-96 w-64 text-[12px]">
+                      {t("depositDescMsg")}
+                    </span>
+                    <Button
+                      color="blue"
+                      className="flex justify-center items-center"
+                      loading={isLoadingResult}
+                      onClick={handleConfirmDeposit}
+                    >
+                      {t("confirm")}
+                    </Button>
+                  </div>
+                )}
               </div>
             )}
           </div>

@@ -19,11 +19,13 @@ const HotAssertItem = ({ itemData, subIndex }) => {
                 </span>
                 <Image src={fileUrl} width={24} height={24} alt="icon" />
                 <span className="font-bold text-white">
-                  {coinData.name.toUpperCase()}/USDT
+                  {coinData.symbol.toUpperCase()}/USDT
                 </span>
               </div>
               <div className="flex flex-col items-end">
-                <span className="text-white">${coinData.current_price?.toFixed(3)}</span>
+                <span className="text-white">
+                  ${coinData.current_price?.toFixed(3)}
+                </span>
                 <span
                   className={`${coinData.market_cap_change_percentage_24h > 0 ? "text-[#01BD8D]" : "text-red-500"} `}
                 >

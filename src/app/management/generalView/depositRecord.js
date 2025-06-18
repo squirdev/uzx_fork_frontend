@@ -35,7 +35,7 @@ const DepositRecord = () => {
               className="w-full grid grid-cols-3 font-bold text-sm"
             >
               <p>{data.token.toUpperCase()}</p>
-              <p>{data.amount}</p>
+              <p>{data.amount.toFixed(3)}</p>
               <p>{getSimplifiedDateTime(data.createdAt)}</p>
             </div>
           ))
