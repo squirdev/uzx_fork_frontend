@@ -50,9 +50,9 @@ export default function Home() {
             <Typography variant="h2">{t("emailAddress")}</Typography>
             <div className="flex flex-col gap-1">
               <Typography variant="h6">
-                {t("customerService")}: CS@UZXKR.com
+                {t("customerService")}: uzxkr01@gmail.com
               </Typography>
-              <Typography variant="h6">
+              {/* <Typography variant="h6">
                 {t("technicalSupport")}: TS@UZXKR.com
               </Typography>
               <Typography variant="h6">
@@ -66,16 +66,8 @@ export default function Home() {
               </Typography>
               <Typography variant="h6">
                 {t("riskControlDepartment")}: RCD@UZXKR.com
-              </Typography>
+              </Typography> */}
             </div>
-            {/* <Typography variant="h2">Social Media</Typography>
-            <div className="flex items-center gap-8">
-              {communityLinkData.map((data, index) => (
-                <a key={index} href={data.url}>
-                  <Image src={data.icon} width={26} height={26} alt="icon" />
-                </a>
-              ))}
-            </div> */}
           </div>
         </div>
       </div>

@@ -90,7 +90,11 @@ export default function WithdrawStep() {
       showAlert(t("withdrawFailed"), "error");
     } finally {
       setIsLoading(false);
-      window.location.reload();
+      setActiveIndex(0);
+      setAddress("");
+      setWithdrawAmount(0);
+      setActiveNewworkIndex(0);
+      setCurrentCoinBalance(0);
     }
   };
 
